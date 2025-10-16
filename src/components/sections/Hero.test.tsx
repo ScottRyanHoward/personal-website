@@ -113,7 +113,7 @@ describe('Hero Component', () => {
     const downloadButton = screen.getByRole('button', { name: /download resume/i });
     await user.click(downloadButton);
 
-    expect(window.open).toHaveBeenCalledWith('/resume.pdf', '_blank');
+    expect(window.open).toHaveBeenCalledWith('/Scott_Howard_Resume.pdf', '_blank');
   });
 
   it('handles Contact button click with custom handler', async () => {

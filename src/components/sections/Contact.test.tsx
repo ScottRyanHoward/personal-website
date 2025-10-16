@@ -266,7 +266,7 @@ describe('Contact', () => {
       });
       await user.click(downloadButton);
 
-      expect(openSpy).toHaveBeenCalledWith('/resume.pdf', '_blank');
+      expect(openSpy).toHaveBeenCalledWith('/Scott_Howard_Resume.pdf', '_blank');
     });
 
     it('calls custom onDownloadResume handler when provided', async () => {

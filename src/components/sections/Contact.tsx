@@ -17,7 +17,7 @@ export const Contact: React.FC<ContactProps> = ({
     if (onDownloadResume) {
       onDownloadResume();
     } else {
-      window.open('/resume.pdf', '_blank');
+      window.open('/Scott_Howard_Resume.pdf', '_blank');
     }
   };
 

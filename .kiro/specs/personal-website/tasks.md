@@ -204,7 +204,7 @@
   - Run Lighthouse audit and address issues
   - _Requirements: 8.1_
 
-- [ ] 21. Set up deployment configuration
+- [x] 21. Set up deployment configuration
   - Create next.config.js with production optimizations
   - Configure environment variables if needed
   - Create vercel.json for deployment settings
@@ -212,7 +212,7 @@
   - Test production build locally
   - _Requirements: 10.1, 10.2, 10.3, 10.4_
 
-- [ ] 22. Write end-to-end tests
+- [x] 22. Write end-to-end tests
   - Set up Playwright or Cypress for E2E testing
   - Write tests for full page navigation flow
   - Test smooth scrolling between sections

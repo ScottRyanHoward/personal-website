@@ -1,0 +1,23 @@
+# Files to ignore during Vercel deployment
+
+# Test files
+**/*.test.tsx
+**/*.test.ts
+**/*.spec.tsx
+**/*.spec.ts
+src/test/
+
+# Documentation
+*.md
+!README.md
+DEPLOYMENT.md
+
+# Development files
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# Lighthouse reports
+lighthouse-report.html

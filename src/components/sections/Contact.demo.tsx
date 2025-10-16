@@ -48,7 +48,7 @@ export const ContactWithCustomHandlerDemo = () => {
   const handleDownloadResume = () => {
     console.log('Custom resume download handler called');
     // Custom logic here, e.g., analytics tracking
-    window.open('/resume.pdf', '_blank');
+    window.open('/Scott_Howard_Resume.pdf', '_blank');
   };
 
   return (

@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({
     if (onDownloadResume) {
       onDownloadResume();
     } else {
-      window.open('/resume.pdf', '_blank');
+      window.open('/Scott_Howard_Resume.pdf', '_blank');
     }
   };
 
