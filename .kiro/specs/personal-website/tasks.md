@@ -168,7 +168,7 @@
   - Write tests to validate meta tags and structured data
   - _Requirements: 10.1, 10.2, 10.3, 10.4_
 
-- [ ] 17. Optimize images and assets
+- [x] 17. Optimize images and assets
   - Add sample images to public/images directory
   - Configure Next.js Image component with proper sizes and formats
   - Implement lazy loading for images
@@ -177,7 +177,7 @@
   - Add fallback images for error states
   - _Requirements: 8.1, 4.6, 5.5_
 
-- [ ] 18. Implement accessibility features
+- [x] 18. Implement accessibility features
   - Add ARIA labels to all interactive elements
   - Ensure proper heading hierarchy (h1, h2, h3)
   - Implement skip-to-content link

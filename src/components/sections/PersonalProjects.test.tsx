@@ -134,8 +134,9 @@ describe('PersonalProjects', () => {
     render(<PersonalProjects />);
     const images = screen.getAllByRole('img');
     expect(images).toHaveLength(2);
-    expect(images[0]).toHaveAttribute('src', '/images/projects/devtools-cli-1.jpg');
-    expect(images[1]).toHaveAttribute('src', '/images/projects/budget-tracker-1.jpg');
+    // Next.js Image component transforms the src with URL encoding
+    expect(images[0].getAttribute('src')).toContain('%2Fimages%2Fprojects%2F');
+    expect(images[1].getAttribute('src')).toContain('%2Fimages%2Fprojects%2F');
   });
 
   it('renders date ranges for projects', () => {

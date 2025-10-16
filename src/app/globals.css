@@ -52,10 +52,45 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus styles for accessibility */
+/* Focus styles for accessibility - WCAG 2.1 compliant */
 *:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 3px solid #2563eb; /* Blue-600 for high contrast */
   outline-offset: 2px;
+  transition: outline-offset 0.1s ease;
+}
+
+/* Enhanced focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Screen reader only utility class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Screen reader only but visible on focus */
+.sr-only:focus,
+.sr-only:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }
 
 /* Section spacing */

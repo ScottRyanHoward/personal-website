@@ -1,4 +1,5 @@
 import { Header, Footer } from '@/components/layout';
+import SkipToContent from '@/components/layout/SkipToContent';
 import {
   Hero,
   About,
@@ -32,8 +33,9 @@ export default function Home() {
         experiences={experienceData as ExperienceType[]}
         education={educationData.degrees as EducationType[]}
       />
+      <SkipToContent />
       <Header name={profileData.name} />
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen" tabIndex={-1}>
         <Hero profile={profileData as Profile} />
         <About profile={profileData as Profile} />
         <Experience experiences={experienceData as ExperienceType[]} />

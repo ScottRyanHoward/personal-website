@@ -80,7 +80,7 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href={siteUrl} />
       </head>
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
+import { OptimizedImage } from './OptimizedImage';
 import { PersonalProject } from '@/types';
 
 export interface PersonalProjectCardProps {
@@ -51,11 +52,13 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({
       {/* Project Image */}
       {project.images && project.images.length > 0 && (
         <div className="relative w-full h-48 mb-4 -mt-4 -mx-4 sm:-mt-6 sm:-mx-6 md:-mt-8 md:-mx-8 overflow-hidden rounded-t-lg">
-          <img
+          <OptimizedImage
             src={project.images[0]}
             alt={`${project.title} screenshot`}
-            className="w-full h-full object-cover"
-            loading="lazy"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            fallbackSrc="/images/project-placeholder.svg"
           />
         </div>
       )}

@@ -75,7 +75,8 @@ describe('PersonalProjectCard', () => {
     render(<PersonalProjectCard project={mockProject} />);
     const image = screen.getByAltText('Test Project screenshot');
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute('src', '/images/test-project.jpg');
+    // Next.js Image component transforms the src with URL encoding
+    expect(image.getAttribute('src')).toContain('%2Fimages%2Ftest-project.jpg');
   });
 
   it('does not render image when images array is empty', () => {

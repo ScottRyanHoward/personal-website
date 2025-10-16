@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/ui';
 import { Experience as ExperienceType } from '@/types';
 
 export interface ExperienceProps {
@@ -84,11 +84,13 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
                   {/* Company logo */}
                   {exp.companyLogo && (
                     <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-sm md:h-16 md:w-16">
-                      <Image
+                      <OptimizedImage
                         src={exp.companyLogo}
                         alt={`${exp.company} logo`}
                         fill
                         className="object-contain p-2"
+                        sizes="(max-width: 768px) 48px, 64px"
+                        fallbackSrc="/images/company-placeholder.svg"
                       />
                     </div>
                   )}

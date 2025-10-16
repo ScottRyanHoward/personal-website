@@ -15,3 +15,6 @@ export type { ProjectCardProps } from './ProjectCard';
 
 export { PersonalProjectCard } from './PersonalProjectCard';
 export type { PersonalProjectCardProps } from './PersonalProjectCard';
+
+export { OptimizedImage } from './OptimizedImage';
+export type { OptimizedImageProps } from './OptimizedImage';

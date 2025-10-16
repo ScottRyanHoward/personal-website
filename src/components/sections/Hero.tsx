@@ -1,6 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
-import { Button } from '@/components/ui';
+import { Button, OptimizedImage } from '@/components/ui';
 import { Profile } from '@/types';
 
 export interface HeroProps {
@@ -57,13 +56,15 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="flex flex-col items-center text-center">
           {/* Profile Image */}
           <div className="relative mb-8 h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-xl md:h-64 md:w-64">
-            <Image
+            <OptimizedImage
               src={profile.profileImage}
               alt={`${profile.name} profile picture`}
               fill
               className="object-cover"
               priority
+              loading="eager"
               sizes="(max-width: 768px) 192px, 256px"
+              fallbackSrc="/images/profile-placeholder.svg"
             />
           </div>
 
