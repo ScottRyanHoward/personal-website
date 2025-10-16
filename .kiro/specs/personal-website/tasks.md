@@ -150,7 +150,7 @@
   - Write unit tests for Contact section
   - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
-- [ ] 15. Create main page and wire all sections together
+- [x] 15. Create main page and wire all sections together
   - Update pages/index.tsx to import and render all section components
   - Implement smooth scrolling between sections
   - Add proper section IDs for navigation
@@ -158,7 +158,7 @@
   - Write integration tests for full page navigation
   - _Requirements: 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 9.1_
 
-- [ ] 16. Implement SEO and metadata
+- [x] 16. Implement SEO and metadata
   - Update pages/_document.tsx with proper HTML structure
   - Add meta tags for title, description, and keywords in pages/index.tsx
   - Implement Open Graph tags for social media sharing

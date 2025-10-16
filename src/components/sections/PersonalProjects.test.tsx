@@ -153,8 +153,8 @@ describe('PersonalProjects - Empty State', () => {
     }));
 
     // Re-import the component with the mocked empty data
-    const module = await import('./PersonalProjects?t=' + Date.now());
-    const EmptyPersonalProjects = module.PersonalProjects;
+    const importedModule = await import('./PersonalProjects?t=' + Date.now());
+    const EmptyPersonalProjects = importedModule.PersonalProjects;
     render(<EmptyPersonalProjects />);
 
     expect(screen.getByText(/no personal projects to display/i)).toBeInTheDocument();

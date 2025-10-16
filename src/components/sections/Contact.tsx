@@ -31,7 +31,7 @@ export const Contact: React.FC<ContactProps> = ({
           Get In Touch
         </h2>
         <p className="mb-12 text-center text-lg text-gray-700">
-          I'm always open to discussing new opportunities, collaborations, or
+          I&apos;m always open to discussing new opportunities, collaborations, or
           just having a chat about technology.
         </p>
 

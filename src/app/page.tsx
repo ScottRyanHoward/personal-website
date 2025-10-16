@@ -1,8 +1,52 @@
+import { Header, Footer } from '@/components/layout';
+import {
+  Hero,
+  About,
+  Experience,
+  Skills,
+  WorkProjects,
+  PersonalProjects,
+  Education,
+  Contact,
+} from '@/components/sections';
+import StructuredData from '@/components/StructuredData';
+import type {
+  Profile,
+  Experience as ExperienceType,
+  SkillCategory,
+  Education as EducationType,
+  Certification,
+} from '@/types';
+
+// Import data
+import profileData from '@/data/profile.json';
+import experienceData from '@/data/experience.json';
+import skillsData from '@/data/skills.json';
+import educationData from '@/data/education.json';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">Scott Ryan Howard</h1>
-      <p className="mt-4 text-xl">Personal Website</p>
-    </main>
+    <>
+      <StructuredData 
+        profile={profileData as Profile}
+        experiences={experienceData as ExperienceType[]}
+        education={educationData.degrees as EducationType[]}
+      />
+      <Header name={profileData.name} />
+      <main className="min-h-screen">
+        <Hero profile={profileData as Profile} />
+        <About profile={profileData as Profile} />
+        <Experience experiences={experienceData as ExperienceType[]} />
+        <Skills skillCategories={skillsData as SkillCategory[]} />
+        <WorkProjects />
+        <PersonalProjects />
+        <Education 
+          degrees={educationData.degrees as EducationType[]} 
+          certifications={educationData.certifications as Certification[]} 
+        />
+        <Contact profile={profileData as Profile} />
+      </main>
+      <Footer socialLinks={profileData.socialLinks} />
+    </>
   );
 }
