@@ -12,3 +12,6 @@ export type { SkillBadgeProps } from './SkillBadge';
 
 export { ProjectCard } from './ProjectCard';
 export type { ProjectCardProps } from './ProjectCard';
+
+export { PersonalProjectCard } from './PersonalProjectCard';
+export type { PersonalProjectCardProps } from './PersonalProjectCard';
