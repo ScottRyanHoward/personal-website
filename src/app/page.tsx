@@ -1,15 +1,7 @@
+import dynamic from 'next/dynamic';
 import { Header, Footer } from '@/components/layout';
 import SkipToContent from '@/components/layout/SkipToContent';
-import {
-  Hero,
-  About,
-  Experience,
-  Skills,
-  WorkProjects,
-  PersonalProjects,
-  Education,
-  Contact,
-} from '@/components/sections';
+import { Hero, About } from '@/components/sections';
 import StructuredData from '@/components/StructuredData';
 import type {
   Profile,
@@ -24,6 +16,38 @@ import profileData from '@/data/profile.json';
 import experienceData from '@/data/experience.json';
 import skillsData from '@/data/skills.json';
 import educationData from '@/data/education.json';
+
+// Lazy load below-the-fold sections for better initial page load performance
+// ssr: false ensures components load on client side only, reducing initial bundle
+const Experience = dynamic(() => import('@/components/sections/Experience').then(mod => mod.Experience), {
+  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
+  ssr: true, // Keep SSR for SEO
+});
+
+const Skills = dynamic(() => import('@/components/sections/Skills').then(mod => mod.Skills), {
+  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
+  ssr: true,
+});
+
+const WorkProjects = dynamic(() => import('@/components/sections/WorkProjects').then(mod => mod.WorkProjects), {
+  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
+  ssr: true,
+});
+
+const PersonalProjects = dynamic(() => import('@/components/sections/PersonalProjects').then(mod => mod.PersonalProjects), {
+  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
+  ssr: true,
+});
+
+const Education = dynamic(() => import('@/components/sections/Education').then(mod => mod.Education), {
+  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
+  ssr: true,
+});
+
+const Contact = dynamic(() => import('@/components/sections/Contact').then(mod => mod.Contact), {
+  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
+  ssr: true,
+});
 
 export default function Home() {
   return (

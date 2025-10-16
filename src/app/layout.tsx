@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
+import { Inter } from 'next/font/google';
 import "./globals.css";
 import profileData from '@/data/profile.json';
+import WebVitals from '@/components/WebVitals';
+
+// Optimize font loading with font-display: swap
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+});
 
 const siteUrl = "https://scottryanhoward.info";
 
@@ -76,11 +87,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="canonical" href={siteUrl} />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <WebVitals />
+        {children}
+      </body>
     </html>
   );
 }
