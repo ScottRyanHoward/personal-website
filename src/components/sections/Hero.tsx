@@ -78,11 +78,6 @@ export const Hero: React.FC<HeroProps> = ({
             {profile.title}
           </h2>
 
-          {/* Tagline/Summary */}
-          <p className="mb-8 sm:mb-10 max-w-4xl text-base sm:text-lg text-blue-50 md:text-xl px-4 leading-relaxed">
-            {profile.summary}
-          </p>
-
           {/* CTA Buttons */}
           <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 w-full sm:w-auto max-w-md sm:max-w-none">
             <Button
