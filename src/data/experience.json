@@ -1,71 +1,128 @@
 [
   {
     "id": "exp-1",
-    "company": "TechCorp Solutions",
-    "companyLogo": "/images/companies/techcorp.png",
-    "position": "Senior Software Engineer",
-    "location": "San Francisco, CA",
-    "startDate": "2021-03",
+    "company": "Liatrio",
+    "companyLogo": "/images/liatrio.png",
+    "position": "Senior DevOps Engineer I & II",
+    "location": "Chico, CA (Remote)",
+    "startDate": "2023-02",
     "endDate": "Present",
-    "description": "Leading development of cloud-native applications and mentoring junior engineers in modern web development practices.",
+    "description": "Leading DevOps initiatives for major enterprise clients, building DevEx platforms, and mentoring engineers while driving cultural excellence.",
     "responsibilities": [
-      "Architected and implemented microservices infrastructure serving 1M+ daily active users",
-      "Led a team of 5 engineers in developing customer-facing web applications",
-      "Established CI/CD pipelines reducing deployment time by 60%",
-      "Conducted code reviews and provided technical mentorship to team members"
+      "Co-lead for a team of six engineers building a DevEx platform for a major retail company using Terraform, Backstage, GitHub, and AI tooling",
+      "Automate infrastructure and app configurations for Azure Function and Container apps",
+      "Conduct Value Stream Mapping sessions and provide data analysis readouts of client team processes",
+      "Engineer automation processes for a major airline using Terraform, GitLab, and Docker for cybersecurity applications",
+      "Architect and implement GitLab pipeline solutions to monitor production releases and enhance Terraform plan clarity",
+      "Mentor four engineers, offering guidance in goal setting, self-development, and career advancement"
     ],
     "achievements": [
-      "Reduced application load time by 45% through performance optimization",
-      "Implemented automated testing suite increasing code coverage from 40% to 85%",
-      "Designed and launched 3 major features that increased user engagement by 30%"
+      "Led Value Stream Mapping effort that resulted in a contract extension of $1.6 million",
+      "Achieved 100% reduction in P2 incidents through improved GitLab pipeline solutions",
+      "Analyzed 18 months of Terraform state drift and devised reusable reconciliation process",
+      "Honored with Liatrio Champion award for exemplary communication and stakeholder feedback generation",
+      "Recognized for leading with empathy and setting benchmark in trusted advisor role",
+      "Spearheaded initiative for tooling to help delivery leaders track employee sentiment"
     ],
-    "technologies": ["React", "TypeScript", "Node.js", "AWS", "Docker", "Kubernetes", "PostgreSQL"],
-    "relatedProjects": ["work-proj-1", "work-proj-2"]
+    "technologies": ["Terraform", "Terragrunt", "Azure", "GitHub", "GitLab", "Docker", "Python", "Backstage", "SAML", "OAuth", "OpenID"],
+    "relatedProjects": ["work-proj-1", "work-proj-2", "work-proj-3"]
   },
   {
     "id": "exp-2",
-    "company": "StartupXYZ",
-    "companyLogo": "/images/companies/startupxyz.png",
-    "position": "Full Stack Developer",
-    "location": "Remote",
-    "startDate": "2019-06",
-    "endDate": "2021-02",
-    "description": "Developed full-stack web applications for early-stage startup, working across the entire technology stack.",
+    "company": "Apto Payments",
+    "companyLogo": "/images/apto.jpg",
+    "position": "DevOps Engineer",
+    "location": "San Francisco, CA (Remote)",
+    "startDate": "2022-07",
+    "endDate": "2022-11",
+    "description": "Designed and implemented AWS infrastructure and network architecture for a fintech payment platform.",
     "responsibilities": [
-      "Built and maintained RESTful APIs using Node.js and Express",
-      "Developed responsive front-end interfaces with React and Redux",
-      "Collaborated with product team to define technical requirements",
-      "Managed database schema design and optimization"
+      "Designed and implemented AWS account structure using AWS Organizations and Resource Access Management",
+      "Engineered multi-region AWS network architecture using AWS VPC, Subnets, and gateways",
+      "Developed CIDR assignment strategy for scalable network infrastructure",
+      "Positioned infrastructure for efficiency and growth in multi-account, multi-region environment"
     ],
     "achievements": [
-      "Launched MVP in 3 months, securing $2M in seed funding",
-      "Implemented real-time features using WebSockets serving 10K concurrent users",
-      "Reduced server costs by 40% through infrastructure optimization"
+      "Created maintainable multi-account, multi-region AWS environment",
+      "Implemented scalable and maintainable network infrastructure architecture"
     ],
-    "technologies": ["React", "Redux", "Node.js", "Express", "MongoDB", "Redis", "AWS"],
-    "relatedProjects": ["work-proj-3"]
+    "technologies": ["AWS", "AWS Organizations", "AWS VPC", "Terraform", "Multi-region Architecture"],
+    "relatedProjects": ["work-proj-4"]
   },
   {
     "id": "exp-3",
-    "company": "Digital Agency Co",
-    "companyLogo": "/images/companies/digitalagency.png",
-    "position": "Frontend Developer",
-    "location": "New York, NY",
-    "startDate": "2017-08",
-    "endDate": "2019-05",
-    "description": "Created responsive websites and web applications for diverse clients across various industries.",
+    "company": "Pariveda Solutions",
+    "companyLogo": "/images/pariveda.jpeg",
+    "position": "Senior Software Engineer",
+    "location": "Philadelphia, PA",
+    "startDate": "2019-10",
+    "endDate": "2022-07",
+    "description": "Led Infrastructure-as-Code and migration projects for life science and healthcare clients using Agile methodologies.",
     "responsibilities": [
-      "Developed pixel-perfect responsive websites from design mockups",
-      "Implemented interactive features using JavaScript and jQuery",
-      "Collaborated with designers and backend developers on client projects",
-      "Maintained and updated existing client websites"
+      "Co-led Infrastructure-as-Code and migration projects for life science and healthcare clients",
+      "Implemented infrastructure solutions with AWS CDK in multi-account environment",
+      "Designed and implemented CI/CD pipelines with Jenkins, AWS, and Azure DevOps",
+      "Developed application for university researchers using JavaScript and React to manage grant financials",
+      "Enhanced financial dispute services for $3 billion peer-to-peer payment company using Python and Apache Kafka",
+      "Coached junior developers and provided guidance for technical, soft-skill, and professional growth",
+      "Served as Culture Lead for Philadelphia office"
     ],
     "achievements": [
-      "Delivered 15+ client projects on time and within budget",
-      "Improved website accessibility scores to 95+ on all projects",
-      "Reduced page load times by 50% through optimization techniques"
+      "Significantly improved operational efficiency and reduced deployment time through automation",
+      "Reduced core KPI from 2% to 0% for debit card reissue processes",
+      "Led code standardization initiative for 20,000-line codebase ensuring PEP8 compliance",
+      "Fostered connectedness and drove initiatives that enhanced company culture and employee engagement",
+      "Conducted interviews with end users to establish pain points and feedback during development"
     ],
-    "technologies": ["HTML5", "CSS3", "JavaScript", "jQuery", "Sass", "WordPress", "Git"],
+    "technologies": ["AWS", "Azure", "AWS CDK", "Jenkins", "Azure DevOps", "Python", "JavaScript", "React", "Apache Kafka", "Terraform"],
+    "relatedProjects": ["work-proj-5", "work-proj-6"]
+  },
+  {
+    "id": "exp-4",
+    "company": "Thunderbolt Software LLC",
+    "companyLogo": "/images/thunderbolt.jpeg",
+    "position": "Software Engineer II",
+    "location": "Egg Harbor Township, NJ",
+    "startDate": "2019-01",
+    "endDate": "2019-10",
+    "description": "Developed mission planning applications for F-35 Joint Strike Fighter and microcontroller-based systems.",
+    "responsibilities": [
+      "Developed mission planning applications and test procedures for F-35 Joint Strike Fighter Offboard Mission Support (OMS) system",
+      "Designed and developed microcontroller-based volume sensor systems using radar, GPS, and network components",
+      "Supervised interns, assigning tasks and monitoring progress while providing educational guidance"
+    ],
+    "achievements": [
+      "Successfully delivered mission-critical software for F-35 OMS system",
+      "Mentored and guided intern development"
+    ],
+    "technologies": ["C#", ".NET Framework", "Visual Studio", "Microcontrollers", "Radar", "GPS"],
+    "relatedProjects": []
+  },
+  {
+    "id": "exp-5",
+    "company": "ASRC Federal Mission Solutions",
+    "companyLogo": "/images/asrc_federal.jpeg",
+    "position": "Software Engineer I & II",
+    "location": "Moorestown, NJ",
+    "startDate": "2015-06",
+    "endDate": "2019-01",
+    "description": "Engineered defense software systems and led development efforts for military applications.",
+    "responsibilities": [
+      "Engineered and developed software for Modular Active Protection System (MAPS) using C++, UML, and Agile methodologies",
+      "Produced architectural solutions for complex systems engineering problem spaces",
+      "Led development efforts on R&D team engineering communication systems between Radar and Command and Control components",
+      "Participated in Leadership Development Program gaining exposure to engineering management and RFP processes"
+    ],
+    "achievements": [
+      "Enhanced defensive capabilities of military vehicles against RPG and guided threats",
+      "Resulted in modular designs, clean reusable source code, and increase in contract funding and staffing",
+      "Developed system that served as precursor to next baseline design for naval fleet",
+      "Graduated from Leadership Development Program",
+      "Spearheaded fastest growing shareholder initiative in ASRC history",
+      "Served as company ambassador supporting STEM curricula in Alaska school districts",
+      "Developed on-site STEM camp for shareholder children teaching software, hardware, weather analysis, and rocketry"
+    ],
+    "technologies": ["C++", "Python", "UML", "Agile", "Radar Systems", "Command and Control Systems"],
     "relatedProjects": []
   }
 ]

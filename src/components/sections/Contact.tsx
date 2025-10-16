@@ -24,27 +24,27 @@ export const Contact: React.FC<ContactProps> = ({
   return (
     <section
       id="contact"
-      className="bg-gradient-to-br from-blue-50 to-indigo-100 px-4 py-20"
+      className="bg-gradient-to-br from-blue-900 to-blue-800 px-4 py-20"
       aria-label="Contact section"
     >
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
-        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+        <h2 className="mb-4 text-center text-3xl font-bold text-white md:text-4xl">
           Get In Touch
         </h2>
-        <p className="mb-12 text-center text-lg text-gray-700">
+        <p className="mb-12 text-center text-lg text-blue-100">
           I&apos;m always open to discussing new opportunities, collaborations, or
           just having a chat about technology.
         </p>
 
         {/* Contact Methods */}
-        <div className="mb-12 grid gap-4 sm:gap-6 md:grid-cols-2">
+        <div className="mb-12 flex justify-center">
           {/* Email Contact */}
-          <div className="rounded-lg bg-white p-6 sm:p-8 shadow-md transition-transform hover:scale-105">
+          <div className="w-full max-w-md rounded-lg bg-white p-6 sm:p-8 shadow-lg transition-transform hover:scale-105 border border-blue-100">
             <div className="mb-4 flex items-center justify-center">
-              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-blue-100">
+              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-blue-50">
                 <svg
-                  className="h-7 w-7 sm:h-8 sm:w-8 text-blue-600"
+                  className="h-7 w-7 sm:h-8 sm:w-8 text-blue-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -59,66 +59,27 @@ export const Contact: React.FC<ContactProps> = ({
                 </svg>
               </div>
             </div>
-            <h3 className="mb-2 text-center text-lg sm:text-xl font-semibold text-gray-900">
+            <h3 className="mb-2 text-center text-lg sm:text-xl font-semibold text-slate-900">
               Email
             </h3>
-            <p className="mb-4 text-center text-sm sm:text-base text-gray-600">
+            <p className="mb-4 text-center text-sm sm:text-base text-slate-600">
               Send me an email anytime
             </p>
             <div className="text-center">
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-block text-sm sm:text-base text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded break-all"
+                className="inline-block text-sm sm:text-base text-blue-700 hover:text-blue-800 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded break-all font-medium"
                 aria-label={`Send email to ${profile.email}`}
               >
                 {profile.email}
               </a>
             </div>
           </div>
-
-          {/* Phone Contact (if available) */}
-          {profile.phone && (
-            <div className="rounded-lg bg-white p-6 sm:p-8 shadow-md transition-transform hover:scale-105">
-              <div className="mb-4 flex items-center justify-center">
-                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-green-100">
-                  <svg
-                    className="h-7 w-7 sm:h-8 sm:w-8 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="mb-2 text-center text-lg sm:text-xl font-semibold text-gray-900">
-                Phone
-              </h3>
-              <p className="mb-4 text-center text-sm sm:text-base text-gray-600">
-                Give me a call
-              </p>
-              <div className="text-center">
-                <a
-                  href={`tel:${profile.phone}`}
-                  className="inline-block text-sm sm:text-base text-green-600 hover:text-green-700 hover:underline focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded"
-                  aria-label={`Call phone number ${profile.phone}`}
-                >
-                  {profile.phone}
-                </a>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Social Media Links */}
-        <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-md">
-          <h3 className="mb-6 text-center text-lg sm:text-xl font-semibold text-gray-900">
+        <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-lg border border-blue-100">
+          <h3 className="mb-6 text-center text-lg sm:text-xl font-semibold text-slate-900">
             Connect on Social Media
           </h3>
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
@@ -128,11 +89,11 @@ export const Contact: React.FC<ContactProps> = ({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 sm:px-6 sm:py-3 transition-all hover:border-blue-500 hover:bg-blue-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 sm:px-6 sm:py-3 transition-all hover:border-blue-600 hover:bg-blue-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 aria-label={`Visit ${link.platform} profile (opens in new tab)`}
               >
                 {getSocialIcon(link.icon)}
-                <span className="text-sm sm:text-base font-medium text-gray-700">{link.platform}</span>
+                <span className="text-sm sm:text-base font-medium text-slate-700">{link.platform}</span>
               </a>
             ))}
           </div>
@@ -140,33 +101,21 @@ export const Contact: React.FC<ContactProps> = ({
 
         {/* Resume Download */}
         <div className="text-center">
-          <h3 className="mb-4 text-xl font-semibold text-gray-900">
+          <h3 className="mb-4 text-xl font-semibold text-white">
             Download My Resume
           </h3>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-blue-100">
             Get a PDF copy of my complete resume
           </p>
-          <Button
-            variant="primary"
-            onClick={handleDownloadResume}
-            aria-label="Download resume as PDF file"
-          >
-            <svg
-              className="mr-2 h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
+          <div className="flex justify-center">
+            <Button
+              variant="primary"
+              onClick={handleDownloadResume}
+              aria-label="Download resume as PDF file"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Download Resume
-          </Button>
+              Download Resume
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -14,43 +14,43 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
     >
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
-        <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+        <h2 className="mb-12 text-center text-3xl font-bold text-slate-900 md:text-4xl">
           About Me
         </h2>
 
         {/* Professional Summary */}
         <div className="mb-12">
-          <p className="text-lg leading-relaxed text-gray-700">
+          <p className="text-lg leading-relaxed text-slate-700">
             {profile.summary}
           </p>
         </div>
 
         {/* Key Highlights */}
         <div className="mb-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg bg-blue-50 p-4 sm:p-6 text-center transition-transform hover:scale-105">
-            <div className="mb-2 text-2xl sm:text-3xl font-bold text-blue-600">
+          <div className="rounded-lg bg-slate-50 p-4 sm:p-6 text-center transition-transform hover:scale-105 border border-slate-200">
+            <div className="mb-2 text-2xl sm:text-3xl font-bold text-slate-700">
               📍
             </div>
-            <h3 className="mb-1 text-sm sm:text-base font-semibold text-gray-900">Location</h3>
-            <p className="text-sm sm:text-base text-gray-600">{profile.location}</p>
+            <h3 className="mb-1 text-sm sm:text-base font-semibold text-slate-900">Location</h3>
+            <p className="text-sm sm:text-base text-slate-600">{profile.location}</p>
           </div>
 
-          <div className="rounded-lg bg-blue-50 p-4 sm:p-6 text-center transition-transform hover:scale-105">
-            <div className="mb-2 text-2xl sm:text-3xl font-bold text-blue-600">
+          <div className="rounded-lg bg-slate-50 p-4 sm:p-6 text-center transition-transform hover:scale-105 border border-slate-200">
+            <div className="mb-2 text-2xl sm:text-3xl font-bold text-slate-700">
               💼
             </div>
-            <h3 className="mb-1 text-sm sm:text-base font-semibold text-gray-900">Role</h3>
-            <p className="text-sm sm:text-base text-gray-600">{profile.title}</p>
+            <h3 className="mb-1 text-sm sm:text-base font-semibold text-slate-900">Role</h3>
+            <p className="text-sm sm:text-base text-slate-600">{profile.title}</p>
           </div>
 
-          <div className="rounded-lg bg-blue-50 p-4 sm:p-6 text-center transition-transform hover:scale-105 sm:col-span-2 lg:col-span-1">
-            <div className="mb-2 text-2xl sm:text-3xl font-bold text-blue-600">
+          <div className="rounded-lg bg-slate-50 p-4 sm:p-6 text-center transition-transform hover:scale-105 sm:col-span-2 lg:col-span-1 border border-slate-200">
+            <div className="mb-2 text-2xl sm:text-3xl font-bold text-slate-700">
               ✉️
             </div>
-            <h3 className="mb-1 text-sm sm:text-base font-semibold text-gray-900">Contact</h3>
+            <h3 className="mb-1 text-sm sm:text-base font-semibold text-slate-900">Contact</h3>
             <a
               href={`mailto:${profile.email}`}
-              className="text-sm sm:text-base text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+              className="text-sm sm:text-base text-slate-700 hover:text-slate-900 hover:underline focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 rounded"
               aria-label={`Send email to ${profile.email}`}
             >
               Email Me
@@ -60,13 +60,13 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
 
         {/* Contact Information */}
         <div className="mb-8 text-center">
-          <h3 className="mb-4 text-xl font-semibold text-gray-900">
+          <h3 className="mb-4 text-xl font-semibold text-slate-900">
             Get In Touch
           </h3>
           <div className="flex flex-col items-center gap-3">
             <a
               href={`mailto:${profile.email}`}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="text-slate-700 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
               aria-label={`Email address: ${profile.email}`}
             >
               {profile.email}
@@ -74,7 +74,7 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
             {profile.phone && (
               <a
                 href={`tel:${profile.phone}`}
-                className="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="text-slate-700 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
                 aria-label={`Phone number: ${profile.phone}`}
               >
                 {profile.phone}
@@ -85,7 +85,7 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
 
         {/* Social Links */}
         <div className="text-center">
-          <h3 className="mb-4 text-lg sm:text-xl font-semibold text-gray-900">
+          <h3 className="mb-4 text-lg sm:text-xl font-semibold text-slate-900">
             Connect With Me
           </h3>
           <div className="flex justify-center gap-4 sm:gap-6 flex-wrap">
@@ -95,7 +95,7 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-all hover:bg-blue-600 hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition-all hover:bg-slate-700 hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 border border-slate-200"
                 aria-label={`Visit ${link.platform} profile (opens in new tab)`}
               >
                 <span className="sr-only">{link.platform}</span>

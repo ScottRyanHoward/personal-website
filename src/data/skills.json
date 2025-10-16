@@ -3,40 +3,158 @@
     "name": "Programming Languages",
     "skills": [
       {
-        "name": "JavaScript",
+        "name": "Python",
         "category": "Programming Languages",
         "proficiency": "expert",
-        "yearsOfExperience": 7
+        "yearsOfExperience": 8
+      },
+      {
+        "name": "C++",
+        "category": "Programming Languages",
+        "proficiency": "advanced",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "Go",
+        "category": "Programming Languages",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "Java",
+        "category": "Programming Languages",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "JavaScript",
+        "category": "Programming Languages",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
       },
       {
         "name": "TypeScript",
         "category": "Programming Languages",
-        "proficiency": "expert",
-        "yearsOfExperience": 5
-      },
-      {
-        "name": "Python",
-        "category": "Programming Languages",
-        "proficiency": "advanced",
-        "yearsOfExperience": 4
-      },
-      {
-        "name": "HTML5",
-        "category": "Programming Languages",
-        "proficiency": "expert",
-        "yearsOfExperience": 8
-      },
-      {
-        "name": "CSS3",
-        "category": "Programming Languages",
-        "proficiency": "expert",
-        "yearsOfExperience": 8
+        "proficiency": "intermediate",
+        "yearsOfExperience": 3
       },
       {
         "name": "SQL",
         "category": "Programming Languages",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "HTML/CSS",
+        "category": "Programming Languages",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 4
+      }
+    ]
+  },
+  {
+    "name": "DevOps & Infrastructure",
+    "skills": [
+      {
+        "name": "Terraform",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "expert",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "Terragrunt",
+        "category": "DevOps & Infrastructure",
         "proficiency": "advanced",
-        "yearsOfExperience": 6
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Docker",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "expert",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "Kubernetes",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "CI/CD Pipelines",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "expert",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "Jenkins",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "CircleCI",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "GitLab CI/CD",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "expert",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "GitHub Actions",
+        "category": "DevOps & Infrastructure",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      }
+    ]
+  },
+  {
+    "name": "Cloud Platforms",
+    "skills": [
+      {
+        "name": "AWS",
+        "category": "Cloud Platforms",
+        "proficiency": "expert",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "Azure",
+        "category": "Cloud Platforms",
+        "proficiency": "expert",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "AWS CDK",
+        "category": "Cloud Platforms",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "AWS Organizations",
+        "category": "Cloud Platforms",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "AWS VPC",
+        "category": "Cloud Platforms",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Azure Functions",
+        "category": "Cloud Platforms",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "Azure Container Apps",
+        "category": "Cloud Platforms",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
       }
     ]
   },
@@ -46,114 +164,32 @@
       {
         "name": "React",
         "category": "Frameworks & Libraries",
-        "proficiency": "expert",
-        "yearsOfExperience": 6
-      },
-      {
-        "name": "Next.js",
-        "category": "Frameworks & Libraries",
-        "proficiency": "advanced",
-        "yearsOfExperience": 3
-      },
-      {
-        "name": "Node.js",
-        "category": "Frameworks & Libraries",
-        "proficiency": "expert",
-        "yearsOfExperience": 6
-      },
-      {
-        "name": "Express",
-        "category": "Frameworks & Libraries",
-        "proficiency": "advanced",
-        "yearsOfExperience": 5
-      },
-      {
-        "name": "Redux",
-        "category": "Frameworks & Libraries",
         "proficiency": "advanced",
         "yearsOfExperience": 4
       },
       {
-        "name": "Tailwind CSS",
+        "name": ".NET Framework",
         "category": "Frameworks & Libraries",
-        "proficiency": "advanced",
-        "yearsOfExperience": 3
-      },
-      {
-        "name": "Vue.js",
-        "category": "Frameworks & Libraries",
-        "proficiency": "intermediate",
-        "yearsOfExperience": 2
-      }
-    ]
-  },
-  {
-    "name": "Databases",
-    "skills": [
-      {
-        "name": "PostgreSQL",
-        "category": "Databases",
-        "proficiency": "advanced",
-        "yearsOfExperience": 5
-      },
-      {
-        "name": "MongoDB",
-        "category": "Databases",
-        "proficiency": "advanced",
-        "yearsOfExperience": 4
-      },
-      {
-        "name": "Redis",
-        "category": "Databases",
-        "proficiency": "intermediate",
-        "yearsOfExperience": 3
-      },
-      {
-        "name": "MySQL",
-        "category": "Databases",
-        "proficiency": "advanced",
-        "yearsOfExperience": 5
-      }
-    ]
-  },
-  {
-    "name": "Cloud & DevOps",
-    "skills": [
-      {
-        "name": "AWS",
-        "category": "Cloud & DevOps",
-        "proficiency": "advanced",
-        "yearsOfExperience": 4
-      },
-      {
-        "name": "Docker",
-        "category": "Cloud & DevOps",
-        "proficiency": "advanced",
-        "yearsOfExperience": 4
-      },
-      {
-        "name": "Kubernetes",
-        "category": "Cloud & DevOps",
         "proficiency": "intermediate",
         "yearsOfExperience": 2
       },
       {
-        "name": "CI/CD",
-        "category": "Cloud & DevOps",
-        "proficiency": "advanced",
-        "yearsOfExperience": 5
+        "name": "Apache Kafka",
+        "category": "Frameworks & Libraries",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 2
       },
       {
-        "name": "GitHub Actions",
-        "category": "Cloud & DevOps",
+        "name": "Backstage",
+        "category": "Frameworks & Libraries",
         "proficiency": "advanced",
-        "yearsOfExperience": 3
+        "yearsOfExperience": 2
       },
       {
-        "name": "Vercel",
-        "category": "Cloud & DevOps",
-        "proficiency": "advanced",
-        "yearsOfExperience": 3
+        "name": "Helm",
+        "category": "Frameworks & Libraries",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 2
       }
     ]
   },
@@ -164,34 +200,40 @@
         "name": "Git",
         "category": "Tools & Technologies",
         "proficiency": "expert",
+        "yearsOfExperience": 10
+      },
+      {
+        "name": "GitHub",
+        "category": "Tools & Technologies",
+        "proficiency": "expert",
         "yearsOfExperience": 8
+      },
+      {
+        "name": "GitLab",
+        "category": "Tools & Technologies",
+        "proficiency": "expert",
+        "yearsOfExperience": 4
       },
       {
         "name": "VS Code",
         "category": "Tools & Technologies",
         "proficiency": "expert",
-        "yearsOfExperience": 6
+        "yearsOfExperience": 8
       },
       {
-        "name": "Jest",
-        "category": "Tools & Technologies",
-        "proficiency": "advanced",
-        "yearsOfExperience": 5
-      },
-      {
-        "name": "Webpack",
-        "category": "Tools & Technologies",
-        "proficiency": "advanced",
-        "yearsOfExperience": 4
-      },
-      {
-        "name": "Figma",
+        "name": "Visual Studio",
         "category": "Tools & Technologies",
         "proficiency": "intermediate",
         "yearsOfExperience": 3
       },
       {
-        "name": "Postman",
+        "name": "Atlassian Suite",
+        "category": "Tools & Technologies",
+        "proficiency": "advanced",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "UML",
         "category": "Tools & Technologies",
         "proficiency": "advanced",
         "yearsOfExperience": 5
@@ -199,31 +241,89 @@
     ]
   },
   {
-    "name": "Methodologies",
+    "name": "AI & Development Tools",
+    "skills": [
+      {
+        "name": "Windsurf IDE",
+        "category": "AI & Development Tools",
+        "proficiency": "advanced",
+        "yearsOfExperience": 1
+      },
+      {
+        "name": "Kiro IDE",
+        "category": "AI & Development Tools",
+        "proficiency": "advanced",
+        "yearsOfExperience": 1
+      },
+      {
+        "name": "GitHub Copilot",
+        "category": "AI & Development Tools",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "ChatGPT",
+        "category": "AI & Development Tools",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      }
+    ]
+  },
+  {
+    "name": "Security & Authentication",
+    "skills": [
+      {
+        "name": "SAML",
+        "category": "Security & Authentication",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "OAuth",
+        "category": "Security & Authentication",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "OpenID",
+        "category": "Security & Authentication",
+        "proficiency": "advanced",
+        "yearsOfExperience": 2
+      }
+    ]
+  },
+  {
+    "name": "Methodologies & Practices",
     "skills": [
       {
         "name": "Agile/Scrum",
-        "category": "Methodologies",
-        "proficiency": "advanced",
-        "yearsOfExperience": 6
+        "category": "Methodologies & Practices",
+        "proficiency": "expert",
+        "yearsOfExperience": 10
       },
       {
-        "name": "Test-Driven Development",
-        "category": "Methodologies",
-        "proficiency": "advanced",
+        "name": "Value Stream Mapping",
+        "category": "Methodologies & Practices",
+        "proficiency": "expert",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Infrastructure as Code",
+        "category": "Methodologies & Practices",
+        "proficiency": "expert",
         "yearsOfExperience": 5
       },
       {
-        "name": "RESTful API Design",
-        "category": "Methodologies",
+        "name": "DevOps Culture",
+        "category": "Methodologies & Practices",
         "proficiency": "expert",
-        "yearsOfExperience": 6
+        "yearsOfExperience": 4
       },
       {
-        "name": "Microservices Architecture",
-        "category": "Methodologies",
-        "proficiency": "advanced",
-        "yearsOfExperience": 3
+        "name": "Mentoring & Leadership",
+        "category": "Methodologies & Practices",
+        "proficiency": "expert",
+        "yearsOfExperience": 6
       }
     ]
   }

@@ -29,7 +29,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
   return (
     <section
       id="experience"
-      className="bg-gray-50 px-4 py-20"
+      className="bg-gradient-to-br from-slate-100 to-slate-200 px-4 py-20"
       aria-label="Work experience section"
     >
       <div className="container mx-auto max-w-5xl">

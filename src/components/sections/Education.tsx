@@ -54,21 +54,36 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
                   className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                   aria-label={`${degree.degree} in ${degree.field} from ${degree.institution}`}
                 >
-                  {/* Date range */}
-                  <time className="mb-2 block text-sm font-semibold text-blue-600 md:text-base">
-                    {formatDateRange(degree.startDate, degree.endDate)}
-                  </time>
+                  <div className="flex gap-6">
+                    {/* Institution Logo */}
+                    {degree.institutionLogo && (
+                      <div className="flex-shrink-0">
+                        <img
+                          src={degree.institutionLogo}
+                          alt={`${degree.institution} logo`}
+                          className="h-16 w-16 rounded-lg object-contain md:h-20 md:w-20"
+                        />
+                      </div>
+                    )}
 
-                  {/* Degree and field */}
-                  <h4 className="mb-1 text-xl font-bold text-gray-900 md:text-2xl">
-                    {degree.degree} in {degree.field}
-                  </h4>
+                    <div className="flex-1">
+                      {/* Date range */}
+                      <time className="mb-2 block text-sm font-semibold text-blue-600 md:text-base">
+                        {formatDateRange(degree.startDate, degree.endDate)}
+                      </time>
 
-                  {/* Institution and location */}
-                  <div className="mb-3 flex flex-wrap items-center gap-2 text-base text-gray-700 md:text-lg">
-                    <span className="font-medium">{degree.institution}</span>
-                    <span className="text-gray-400">•</span>
-                    <span className="text-sm text-gray-600">{degree.location}</span>
+                      {/* Degree and field */}
+                      <h4 className="mb-1 text-xl font-bold text-gray-900 md:text-2xl">
+                        {degree.degree} in {degree.field}
+                      </h4>
+
+                      {/* Institution and location */}
+                      <div className="mb-3 flex flex-wrap items-center gap-2 text-base text-gray-700 md:text-lg">
+                        <span className="font-medium">{degree.institution}</span>
+                        <span className="text-gray-400">•</span>
+                        <span className="text-sm text-gray-600">{degree.location}</span>
+                      </div>
+                    </div>
                   </div>
 
                   {/* GPA */}

@@ -82,6 +82,7 @@ export interface SkillCategory {
 export interface Education {
   id: string;
   institution: string;
+  institutionLogo?: string;
   degree: string;
   field: string;
   location: string;

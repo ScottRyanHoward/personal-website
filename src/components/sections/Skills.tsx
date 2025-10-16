@@ -11,7 +11,7 @@ export const Skills: React.FC<SkillsProps> = ({ skillCategories, className = '' 
   return (
     <section
       id="skills"
-      className={`py-16 px-4 md:px-8 lg:px-16 ${className}`}
+      className={`bg-white py-16 px-4 md:px-8 lg:px-16 ${className}`}
       aria-labelledby="skills-heading"
     >
       <div className="max-w-6xl mx-auto">

@@ -2,45 +2,34 @@
   "degrees": [
     {
       "id": "edu-1",
-      "institution": "University of California, Berkeley",
+      "institution": "Rowan University",
+      "institutionLogo": "/images/rowan.jpeg",
+      "degree": "Master of Science",
+      "field": "Computer Science",
+      "location": "Glassboro, NJ",
+      "startDate": "2016-09",
+      "endDate": "2018-06",
+      "gpa": "",
+      "honors": [
+        "Upsilon Pi Epsilon Honors Society Member"
+      ],
+      "description": "Advanced studies in computer science with focus on software engineering, algorithms, and distributed systems."
+    },
+    {
+      "id": "edu-2",
+      "institution": "Rowan University",
+      "institutionLogo": "/images/rowan.jpeg",
       "degree": "Bachelor of Science",
       "field": "Computer Science",
-      "location": "Berkeley, CA",
-      "startDate": "2013-09",
-      "endDate": "2017-05",
-      "gpa": "3.7",
+      "location": "Glassboro, NJ",
+      "startDate": "2010-09",
+      "endDate": "2014-12",
+      "gpa": "",
       "honors": [
-        "Dean's List (6 semesters)",
-        "Cum Laude"
+        "Cum Laude Institutional Honors"
       ],
-      "description": "Focused on software engineering, algorithms, and distributed systems. Completed senior capstone project on machine learning applications in natural language processing."
+      "description": "Comprehensive undergraduate education in computer science fundamentals, software development, and systems design."
     }
   ],
-  "certifications": [
-    {
-      "id": "cert-1",
-      "name": "AWS Certified Solutions Architect - Associate",
-      "issuer": "Amazon Web Services",
-      "issueDate": "2021-08",
-      "expiryDate": "2024-08",
-      "credentialId": "AWS-ASA-12345",
-      "credentialUrl": "https://aws.amazon.com/verification"
-    },
-    {
-      "id": "cert-2",
-      "name": "Professional Scrum Master I (PSM I)",
-      "issuer": "Scrum.org",
-      "issueDate": "2020-03",
-      "credentialId": "PSM-67890",
-      "credentialUrl": "https://scrum.org/certificates/67890"
-    },
-    {
-      "id": "cert-3",
-      "name": "MongoDB Certified Developer Associate",
-      "issuer": "MongoDB University",
-      "issueDate": "2019-11",
-      "credentialId": "MONGO-DEV-54321",
-      "credentialUrl": "https://university.mongodb.com/certification"
-    }
-  ]
+  "certifications": []
 }
