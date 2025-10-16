@@ -1,0 +1,230 @@
+[
+  {
+    "name": "Programming Languages",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "category": "Programming Languages",
+        "proficiency": "expert",
+        "yearsOfExperience": 7
+      },
+      {
+        "name": "TypeScript",
+        "category": "Programming Languages",
+        "proficiency": "expert",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "Python",
+        "category": "Programming Languages",
+        "proficiency": "advanced",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "HTML5",
+        "category": "Programming Languages",
+        "proficiency": "expert",
+        "yearsOfExperience": 8
+      },
+      {
+        "name": "CSS3",
+        "category": "Programming Languages",
+        "proficiency": "expert",
+        "yearsOfExperience": 8
+      },
+      {
+        "name": "SQL",
+        "category": "Programming Languages",
+        "proficiency": "advanced",
+        "yearsOfExperience": 6
+      }
+    ]
+  },
+  {
+    "name": "Frameworks & Libraries",
+    "skills": [
+      {
+        "name": "React",
+        "category": "Frameworks & Libraries",
+        "proficiency": "expert",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "Next.js",
+        "category": "Frameworks & Libraries",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Node.js",
+        "category": "Frameworks & Libraries",
+        "proficiency": "expert",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "Express",
+        "category": "Frameworks & Libraries",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "Redux",
+        "category": "Frameworks & Libraries",
+        "proficiency": "advanced",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Frameworks & Libraries",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Vue.js",
+        "category": "Frameworks & Libraries",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 2
+      }
+    ]
+  },
+  {
+    "name": "Databases",
+    "skills": [
+      {
+        "name": "PostgreSQL",
+        "category": "Databases",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "MongoDB",
+        "category": "Databases",
+        "proficiency": "advanced",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "Redis",
+        "category": "Databases",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "MySQL",
+        "category": "Databases",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
+      }
+    ]
+  },
+  {
+    "name": "Cloud & DevOps",
+    "skills": [
+      {
+        "name": "AWS",
+        "category": "Cloud & DevOps",
+        "proficiency": "advanced",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "Docker",
+        "category": "Cloud & DevOps",
+        "proficiency": "advanced",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "Kubernetes",
+        "category": "Cloud & DevOps",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "CI/CD",
+        "category": "Cloud & DevOps",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "GitHub Actions",
+        "category": "Cloud & DevOps",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Vercel",
+        "category": "Cloud & DevOps",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      }
+    ]
+  },
+  {
+    "name": "Tools & Technologies",
+    "skills": [
+      {
+        "name": "Git",
+        "category": "Tools & Technologies",
+        "proficiency": "expert",
+        "yearsOfExperience": 8
+      },
+      {
+        "name": "VS Code",
+        "category": "Tools & Technologies",
+        "proficiency": "expert",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "Jest",
+        "category": "Tools & Technologies",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "Webpack",
+        "category": "Tools & Technologies",
+        "proficiency": "advanced",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "Figma",
+        "category": "Tools & Technologies",
+        "proficiency": "intermediate",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Postman",
+        "category": "Tools & Technologies",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
+      }
+    ]
+  },
+  {
+    "name": "Methodologies",
+    "skills": [
+      {
+        "name": "Agile/Scrum",
+        "category": "Methodologies",
+        "proficiency": "advanced",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "Test-Driven Development",
+        "category": "Methodologies",
+        "proficiency": "advanced",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "RESTful API Design",
+        "category": "Methodologies",
+        "proficiency": "expert",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "Microservices Architecture",
+        "category": "Methodologies",
+        "proficiency": "advanced",
+        "yearsOfExperience": 3
+      }
+    ]
+  }
+]

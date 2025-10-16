@@ -1,0 +1,58 @@
+[
+  {
+    "id": "work-proj-1",
+    "title": "Enterprise Analytics Dashboard",
+    "description": "Real-time analytics platform for monitoring business metrics and KPIs across multiple data sources.",
+    "longDescription": "Led the development of a comprehensive analytics dashboard that aggregates data from multiple sources and provides real-time insights to business stakeholders. The platform features customizable widgets, advanced filtering, and automated report generation. Implemented using React, TypeScript, and AWS services with a focus on performance and scalability.",
+    "technologies": ["React", "TypeScript", "D3.js", "AWS Lambda", "DynamoDB", "API Gateway", "CloudWatch"],
+    "companyId": "company-1",
+    "experienceId": "exp-1",
+    "images": ["/images/projects/analytics-dashboard-1.jpg", "/images/projects/analytics-dashboard-2.jpg"],
+    "demoUrl": "https://demo.analytics-platform.example.com",
+    "featured": true,
+    "startDate": "2022-01",
+    "endDate": "2022-08"
+  },
+  {
+    "id": "work-proj-2",
+    "title": "Customer Portal Redesign",
+    "description": "Complete redesign and modernization of customer-facing portal serving over 500K users.",
+    "longDescription": "Spearheaded the complete redesign of the customer portal, migrating from a legacy jQuery application to a modern React-based SPA. Implemented new features including real-time notifications, advanced search, and personalized dashboards. The project resulted in a 45% improvement in page load times and a 30% increase in user engagement metrics.",
+    "technologies": ["React", "TypeScript", "Redux", "Node.js", "PostgreSQL", "Docker", "Kubernetes"],
+    "companyId": "company-1",
+    "experienceId": "exp-1",
+    "images": ["/images/projects/customer-portal-1.jpg", "/images/projects/customer-portal-2.jpg"],
+    "demoUrl": "https://portal.techcorp.example.com",
+    "featured": true,
+    "startDate": "2021-06",
+    "endDate": "2022-03"
+  },
+  {
+    "id": "work-proj-3",
+    "title": "Real-Time Collaboration Platform",
+    "description": "WebSocket-based collaboration tool enabling real-time document editing and team communication.",
+    "longDescription": "Built a real-time collaboration platform from the ground up, featuring live document editing, instant messaging, and video conferencing integration. Implemented operational transformation algorithms for conflict-free collaborative editing. The platform successfully handled 10K concurrent users with sub-100ms latency.",
+    "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Redis", "AWS EC2", "WebRTC"],
+    "companyId": "company-2",
+    "experienceId": "exp-2",
+    "images": ["/images/projects/collaboration-platform-1.jpg", "/images/projects/collaboration-platform-2.jpg"],
+    "demoUrl": "https://collab.startupxyz.example.com",
+    "repoUrl": "https://github.com/startupxyz/collab-platform",
+    "featured": true,
+    "startDate": "2020-03",
+    "endDate": "2020-12"
+  },
+  {
+    "id": "work-proj-4",
+    "title": "E-commerce Payment Integration",
+    "description": "Secure payment processing system integrated with multiple payment gateways.",
+    "longDescription": "Developed a robust payment processing system supporting multiple payment methods and gateways including Stripe, PayPal, and Apple Pay. Implemented PCI-compliant security measures, fraud detection, and automated reconciliation. The system processes over $1M in transactions monthly with 99.9% uptime.",
+    "technologies": ["Node.js", "Express", "PostgreSQL", "Stripe API", "PayPal SDK", "AWS Lambda"],
+    "companyId": "company-2",
+    "experienceId": "exp-2",
+    "images": ["/images/projects/payment-integration-1.jpg"],
+    "featured": false,
+    "startDate": "2019-09",
+    "endDate": "2020-02"
+  }
+]

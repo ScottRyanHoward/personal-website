@@ -1,0 +1,73 @@
+[
+  {
+    "id": "personal-proj-1",
+    "title": "DevTools CLI",
+    "description": "Command-line tool for automating common development workflows and project scaffolding.",
+    "longDescription": "Created an open-source CLI tool that helps developers quickly scaffold new projects, manage dependencies, and automate repetitive tasks. Features include project templates, code generators, and integration with popular development tools. The tool has been downloaded over 10K times and has 500+ GitHub stars.",
+    "motivation": "I found myself repeatedly setting up similar project structures and wanted to streamline the process for myself and other developers. This tool saves hours of initial setup time for new projects.",
+    "technologies": ["TypeScript", "Node.js", "Commander.js", "Inquirer.js", "Jest"],
+    "images": ["/images/projects/devtools-cli-1.jpg", "/images/projects/devtools-cli-2.jpg"],
+    "repoUrl": "https://github.com/scottryanhoward/devtools-cli",
+    "featured": true,
+    "startDate": "2022-06",
+    "endDate": "2023-01",
+    "status": "completed"
+  },
+  {
+    "id": "personal-proj-2",
+    "title": "Budget Tracker App",
+    "description": "Personal finance management application with expense tracking and budget visualization.",
+    "longDescription": "Built a full-stack personal finance application to help users track expenses, set budgets, and visualize spending patterns. Features include automatic transaction categorization, budget alerts, and detailed financial reports. The app uses machine learning to categorize transactions and provide spending insights.",
+    "motivation": "Wanted to create a privacy-focused alternative to commercial budgeting apps that keeps all data local and gives users full control over their financial information.",
+    "technologies": ["React", "Next.js", "TypeScript", "Prisma", "SQLite", "Chart.js", "TailwindCSS"],
+    "images": ["/images/projects/budget-tracker-1.jpg", "/images/projects/budget-tracker-2.jpg"],
+    "demoUrl": "https://budget-tracker-demo.vercel.app",
+    "repoUrl": "https://github.com/scottryanhoward/budget-tracker",
+    "featured": true,
+    "startDate": "2023-03",
+    "status": "in-progress"
+  },
+  {
+    "id": "personal-proj-3",
+    "title": "React Component Library",
+    "description": "Reusable React component library with TypeScript support and comprehensive documentation.",
+    "longDescription": "Developed a comprehensive component library featuring 50+ accessible, customizable React components. Includes full TypeScript support, Storybook documentation, and automated testing. The library follows best practices for accessibility (WCAG 2.1 AA) and is optimized for tree-shaking to minimize bundle size.",
+    "motivation": "After building similar components across multiple projects, I decided to create a unified library that I could reuse and share with the community. This also served as a learning opportunity to dive deep into component API design and accessibility.",
+    "technologies": ["React", "TypeScript", "Storybook", "Rollup", "Jest", "Testing Library"],
+    "images": ["/images/projects/component-library-1.jpg"],
+    "demoUrl": "https://components.scottryanhoward.info",
+    "repoUrl": "https://github.com/scottryanhoward/react-components",
+    "featured": true,
+    "startDate": "2021-09",
+    "endDate": "2022-05",
+    "status": "completed"
+  },
+  {
+    "id": "personal-proj-4",
+    "title": "Markdown Blog Engine",
+    "description": "Static site generator optimized for technical blogs with markdown support and syntax highlighting.",
+    "longDescription": "Created a lightweight static site generator specifically designed for technical blogs. Features include markdown parsing, syntax highlighting, RSS feed generation, and automatic sitemap creation. The engine is highly customizable and generates blazing-fast static sites with excellent SEO.",
+    "motivation": "Existing static site generators felt too complex for simple blogging needs. I wanted to build something minimal, fast, and focused specifically on technical writing with great code highlighting.",
+    "technologies": ["Node.js", "TypeScript", "Marked", "Prism.js", "PostCSS"],
+    "images": ["/images/projects/blog-engine-1.jpg"],
+    "repoUrl": "https://github.com/scottryanhoward/markdown-blog-engine",
+    "featured": false,
+    "startDate": "2021-01",
+    "endDate": "2021-04",
+    "status": "completed"
+  },
+  {
+    "id": "personal-proj-5",
+    "title": "API Rate Limiter Middleware",
+    "description": "Express middleware for implementing flexible rate limiting with multiple strategies.",
+    "longDescription": "Developed an npm package providing flexible rate limiting middleware for Express applications. Supports multiple rate limiting strategies (token bucket, sliding window, fixed window), Redis-based distributed rate limiting, and customizable response handling. Used in production by several companies.",
+    "motivation": "While working on various API projects, I needed more flexible rate limiting options than existing solutions provided. This package offers fine-grained control over rate limiting behavior.",
+    "technologies": ["TypeScript", "Node.js", "Express", "Redis", "Jest"],
+    "images": [],
+    "repoUrl": "https://github.com/scottryanhoward/express-rate-limiter",
+    "featured": false,
+    "startDate": "2020-08",
+    "endDate": "2020-11",
+    "status": "completed"
+  }
+]

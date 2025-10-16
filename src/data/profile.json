@@ -1,0 +1,26 @@
+{
+  "name": "Scott Ryan Howard",
+  "title": "Software Engineer",
+  "summary": "Experienced software engineer with a passion for building scalable web applications and solving complex technical challenges. Specialized in full-stack development with expertise in modern JavaScript frameworks, cloud infrastructure, and agile methodologies.",
+  "email": "contact@scottryanhoward.info",
+  "phone": "+1 (555) 123-4567",
+  "location": "San Francisco, CA",
+  "profileImage": "/images/profile.jpg",
+  "socialLinks": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/scottryanhoward",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/scottryanhoward",
+      "icon": "github"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/scottryanhoward",
+      "icon": "twitter"
+    }
+  ]
+}
