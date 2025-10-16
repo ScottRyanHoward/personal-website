@@ -221,7 +221,7 @@
   - Test resume download functionality
   - _Requirements: 1.4, 9.3, 9.4_
 
-- [ ] 23. Create README and documentation
+- [x] 23. Create README and documentation
   - Write README.md with project overview and setup instructions
   - Document how to update content in JSON files
   - Add instructions for adding new projects or experience
