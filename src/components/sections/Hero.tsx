@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Button, OptimizedImage } from '@/components/ui';
 import { Profile } from '@/types';
@@ -55,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center text-center">
           {/* Profile Image */}
-          <div className="relative mb-8 h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-xl md:h-64 md:w-64">
+          <div className="relative mb-6 sm:mb-8 h-40 w-40 sm:h-48 sm:w-48 overflow-hidden rounded-full border-4 border-white shadow-xl md:h-64 md:w-64 transition-transform hover:scale-105">
             <OptimizedImage
               src={profile.profileImage}
               alt={`${profile.name} profile picture`}
@@ -63,30 +65,31 @@ export const Hero: React.FC<HeroProps> = ({
               className="object-cover"
               priority
               loading="eager"
-              sizes="(max-width: 768px) 192px, 256px"
+              sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 256px"
               fallbackSrc="/images/profile-placeholder.svg"
             />
           </div>
 
           {/* Name and Title */}
-          <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl lg:text-6xl">
+          <h1 className="mb-3 sm:mb-4 text-3xl sm:text-4xl font-bold text-gray-900 md:text-5xl lg:text-6xl px-4">
             {profile.name}
           </h1>
-          <h2 className="mb-6 text-2xl font-medium text-gray-700 md:text-3xl">
+          <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl font-medium text-gray-700 md:text-3xl px-4">
             {profile.title}
           </h2>
 
           {/* Tagline/Summary */}
-          <p className="mb-10 max-w-2xl text-lg text-gray-600 md:text-xl">
+          <p className="mb-8 sm:mb-10 max-w-2xl text-base sm:text-lg text-gray-600 md:text-xl px-4">
             {profile.summary}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 w-full sm:w-auto max-w-md sm:max-w-none">
             <Button
               variant="primary"
               onClick={handleViewWork}
               aria-label="View my work and projects"
+              className="w-full sm:w-auto"
             >
               View Work
             </Button>
@@ -94,6 +97,7 @@ export const Hero: React.FC<HeroProps> = ({
               variant="outline"
               onClick={handleDownloadResume}
               aria-label="Download resume as PDF"
+              className="w-full sm:w-auto"
             >
               Download Resume
             </Button>
@@ -101,6 +105,7 @@ export const Hero: React.FC<HeroProps> = ({
               variant="secondary"
               onClick={handleContact}
               aria-label="Go to contact section"
+              className="w-full sm:w-auto"
             >
               Contact
             </Button>

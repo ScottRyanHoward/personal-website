@@ -183,6 +183,6 @@ describe('Hero Component', () => {
     render(<Hero profile={mockProfile} />);
 
     const heading = screen.getByRole('heading', { level: 1 });
-    expect(heading).toHaveClass('text-4xl', 'md:text-5xl', 'lg:text-6xl');
+    expect(heading).toHaveClass('text-3xl', 'sm:text-4xl', 'md:text-5xl', 'lg:text-6xl');
   });
 });

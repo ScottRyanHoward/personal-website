@@ -64,8 +64,8 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
 
   return (
     <footer className="bg-gray-900 text-gray-300" role="contentinfo">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Quick Links */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
@@ -104,14 +104,14 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
           </div>
 
           {/* Back to Top */}
-          <div className="flex flex-col items-start md:items-end">
+          <div className="flex flex-col items-start sm:col-span-2 md:col-span-1 md:items-end">
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+              className="inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 bg-blue-600 text-white text-sm sm:text-base rounded hover:bg-blue-700 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               aria-label="Back to top"
             >
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -128,7 +128,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-800 text-center text-xs sm:text-sm">
           <p>&copy; {currentYear} Scott Ryan Howard. All rights reserved.</p>
         </div>
       </div>

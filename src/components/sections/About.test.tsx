@@ -153,7 +153,7 @@ describe('About Component', () => {
 
   it('applies correct CSS classes for responsive layout', () => {
     const { container } = render(<About profile={mockProfile} />);
-    const highlightsGrid = container.querySelector('.md\\:grid-cols-3');
+    const highlightsGrid = container.querySelector('.lg\\:grid-cols-3');
     expect(highlightsGrid).toBeInTheDocument();
   });
 

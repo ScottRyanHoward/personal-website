@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Button } from '@/components/ui';
 import { Profile } from '@/types';
@@ -36,13 +38,13 @@ export const Contact: React.FC<ContactProps> = ({
         </p>
 
         {/* Contact Methods */}
-        <div className="mb-12 grid gap-6 md:grid-cols-2">
+        <div className="mb-12 grid gap-4 sm:gap-6 md:grid-cols-2">
           {/* Email Contact */}
-          <div className="rounded-lg bg-white p-8 shadow-md">
+          <div className="rounded-lg bg-white p-6 sm:p-8 shadow-md transition-transform hover:scale-105">
             <div className="mb-4 flex items-center justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
+              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-blue-100">
                 <svg
-                  className="h-8 w-8 text-blue-600"
+                  className="h-7 w-7 sm:h-8 sm:w-8 text-blue-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -57,16 +59,16 @@ export const Contact: React.FC<ContactProps> = ({
                 </svg>
               </div>
             </div>
-            <h3 className="mb-2 text-center text-xl font-semibold text-gray-900">
+            <h3 className="mb-2 text-center text-lg sm:text-xl font-semibold text-gray-900">
               Email
             </h3>
-            <p className="mb-4 text-center text-gray-600">
+            <p className="mb-4 text-center text-sm sm:text-base text-gray-600">
               Send me an email anytime
             </p>
             <div className="text-center">
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-block text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="inline-block text-sm sm:text-base text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded break-all"
                 aria-label={`Send email to ${profile.email}`}
               >
                 {profile.email}
@@ -76,11 +78,11 @@ export const Contact: React.FC<ContactProps> = ({
 
           {/* Phone Contact (if available) */}
           {profile.phone && (
-            <div className="rounded-lg bg-white p-8 shadow-md">
+            <div className="rounded-lg bg-white p-6 sm:p-8 shadow-md transition-transform hover:scale-105">
               <div className="mb-4 flex items-center justify-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-green-100">
                   <svg
-                    className="h-8 w-8 text-green-600"
+                    className="h-7 w-7 sm:h-8 sm:w-8 text-green-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -95,16 +97,16 @@ export const Contact: React.FC<ContactProps> = ({
                   </svg>
                 </div>
               </div>
-              <h3 className="mb-2 text-center text-xl font-semibold text-gray-900">
+              <h3 className="mb-2 text-center text-lg sm:text-xl font-semibold text-gray-900">
                 Phone
               </h3>
-              <p className="mb-4 text-center text-gray-600">
+              <p className="mb-4 text-center text-sm sm:text-base text-gray-600">
                 Give me a call
               </p>
               <div className="text-center">
                 <a
                   href={`tel:${profile.phone}`}
-                  className="inline-block text-green-600 hover:text-green-700 hover:underline focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                  className="inline-block text-sm sm:text-base text-green-600 hover:text-green-700 hover:underline focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded"
                   aria-label={`Call phone number ${profile.phone}`}
                 >
                   {profile.phone}
@@ -115,22 +117,22 @@ export const Contact: React.FC<ContactProps> = ({
         </div>
 
         {/* Social Media Links */}
-        <div className="mb-12 rounded-lg bg-white p-8 shadow-md">
-          <h3 className="mb-6 text-center text-xl font-semibold text-gray-900">
+        <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-md">
+          <h3 className="mb-6 text-center text-lg sm:text-xl font-semibold text-gray-900">
             Connect on Social Media
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {profile.socialLinks.map((link) => (
               <a
                 key={link.platform}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-gray-200 px-6 py-3 transition-colors hover:border-blue-500 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 sm:px-6 sm:py-3 transition-all hover:border-blue-500 hover:bg-blue-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 aria-label={`Visit ${link.platform} profile (opens in new tab)`}
               >
                 {getSocialIcon(link.icon)}
-                <span className="font-medium text-gray-700">{link.platform}</span>
+                <span className="text-sm sm:text-base font-medium text-gray-700">{link.platform}</span>
               </a>
             ))}
           </div>

@@ -26,31 +26,31 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
         </div>
 
         {/* Key Highlights */}
-        <div className="mb-12 grid gap-6 md:grid-cols-3">
-          <div className="rounded-lg bg-blue-50 p-6 text-center">
-            <div className="mb-2 text-2xl font-bold text-blue-600">
+        <div className="mb-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-lg bg-blue-50 p-4 sm:p-6 text-center transition-transform hover:scale-105">
+            <div className="mb-2 text-2xl sm:text-3xl font-bold text-blue-600">
               📍
             </div>
-            <h3 className="mb-1 font-semibold text-gray-900">Location</h3>
-            <p className="text-gray-600">{profile.location}</p>
+            <h3 className="mb-1 text-sm sm:text-base font-semibold text-gray-900">Location</h3>
+            <p className="text-sm sm:text-base text-gray-600">{profile.location}</p>
           </div>
 
-          <div className="rounded-lg bg-blue-50 p-6 text-center">
-            <div className="mb-2 text-2xl font-bold text-blue-600">
+          <div className="rounded-lg bg-blue-50 p-4 sm:p-6 text-center transition-transform hover:scale-105">
+            <div className="mb-2 text-2xl sm:text-3xl font-bold text-blue-600">
               💼
             </div>
-            <h3 className="mb-1 font-semibold text-gray-900">Role</h3>
-            <p className="text-gray-600">{profile.title}</p>
+            <h3 className="mb-1 text-sm sm:text-base font-semibold text-gray-900">Role</h3>
+            <p className="text-sm sm:text-base text-gray-600">{profile.title}</p>
           </div>
 
-          <div className="rounded-lg bg-blue-50 p-6 text-center">
-            <div className="mb-2 text-2xl font-bold text-blue-600">
+          <div className="rounded-lg bg-blue-50 p-4 sm:p-6 text-center transition-transform hover:scale-105 sm:col-span-2 lg:col-span-1">
+            <div className="mb-2 text-2xl sm:text-3xl font-bold text-blue-600">
               ✉️
             </div>
-            <h3 className="mb-1 font-semibold text-gray-900">Contact</h3>
+            <h3 className="mb-1 text-sm sm:text-base font-semibold text-gray-900">Contact</h3>
             <a
               href={`mailto:${profile.email}`}
-              className="text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="text-sm sm:text-base text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
               aria-label={`Send email to ${profile.email}`}
             >
               Email Me
@@ -85,17 +85,17 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
 
         {/* Social Links */}
         <div className="text-center">
-          <h3 className="mb-4 text-xl font-semibold text-gray-900">
+          <h3 className="mb-4 text-lg sm:text-xl font-semibold text-gray-900">
             Connect With Me
           </h3>
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-4 sm:gap-6 flex-wrap">
             {profile.socialLinks.map((link) => (
               <a
                 key={link.platform}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-colors hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-all hover:bg-blue-600 hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 aria-label={`Visit ${link.platform} profile (opens in new tab)`}
               >
                 <span className="sr-only">{link.platform}</span>
