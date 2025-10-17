@@ -58,31 +58,6 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
           </div>
         </div>
 
-        {/* Contact Information */}
-        <div className="mb-8 text-center">
-          <h3 className="mb-4 text-xl font-semibold text-slate-900">
-            Get In Touch
-          </h3>
-          <div className="flex flex-col items-center gap-3">
-            <a
-              href={`mailto:${profile.email}`}
-              className="text-slate-700 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
-              aria-label={`Email address: ${profile.email}`}
-            >
-              {profile.email}
-            </a>
-            {profile.phone && (
-              <a
-                href={`tel:${profile.phone}`}
-                className="text-slate-700 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
-                aria-label={`Phone number: ${profile.phone}`}
-              >
-                {profile.phone}
-              </a>
-            )}
-          </div>
-        </div>
-
         {/* Social Links */}
         <div className="text-center">
           <h3 className="mb-4 text-lg sm:text-xl font-semibold text-slate-900">

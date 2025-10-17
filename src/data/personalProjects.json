@@ -5,8 +5,19 @@
     "description": "Modern, performant personal website built with Next.js, TypeScript, and Tailwind CSS showcasing professional experience and projects.",
     "longDescription": "Designed and developed a comprehensive personal portfolio website using Next.js 14 with App Router, TypeScript, and Tailwind CSS. The site features a fully responsive design optimized for mobile, tablet, and desktop devices with Lighthouse scores of 90+ across all metrics. Implemented WCAG 2.1 Level AA accessibility compliance, SEO optimization with meta tags and structured data, and comprehensive testing with Vitest and Playwright. The site is deployed on Vercel with automatic CI/CD from GitHub.",
     "motivation": "I wanted to create a professional online presence that showcases my DevOps and software engineering experience while demonstrating my full-stack development capabilities. This project allowed me to explore modern web technologies and best practices in performance optimization, accessibility, and SEO. Built with the assistance of Kiro AI IDE, this project showcases how AI-powered development tools can accelerate the creation of production-ready applications.",
-    "technologies": ["Next.js", "TypeScript", "React", "Tailwind CSS", "Vercel", "Vitest", "Playwright", "Kiro AI"],
-    "images": ["/images/kiro.svg"],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "Vercel",
+      "Vitest",
+      "Playwright",
+      "Kiro AI"
+    ],
+    "images": [
+      "/images/kiro.svg"
+    ],
     "featured": true,
     "startDate": "2025-10-01",
     "status": "completed"

@@ -263,7 +263,7 @@ describe('Education', () => {
       render(<Education degrees={mockDegrees} certifications={[]} />);
 
       const articles = screen.getAllByRole('article');
-      
+
       // Master's degree (2020) should come before Bachelor's (2017)
       expect(articles[0]).toHaveTextContent(/master of science/i);
       expect(articles[1]).toHaveTextContent(/bachelor of science/i);
@@ -273,7 +273,7 @@ describe('Education', () => {
       render(<Education degrees={[]} certifications={mockCertifications} />);
 
       const articles = screen.getAllByRole('article');
-      
+
       // AWS cert (2021-08) should come before PSM cert (2020-03)
       expect(articles[0]).toHaveTextContent(/aws certified solutions architect/i);
       expect(articles[1]).toHaveTextContent(/professional scrum master/i);
