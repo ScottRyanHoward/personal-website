@@ -160,40 +160,6 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
                   </div>
                 )}
 
-                {/* Related projects */}
-                {exp.relatedProjects.length > 0 && (
-                  <div>
-                    <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-600">
-                      Related Projects
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.relatedProjects.map((projectId) => (
-                        <a
-                          key={projectId}
-                          href={`#project-${projectId}`}
-                          className="inline-flex items-center gap-1 rounded-lg border border-blue-200 bg-white px-3 py-1.5 text-sm font-medium text-blue-600 transition-colors hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                          aria-label={`View project ${projectId}`}
-                        >
-                          <span>View Project</span>
-                          <svg
-                            className="h-4 w-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           ))}
