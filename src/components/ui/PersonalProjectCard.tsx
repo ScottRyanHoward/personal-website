@@ -51,15 +51,22 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({
     <Card variant="default" hoverable className="flex flex-col h-full">
       {/* Project Image */}
       {project.images && project.images.length > 0 && (
-        <div className="relative w-full h-48 mb-4 -mt-4 -mx-4 sm:-mt-6 sm:-mx-6 md:-mt-8 md:-mx-8 overflow-hidden rounded-t-lg">
-          <OptimizedImage
-            src={project.images[0]}
-            alt={`${project.title} screenshot`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            fallbackSrc="/images/project-placeholder.svg"
-          />
+        <div className="relative w-full aspect-video mb-4 overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
+          {project.images[0].endsWith('.svg') ? (
+            <img
+              src={project.images[0]}
+              alt={`${project.title} screenshot`}
+              className="w-full h-full object-contain p-4"
+            />
+          ) : (
+            <OptimizedImage
+              src={project.images[0]}
+              alt={`${project.title} screenshot`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          )}
         </div>
       )}
 

@@ -7,7 +7,7 @@
     "technologies": ["Terraform", "Backstage", "GitHub", "Azure Functions", "Azure Container Apps", "AI Tooling", "Python"],
     "companyId": "liatrio",
     "experienceId": "exp-1",
-    "images": ["/images/projects/sample-work-1.svg"],
+    "images": ["/images/retail.jpg"],
     "featured": true,
     "startDate": "2023-02"
   },
@@ -19,7 +19,7 @@
     "technologies": ["Terraform", "GitLab", "Docker", "Ping", "SAML", "OAuth", "OpenID"],
     "companyId": "liatrio",
     "experienceId": "exp-1",
-    "images": ["/images/projects/sample-work-1.svg"],
+    "images": ["/images/airplane.jpg"],
     "featured": true,
     "startDate": "2023-06"
   },
@@ -31,7 +31,7 @@
     "technologies": ["GitLab CI/CD", "Terraform", "Python", "Monitoring"],
     "companyId": "liatrio",
     "experienceId": "exp-1",
-    "images": ["/images/projects/sample-work-1.svg"],
+    "images": ["/images/gitlab.png"],
     "featured": true,
     "startDate": "2023-08",
     "endDate": "2024-01"
@@ -44,7 +44,7 @@
     "technologies": ["AWS", "AWS Organizations", "AWS VPC", "Terraform", "Multi-region Architecture", "CIDR Planning"],
     "companyId": "apto",
     "experienceId": "exp-2",
-    "images": ["/images/projects/sample-work-1.svg"],
+    "images": ["/images/aws.jpg"],
     "featured": true,
     "startDate": "2022-07",
     "endDate": "2022-11"
@@ -57,7 +57,7 @@
     "technologies": ["AWS CDK", "Terraform", "AWS", "Jenkins", "Python", "Multi-account Architecture"],
     "companyId": "pariveda",
     "experienceId": "exp-3",
-    "images": ["/images/projects/sample-work-1.svg"],
+    "images": ["/images/healthcare.jpeg"],
     "featured": true,
     "startDate": "2020-03",
     "endDate": "2021-06"
@@ -70,7 +70,7 @@
     "technologies": ["Python", "Apache Kafka", "React", "JavaScript", "Azure DevOps"],
     "companyId": "pariveda",
     "experienceId": "exp-3",
-    "images": ["/images/projects/sample-work-1.svg"],
+    "images": ["/images/payment.jpg"],
     "featured": true,
     "startDate": "2021-01",
     "endDate": "2022-03"
@@ -83,7 +83,7 @@
     "technologies": ["JavaScript", "React", "Node.js", "Azure"],
     "companyId": "pariveda",
     "experienceId": "exp-3",
-    "images": ["/images/projects/sample-work-1.svg"],
+    "images": ["/images/university.jpg"],
     "featured": false,
     "startDate": "2020-06",
     "endDate": "2020-12"

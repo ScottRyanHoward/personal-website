@@ -25,7 +25,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <Card variant="default" hoverable className="flex flex-col h-full">
       {/* Project Image */}
       {project.images && project.images.length > 0 && (
-        <div className="relative w-full h-48 mb-4 -mt-4 -mx-4 sm:-mt-6 sm:-mx-6 md:-mt-8 md:-mx-8 overflow-hidden rounded-t-lg">
+        <div className="relative w-full aspect-video mb-4 overflow-hidden rounded-lg bg-gray-100">
           <OptimizedImage
             src={project.images[0]}
             alt={`${project.title} screenshot`}

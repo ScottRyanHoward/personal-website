@@ -34,7 +34,7 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
   return (
     <section
       id="education"
-      className="bg-white px-4 py-20"
+      className="bg-gradient-to-br from-blue-50 to-slate-50 px-4 py-20"
       aria-label="Education and certifications section"
     >
       <div className="container mx-auto max-w-5xl">
