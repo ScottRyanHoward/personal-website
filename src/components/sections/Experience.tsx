@@ -67,11 +67,24 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
                 </time>
 
                 {/* Company and position */}
-                <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="mb-1 text-xl font-bold text-gray-900 md:text-2xl">
-                      {exp.position}
-                    </h3>
+                <div className="mb-4">
+                  <h3 className="mb-1 text-xl font-bold text-gray-900 md:text-2xl">
+                    {exp.position}
+                  </h3>
+                  <div className="flex items-center gap-3">
+                    {/* Company logo */}
+                    {exp.companyLogo && (
+                      <div className="relative h-8 w-8 flex-shrink-0 overflow-hidden rounded bg-white shadow-sm">
+                        <OptimizedImage
+                          src={exp.companyLogo}
+                          alt={`${exp.company} logo`}
+                          fill
+                          className="object-contain p-1"
+                          sizes="32px"
+                          fallbackSrc="/images/company-placeholder.svg"
+                        />
+                      </div>
+                    )}
                     <div className="flex items-center gap-2">
                       <p className="text-lg font-medium text-gray-700">
                         {exp.company}
@@ -80,20 +93,6 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
                       <p className="text-sm text-gray-600">{exp.location}</p>
                     </div>
                   </div>
-
-                  {/* Company logo */}
-                  {exp.companyLogo && (
-                    <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-sm md:h-16 md:w-16">
-                      <OptimizedImage
-                        src={exp.companyLogo}
-                        alt={`${exp.company} logo`}
-                        fill
-                        className="object-contain p-2"
-                        sizes="(max-width: 768px) 48px, 64px"
-                        fallbackSrc="/images/company-placeholder.svg"
-                      />
-                    </div>
-                  )}
                 </div>
 
                 {/* Description */}
