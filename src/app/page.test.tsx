@@ -19,21 +19,40 @@ vi.mock('@/components/layout', () => ({
 vi.mock('@/components/sections', () => ({
   Hero: ({ profile }: any) => <section id="hero" data-testid="hero">{profile.name}</section>,
   About: ({ profile }: any) => <section id="about" data-testid="about">About {profile.name}</section>,
+}));
+
+// Mock the dynamically imported components
+vi.mock('@/components/sections/Experience', () => ({
   Experience: ({ experiences }: any) => (
     <section id="experience" data-testid="experience">{experiences.length} experiences</section>
   ),
+}));
+
+vi.mock('@/components/sections/Skills', () => ({
   Skills: ({ skillCategories }: any) => (
     <section id="skills" data-testid="skills">{skillCategories.length} categories</section>
   ),
+}));
+
+vi.mock('@/components/sections/WorkProjects', () => ({
   WorkProjects: () => <section id="work-projects" data-testid="work-projects">Work Projects</section>,
+}));
+
+vi.mock('@/components/sections/PersonalProjects', () => ({
   PersonalProjects: () => (
     <section id="personal-projects" data-testid="personal-projects">Personal Projects</section>
   ),
+}));
+
+vi.mock('@/components/sections/Education', () => ({
   Education: ({ degrees, certifications }: any) => (
     <section id="education" data-testid="education">
       {degrees.length} degrees, {certifications.length} certifications
     </section>
   ),
+}));
+
+vi.mock('@/components/sections/Contact', () => ({
   Contact: ({ profile }: any) => <section id="contact" data-testid="contact">Contact {profile.name}</section>,
 }));
 
@@ -44,6 +63,11 @@ vi.mock('@/components/StructuredData', () => ({
       {JSON.stringify({ name: profile.name })}
     </script>
   ),
+}));
+
+// Mock SkipToContent component
+vi.mock('@/components/layout/SkipToContent', () => ({
+  default: () => <a href="#main-content" className="sr-only">Skip to content</a>,
 }));
 
 describe('Home Page Integration', () => {
@@ -102,12 +126,12 @@ describe('Home Page Integration', () => {
 
   it('passes correct data to Hero section', () => {
     render(<Home />);
-    expect(screen.getByTestId('hero')).toHaveTextContent('Scott Ryan Howard');
+    expect(screen.getByTestId('hero')).toHaveTextContent('Scott Howard');
   });
 
   it('passes correct data to About section', () => {
     render(<Home />);
-    expect(screen.getByTestId('about')).toHaveTextContent('About Scott Ryan Howard');
+    expect(screen.getByTestId('about')).toHaveTextContent('About Scott Howard');
   });
 
   it('passes correct data to Experience section', () => {
@@ -140,17 +164,17 @@ describe('Home Page Integration', () => {
 
   it('passes correct data to Contact section', () => {
     render(<Home />);
-    expect(screen.getByTestId('contact')).toHaveTextContent('Contact Scott Ryan Howard');
+    expect(screen.getByTestId('contact')).toHaveTextContent('Contact Scott Howard');
   });
 
   it('renders Header with profile name', () => {
     render(<Home />);
-    expect(screen.getByTestId('header')).toHaveTextContent('Scott Ryan Howard');
+    expect(screen.getByTestId('header')).toHaveTextContent('Scott Howard');
   });
 
   it('renders Footer with social links', () => {
     render(<Home />);
-    expect(screen.getByTestId('footer')).toHaveTextContent('Footer with 3 links');
+    expect(screen.getByTestId('footer')).toHaveTextContent('Footer with 2 links');
   });
 
   it('has proper semantic HTML structure', () => {
@@ -192,6 +216,6 @@ describe('Home Page Integration', () => {
     expect(structuredData).toBeInTheDocument();
     
     const jsonContent = JSON.parse(structuredData?.textContent || '{}');
-    expect(jsonContent.name).toBe('Scott Ryan Howard');
+    expect(jsonContent.name).toBe('Scott Howard');
   });
 });

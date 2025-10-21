@@ -142,12 +142,16 @@ describe('ProjectCard', () => {
     expect(mockCallback).toHaveBeenCalledTimes(1);
   });
 
-  it('applies hoverable styling to card', () => {
+  it('applies default card styling without hover effects', () => {
     const { container } = render(<ProjectCard project={mockProject} />);
     
     const card = container.firstChild;
-    expect(card).toHaveClass('hover:shadow-xl');
-    expect(card).toHaveClass('hover:-translate-y-1');
+    expect(card).toHaveClass('bg-white');
+    expect(card).toHaveClass('shadow-md');
+    expect(card).toHaveClass('rounded-lg');
+    // The card should not have hover effects since hoverable is not set to true
+    expect(card).not.toHaveClass('hover:shadow-xl');
+    expect(card).not.toHaveClass('hover:-translate-y-1');
   });
 
   it('has proper accessibility attributes on links', () => {

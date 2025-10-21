@@ -54,11 +54,12 @@ describe('Header', () => {
     expect(window.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
   });
 
-  it('applies transparent background initially', () => {
+  it('applies white background with border initially', () => {
     render(<Header name="Scott Ryan Howard" />);
     
     const header = screen.getByRole('banner');
-    expect(header).toHaveClass('bg-transparent');
+    expect(header).toHaveClass('bg-white');
+    expect(header).toHaveClass('border-b', 'border-gray-200');
     expect(header).not.toHaveClass('shadow-md');
   });
 

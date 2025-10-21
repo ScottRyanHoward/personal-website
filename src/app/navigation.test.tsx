@@ -7,15 +7,34 @@ vi.mock('next/image', () => ({
   default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
 }));
 
-// Mock all section components to render simple sections with IDs
+// Mock the section components
 vi.mock('@/components/sections', () => ({
   Hero: () => <section id="hero">Hero</section>,
   About: () => <section id="about">About</section>,
+}));
+
+// Mock the dynamically imported components
+vi.mock('@/components/sections/Experience', () => ({
   Experience: () => <section id="experience">Experience</section>,
+}));
+
+vi.mock('@/components/sections/Skills', () => ({
   Skills: () => <section id="skills">Skills</section>,
+}));
+
+vi.mock('@/components/sections/WorkProjects', () => ({
   WorkProjects: () => <section id="work-projects">Work Projects</section>,
+}));
+
+vi.mock('@/components/sections/PersonalProjects', () => ({
   PersonalProjects: () => <section id="personal-projects">Personal Projects</section>,
+}));
+
+vi.mock('@/components/sections/Education', () => ({
   Education: () => <section id="education">Education</section>,
+}));
+
+vi.mock('@/components/sections/Contact', () => ({
   Contact: () => <section id="contact">Contact</section>,
 }));
 
@@ -23,6 +42,16 @@ vi.mock('@/components/sections', () => ({
 vi.mock('@/components/layout', () => ({
   Header: () => <header>Header</header>,
   Footer: () => <footer>Footer</footer>,
+}));
+
+// Mock StructuredData component
+vi.mock('@/components/StructuredData', () => ({
+  default: () => <script type="application/ld+json">{JSON.stringify({name: "Test"})}</script>,
+}));
+
+// Mock SkipToContent component
+vi.mock('@/components/layout/SkipToContent', () => ({
+  default: () => <a href="#main-content">Skip to content</a>,
 }));
 
 describe('Page Navigation', () => {

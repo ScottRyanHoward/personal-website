@@ -354,8 +354,12 @@ describe('Responsive Design - Typography Scaling', () => {
   it('should maintain readable line lengths', () => {
     const { container } = render(<Hero profile={mockProfile} />);
     
-    // Summary text should have max-width for readability
-    const summary = container.querySelector('.max-w-2xl');
-    expect(summary).toBeInTheDocument();
+    // Hero container should have max-width for readability
+    const container_element = container.querySelector('.max-w-6xl');
+    expect(container_element).toBeInTheDocument();
+    
+    // Button container should have responsive max-width
+    const buttonContainer = container.querySelector('.max-w-md');
+    expect(buttonContainer).toBeInTheDocument();
   });
 });

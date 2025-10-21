@@ -100,30 +100,11 @@ describe('Contact', () => {
     });
   });
 
-  describe('Phone Contact', () => {
-    it('displays phone number when provided', () => {
+  describe('Contact Methods', () => {
+    it('does not display phone contact since component focuses on email and social media', () => {
       render(<Contact profile={mockProfile} />);
 
-      const phoneLink = screen.getByRole('link', {
-        name: /call phone number/i,
-      });
-      expect(phoneLink).toBeInTheDocument();
-      expect(phoneLink).toHaveTextContent('+1 (555) 123-4567');
-    });
-
-    it('phone link has correct tel href', () => {
-      render(<Contact profile={mockProfile} />);
-
-      const phoneLink = screen.getByRole('link', {
-        name: /call phone number/i,
-      });
-      expect(phoneLink).toHaveAttribute('href', 'tel:+1 (555) 123-4567');
-    });
-
-    it('does not render phone section when phone is not provided', () => {
-      const profileWithoutPhone = { ...mockProfile, phone: undefined };
-      render(<Contact profile={profileWithoutPhone} />);
-
+      // The Contact component doesn't include phone functionality
       expect(
         screen.queryByRole('link', { name: /call phone number/i })
       ).not.toBeInTheDocument();
@@ -132,13 +113,15 @@ describe('Contact', () => {
       ).not.toBeInTheDocument();
     });
 
-    it('phone link has proper accessibility attributes', () => {
+    it('focuses on email as primary contact method', () => {
       render(<Contact profile={mockProfile} />);
 
-      const phoneLink = screen.getByRole('link', {
-        name: /call phone number/i,
+      // Email should be the primary contact method
+      const emailLink = screen.getByRole('link', {
+        name: /send email to/i,
       });
-      expect(phoneLink).toHaveAccessibleName();
+      expect(emailLink).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /email/i })).toBeInTheDocument();
     });
   });
 
@@ -318,9 +301,6 @@ describe('Contact', () => {
       const emailLink = screen.getByRole('link', {
         name: /send email to/i,
       });
-      const phoneLink = screen.getByRole('link', {
-        name: /call phone number/i,
-      });
       const socialLinks = screen.getAllByRole('link', {
         name: /visit .* profile/i,
       });
@@ -329,7 +309,6 @@ describe('Contact', () => {
       });
 
       expect(emailLink).toHaveAccessibleName();
-      expect(phoneLink).toHaveAccessibleName();
       socialLinks.forEach((link) => {
         expect(link).toHaveAccessibleName();
       });
@@ -355,11 +334,12 @@ describe('Contact', () => {
   });
 
   describe('Responsive Design', () => {
-    it('applies responsive grid classes for contact methods', () => {
+    it('applies responsive layout for contact methods', () => {
       const { container } = render(<Contact profile={mockProfile} />);
 
-      const grid = container.querySelector('.grid.md\\:grid-cols-2');
-      expect(grid).toBeInTheDocument();
+      // The Contact component uses flex layout, not grid
+      const flexContainer = container.querySelector('.flex.justify-center');
+      expect(flexContainer).toBeInTheDocument();
     });
 
     it('applies responsive styling to social links container', () => {

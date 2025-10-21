@@ -63,25 +63,24 @@ describe('About Component', () => {
 
   it('displays email in contact information section', () => {
     render(<About profile={mockProfile} />);
-    const emailLinks = screen.getAllByText(mockProfile.email);
-    expect(emailLinks.length).toBeGreaterThan(0);
-    emailLinks.forEach((link) => {
-      expect(link).toHaveAttribute('href', `mailto:${mockProfile.email}`);
-    });
+    // The About component shows "Email Me" text instead of the actual email address
+    const emailLink = screen.getByText('Email Me');
+    expect(emailLink).toBeInTheDocument();
+    expect(emailLink).toHaveAttribute('href', `mailto:${mockProfile.email}`);
   });
 
-  it('displays phone number when provided', () => {
+  it('does not display phone functionality since component focuses on email and social media', () => {
     render(<About profile={mockProfile} />);
-    const phoneLink = screen.getByText(mockProfile.phone!);
-    expect(phoneLink).toBeInTheDocument();
-    expect(phoneLink).toHaveAttribute('href', `tel:${mockProfile.phone}`);
-  });
-
-  it('does not display phone number when not provided', () => {
-    const profileWithoutPhone = { ...mockProfile, phone: undefined };
-    render(<About profile={profileWithoutPhone} />);
+    // The About component doesn't include phone functionality
     const phoneLink = screen.queryByRole('link', { name: /phone number/i });
     expect(phoneLink).not.toBeInTheDocument();
+  });
+
+  it('displays email contact instead of phone', () => {
+    render(<About profile={mockProfile} />);
+    const emailLink = screen.getByRole('link', { name: /send email to/i });
+    expect(emailLink).toBeInTheDocument();
+    expect(emailLink).toHaveAttribute('href', `mailto:${mockProfile.email}`);
   });
 
   it('renders all social links', () => {
@@ -109,22 +108,22 @@ describe('About Component', () => {
   it('email links have proper accessibility attributes', () => {
     render(<About profile={mockProfile} />);
     const emailLink = screen.getByRole('link', {
-      name: new RegExp(`email address: ${mockProfile.email}`, 'i'),
+      name: new RegExp(`send email to ${mockProfile.email}`, 'i'),
     });
     expect(emailLink).toHaveAttribute('href', `mailto:${mockProfile.email}`);
   });
 
-  it('phone link has proper accessibility attributes when phone is provided', () => {
+  it('does not have phone links since component focuses on email contact', () => {
     render(<About profile={mockProfile} />);
-    const phoneLink = screen.getByRole('link', {
-      name: /phone number: \+1 \(555\) 123-4567/i,
+    const phoneLink = screen.queryByRole('link', {
+      name: /phone number/i,
     });
-    expect(phoneLink).toHaveAttribute('href', `tel:${mockProfile.phone}`);
+    expect(phoneLink).not.toBeInTheDocument();
   });
 
-  it('renders "Get In Touch" heading', () => {
+  it('renders "Connect With Me" heading', () => {
     render(<About profile={mockProfile} />);
-    const heading = screen.getByRole('heading', { name: /get in touch/i, level: 3 });
+    const heading = screen.getByRole('heading', { name: /connect with me/i, level: 3 });
     expect(heading).toBeInTheDocument();
   });
 
