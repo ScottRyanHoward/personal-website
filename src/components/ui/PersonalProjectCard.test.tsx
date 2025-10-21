@@ -47,10 +47,16 @@ describe('PersonalProjectCard', () => {
     expect(screen.getByText('In Progress')).toBeInTheDocument();
   });
 
-  it('renders archived status correctly', () => {
-    const archivedProject = { ...mockProject, status: 'archived' as const };
+  it('renders ideation status correctly', () => {
+    const ideationProject = { ...mockProject, status: 'ideation' as const };
+    render(<PersonalProjectCard project={ideationProject} />);
+    expect(screen.getByText('Ideation')).toBeInTheDocument();
+  });
+
+  it('normalizes archived status to completed for backward compatibility', () => {
+    const archivedProject = { ...mockProject, status: 'archived' as any };
     render(<PersonalProjectCard project={archivedProject} />);
-    expect(screen.getByText('Archived')).toBeInTheDocument();
+    expect(screen.getByText('Completed')).toBeInTheDocument();
   });
 
   it('renders date range when both start and end dates are provided', () => {
@@ -139,18 +145,43 @@ describe('PersonalProjectCard', () => {
     expect(statusBadge).toHaveClass('bg-green-100', 'text-green-800');
   });
 
+  it('applies correct CSS classes for ideation status', () => {
+    const ideationProject = { ...mockProject, status: 'ideation' as const };
+    render(<PersonalProjectCard project={ideationProject} />);
+    const statusBadge = screen.getByText('Ideation');
+    expect(statusBadge).toHaveClass('bg-pink-100', 'text-pink-800');
+  });
+
   it('applies correct CSS classes for in-progress status', () => {
     const inProgressProject = { ...mockProject, status: 'in-progress' as const };
     render(<PersonalProjectCard project={inProgressProject} />);
     const statusBadge = screen.getByText('In Progress');
-    expect(statusBadge).toHaveClass('bg-blue-100', 'text-blue-800');
+    expect(statusBadge).toHaveClass('bg-yellow-100', 'text-yellow-800');
   });
 
-  it('applies correct CSS classes for archived status', () => {
-    const archivedProject = { ...mockProject, status: 'archived' as const };
+  it('applies correct CSS classes for archived status (normalized to completed)', () => {
+    const archivedProject = { ...mockProject, status: 'archived' as any };
     render(<PersonalProjectCard project={archivedProject} />);
-    const statusBadge = screen.getByText('Archived');
-    expect(statusBadge).toHaveClass('bg-gray-100', 'text-gray-800');
+    const statusBadge = screen.getByText('Completed');
+    expect(statusBadge).toHaveClass('bg-green-100', 'text-green-800');
+  });
+
+  it('handles missing status by defaulting to completed', () => {
+    const projectWithoutStatus = { ...mockProject, status: undefined as any };
+    render(<PersonalProjectCard project={projectWithoutStatus} />);
+    expect(screen.getByText('Completed')).toBeInTheDocument();
+  });
+
+  it('handles invalid status by defaulting to completed', () => {
+    const projectWithInvalidStatus = { ...mockProject, status: 'invalid-status' as any };
+    render(<PersonalProjectCard project={projectWithInvalidStatus} />);
+    expect(screen.getByText('Completed')).toBeInTheDocument();
+  });
+
+  it('normalizes case-insensitive status values', () => {
+    const projectWithUppercaseStatus = { ...mockProject, status: 'IN-PROGRESS' as any };
+    render(<PersonalProjectCard project={projectWithUppercaseStatus} />);
+    expect(screen.getByText('In Progress')).toBeInTheDocument();
   });
 
   it('renders with minimal required fields', () => {

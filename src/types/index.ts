@@ -63,7 +63,7 @@ export interface PersonalProject {
   featured: boolean;
   startDate: string;
   endDate?: string;
-  status: 'completed' | 'in-progress' | 'archived';
+  status: 'ideation' | 'in-progress' | 'completed';
 }
 
 // Skills

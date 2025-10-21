@@ -8,18 +8,35 @@ export interface PersonalProjectCardProps {
 }
 
 const statusConfig = {
+  ideation: {
+    label: 'Ideation',
+    className: 'bg-pink-100 text-pink-800',
+  },
+  'in-progress': {
+    label: 'In Progress',
+    className: 'bg-yellow-100 text-yellow-800',
+  },
   completed: {
     label: 'Completed',
     className: 'bg-green-100 text-green-800',
   },
-  'in-progress': {
-    label: 'In Progress',
-    className: 'bg-blue-100 text-blue-800',
-  },
-  archived: {
-    label: 'Archived',
-    className: 'bg-gray-100 text-gray-800',
-  },
+};
+
+// Status normalization function for backward compatibility
+const normalizeStatus = (status: string): 'ideation' | 'in-progress' | 'completed' => {
+  const normalized = status.toLowerCase();
+  switch (normalized) {
+    case 'ideation':
+      return 'ideation';
+    case 'in-progress':
+    case 'in progress':
+      return 'in-progress';
+    case 'completed':
+    case 'archived': // Legacy support
+      return 'completed';
+    default:
+      return 'completed'; // Default fallback
+  }
 };
 
 const formatDateRange = (startDate: string, endDate?: string): string => {
@@ -45,7 +62,9 @@ const formatDateRange = (startDate: string, endDate?: string): string => {
 export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({
   project,
 }) => {
-  const statusInfo = statusConfig[project.status];
+  // Normalize status and provide default handling for missing or invalid values
+  const normalizedStatus = normalizeStatus(project.status || 'completed');
+  const statusInfo = statusConfig[normalizedStatus];
 
   return (
     <Card variant="default" className="flex flex-col h-full">
