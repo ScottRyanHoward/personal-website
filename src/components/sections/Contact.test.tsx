@@ -53,13 +53,7 @@ describe('Contact', () => {
       expect(section).toBeInTheDocument();
     });
 
-    it('renders introductory text', () => {
-      render(<Contact profile={mockProfile} />);
 
-      expect(
-        screen.getByText(/always open to discussing new opportunities/i)
-      ).toBeInTheDocument();
-    });
   });
 
   describe('Email Contact', () => {

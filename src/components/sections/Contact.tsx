@@ -29,13 +29,9 @@ export const Contact: React.FC<ContactProps> = ({
     >
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
-        <h2 className="mb-4 text-center text-3xl font-bold text-white md:text-4xl">
+        <h2 className="mb-12 text-center text-3xl font-bold text-white md:text-4xl">
           Let&apos;s Connect
         </h2>
-        <p className="mb-12 text-center text-lg text-blue-100">
-          I&apos;m always open to discussing new opportunities, collaborations, or
-          just having a chat about technology.
-        </p>
 
         {/* Connect Section */}
         <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-lg border border-blue-100">
