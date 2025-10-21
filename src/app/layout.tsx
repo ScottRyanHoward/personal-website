@@ -21,6 +21,15 @@ export const metadata: Metadata = {
     default: `${profileData.name} - ${profileData.title}`,
     template: `%s | ${profileData.name}`,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico?v=2', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon-16x16.png?v=2', sizes: '16x16', type: 'image/png' },
+      { url: '/icon.png?v=2', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico?v=2',
+    apple: '/apple-touch-icon.png?v=2',
+  },
   description: profileData.summary,
   keywords: [
     "Software Engineer",
