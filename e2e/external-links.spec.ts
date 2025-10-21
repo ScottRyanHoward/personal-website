@@ -1,5 +1,26 @@
 import { test, expect } from '@playwright/test';
 
+// Helper function to navigate to a section (handles both desktop and mobile)
+async function navigateToSection(page: any, sectionName: string) {
+  const viewportSize = page.viewportSize();
+  const isMobile = viewportSize && viewportSize.width < 768;
+
+  if (isMobile) {
+    // Open mobile menu first
+    const menuButton = page.getByRole('button', { name: /open menu/i });
+    await menuButton.click();
+    await page.waitForTimeout(300);
+    
+    // Click section in mobile menu
+    await page.locator('#mobile-menu').getByRole('link', { name: sectionName, exact: true }).click();
+  } else {
+    // Click section in desktop navigation
+    await page.locator('nav').getByRole('link', { name: sectionName, exact: true }).click();
+  }
+  
+  await page.waitForTimeout(500);
+}
+
 test.describe('External Links', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -7,12 +28,11 @@ test.describe('External Links', () => {
   });
 
   test('should open social media links in new tab', async ({ page, context }) => {
-    // Scroll to Contact section
-    await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
-    await page.waitForTimeout(500);
+    // Navigate to Contact section
+    await navigateToSection(page, 'Contact');
 
     // Get all social media links from Contact section
-    const socialLinks = ['LinkedIn', 'GitHub', 'Twitter'];
+    const socialLinks = ['LinkedIn', 'GitHub']; // Only test links that exist in profile
     const contactSection = page.locator('#contact');
 
     for (const platform of socialLinks) {
@@ -33,7 +53,6 @@ test.describe('External Links', () => {
       const expectedDomains: Record<string, string> = {
         'LinkedIn': 'linkedin.com',
         'GitHub': 'github.com',
-        'Twitter': 'x.com', // Twitter is now X
       };
 
       expect(url).toContain(expectedDomains[platform]);
@@ -44,9 +63,8 @@ test.describe('External Links', () => {
   });
 
   test('should have proper security attributes on external links', async ({ page }) => {
-    // Scroll to Contact section
-    await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
-    await page.waitForTimeout(500);
+    // Navigate to Contact section
+    await navigateToSection(page, 'Contact');
 
     // Check social media links have proper attributes in Contact section
     const contactSection = page.locator('#contact');
@@ -60,9 +78,8 @@ test.describe('External Links', () => {
   });
 
   test('should have accessible labels for external links', async ({ page }) => {
-    // Scroll to Contact section
-    await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
-    await page.waitForTimeout(500);
+    // Navigate to Contact section
+    await navigateToSection(page, 'Contact');
 
     // Verify aria-labels indicate new tab opening in Contact section
     const contactSection = page.locator('#contact');
@@ -74,9 +91,8 @@ test.describe('External Links', () => {
   });
 
   test('should open email link with mailto', async ({ page }) => {
-    // Scroll to Contact section
-    await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
-    await page.waitForTimeout(500);
+    // Navigate to Contact section
+    await navigateToSection(page, 'Contact');
 
     // Find email link in Contact section
     const contactSection = page.locator('#contact');
@@ -86,13 +102,12 @@ test.describe('External Links', () => {
     // Verify mailto href
     const href = await emailLink.getAttribute('href');
     expect(href).toContain('mailto:');
-    expect(href).toContain('contact@scottryanhoward.info');
+    expect(href).toContain('scottryanhoward@gmail.com');
   });
 
   test('should open phone link with tel protocol', async ({ page }) => {
-    // Scroll to Contact section
-    await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
-    await page.waitForTimeout(500);
+    // Navigate to Contact section
+    await navigateToSection(page, 'Contact');
 
     // Find phone link in Contact section (if it exists)
     const contactSection = page.locator('#contact');
@@ -110,9 +125,8 @@ test.describe('External Links', () => {
   });
 
   test('should handle external project links', async ({ page, context }) => {
-    // Scroll to Work Projects section
-    await page.locator('nav').getByRole('link', { name: 'Work Projects', exact: true }).click();
-    await page.waitForTimeout(500);
+    // Navigate to Work Projects section
+    await navigateToSection(page, 'Work Projects');
 
     // Look for any external project links (demo or repo) in Work Projects section
     const workProjectsSection = page.locator('#work-projects');
@@ -132,9 +146,8 @@ test.describe('External Links', () => {
   });
 
   test('should handle external personal project links', async ({ page }) => {
-    // Scroll to Personal Projects section
-    await page.locator('nav').getByRole('link', { name: 'Personal Projects', exact: true }).click();
-    await page.waitForTimeout(500);
+    // Navigate to Personal Projects section
+    await navigateToSection(page, 'Personal Projects');
 
     // Look for any external project links in Personal Projects section
     const personalProjectsSection = page.locator('#personal-projects');
@@ -156,14 +169,14 @@ test.describe('External Links', () => {
   test('should not navigate away from site when clicking internal links', async ({ page }) => {
     const initialUrl = page.url();
 
-    // Click various internal navigation links
-    await page.locator('nav').getByRole('link', { name: 'About', exact: true }).click();
+    // Navigate to various internal sections
+    await navigateToSection(page, 'About');
     await page.waitForTimeout(300);
 
     // URL should still be the same (just hash changed)
     expect(page.url()).toContain(initialUrl.split('#')[0]);
 
-    await page.locator('nav').getByRole('link', { name: 'Skills', exact: true }).click();
+    await navigateToSection(page, 'Skills');
     await page.waitForTimeout(300);
 
     expect(page.url()).toContain(initialUrl.split('#')[0]);

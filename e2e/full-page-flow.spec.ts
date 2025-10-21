@@ -7,7 +7,7 @@ test.describe('Full Page Navigation Flow', () => {
     await page.waitForLoadState('domcontentloaded');
 
     // 2. Verify Hero section is visible
-    const heroHeading = page.getByRole('heading', { name: /Scott Ryan Howard/i });
+    const heroHeading = page.getByRole('heading', { name: /Scott Howard/i });
     await expect(heroHeading).toBeVisible();
 
     // 3. Navigate through all sections in order
@@ -46,7 +46,7 @@ test.describe('Full Page Navigation Flow', () => {
     // 5. Test email link in Contact section
     const emailLink = contactSection.getByRole('link', { name: /Send email to/i }).first();
     const emailHref = await emailLink.getAttribute('href');
-    expect(emailHref).toContain('mailto:contact@scottryanhoward.info');
+    expect(emailHref).toContain('mailto:scottryanhoward@gmail.com');
 
     // 6. Test resume download button exists and is clickable
     const downloadButton = contactSection.getByRole('button', { name: /Download resume/i });
@@ -74,7 +74,7 @@ test.describe('Full Page Navigation Flow', () => {
     await page.waitForLoadState('networkidle');
 
     // 2. Verify Hero section is visible
-    const heroHeading = page.getByRole('heading', { name: /Scott Ryan Howard/i });
+    const heroHeading = page.getByRole('heading', { name: /Scott Howard/i });
     await expect(heroHeading).toBeVisible();
 
     // 3. Open mobile menu
@@ -202,7 +202,7 @@ test.describe('Full Page Navigation Flow', () => {
     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
     await page.waitForTimeout(600);
     const contactSection = page.locator('#contact');
-    await expect(contactSection.getByRole('heading', { name: /Get In Touch/i })).toBeVisible();
+    await expect(contactSection.getByRole('heading', { name: /Let's Connect/i })).toBeVisible();
   });
 
   test('should handle browser back/forward navigation', async ({ page }) => {

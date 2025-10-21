@@ -30,21 +30,25 @@ export const Contact: React.FC<ContactProps> = ({
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
         <h2 className="mb-4 text-center text-3xl font-bold text-white md:text-4xl">
-          Get In Touch
+          Let&apos;s Connect
         </h2>
         <p className="mb-12 text-center text-lg text-blue-100">
           I&apos;m always open to discussing new opportunities, collaborations, or
           just having a chat about technology.
         </p>
 
-        {/* Contact Methods */}
-        <div className="mb-12 flex justify-center">
+        {/* Connect Section */}
+        <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-lg border border-blue-100">
+          <h3 className="mb-6 text-center text-lg sm:text-xl font-semibold text-slate-900">
+            Get In Touch
+          </h3>
+          
           {/* Email Contact */}
-          <div className="w-full max-w-md rounded-lg bg-white p-6 sm:p-8 shadow-lg transition-transform hover:scale-105 border border-blue-100">
-            <div className="mb-4 flex items-center justify-center">
-              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-blue-50">
+          <div className="mb-6 text-center">
+            <div className="mb-3 flex items-center justify-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50">
                 <svg
-                  className="h-7 w-7 sm:h-8 sm:w-8 text-blue-700"
+                  className="h-6 w-6 text-blue-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -59,29 +63,23 @@ export const Contact: React.FC<ContactProps> = ({
                 </svg>
               </div>
             </div>
-            <h3 className="mb-2 text-center text-lg sm:text-xl font-semibold text-slate-900">
-              Email
-            </h3>
-            <p className="mb-4 text-center text-sm sm:text-base text-slate-600">
-              Send me an email anytime
-            </p>
-            <div className="text-center">
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-block text-sm sm:text-base text-blue-700 hover:text-blue-800 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded break-all font-medium"
-                aria-label={`Send email to ${profile.email}`}
-              >
-                {profile.email}
-              </a>
-            </div>
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-block text-base sm:text-lg text-blue-700 hover:text-blue-800 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded break-all font-medium"
+              aria-label={`Send email to ${profile.email}`}
+            >
+              {profile.email}
+            </a>
           </div>
-        </div>
 
-        {/* Social Media Links */}
-        <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-lg border border-blue-100">
-          <h3 className="mb-6 text-center text-lg sm:text-xl font-semibold text-slate-900">
-            Connect on Social Media
-          </h3>
+          {/* Divider */}
+          <div className="mb-6 flex items-center">
+            <div className="flex-1 border-t border-slate-200"></div>
+            <span className="px-4 text-sm text-slate-500">or connect on</span>
+            <div className="flex-1 border-t border-slate-200"></div>
+          </div>
+
+          {/* Social Media Links */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {profile.socialLinks.map((link) => (
               <a

@@ -42,7 +42,7 @@ describe('Contact', () => {
       render(<Contact profile={mockProfile} />);
 
       expect(
-        screen.getByRole('heading', { name: /get in touch/i, level: 2 })
+        screen.getByRole('heading', { name: /let's connect/i, level: 2 })
       ).toBeInTheDocument();
     });
 
@@ -91,11 +91,11 @@ describe('Contact', () => {
       expect(emailLink).toHaveAccessibleName();
     });
 
-    it('renders email section heading', () => {
+    it('renders unified contact section heading', () => {
       render(<Contact profile={mockProfile} />);
 
       expect(
-        screen.getByRole('heading', { name: /^email$/i, level: 3 })
+        screen.getByRole('heading', { name: /get in touch/i, level: 3 })
       ).toBeInTheDocument();
     });
   });
@@ -121,7 +121,7 @@ describe('Contact', () => {
         name: /send email to/i,
       });
       expect(emailLink).toBeInTheDocument();
-      expect(screen.getByRole('heading', { name: /email/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /get in touch/i })).toBeInTheDocument();
     });
   });
 
@@ -214,15 +214,19 @@ describe('Contact', () => {
       expect(screen.getByText('Twitter')).toBeInTheDocument();
     });
 
-    it('renders social media section heading', () => {
+    it('renders unified contact section with social media', () => {
       render(<Contact profile={mockProfile} />);
 
       expect(
         screen.getByRole('heading', {
-          name: /connect on social media/i,
+          name: /get in touch/i,
           level: 3,
         })
       ).toBeInTheDocument();
+      
+      // Verify social links are present in the same section
+      expect(screen.getByText('LinkedIn')).toBeInTheDocument();
+      expect(screen.getByText('GitHub')).toBeInTheDocument();
     });
   });
 
@@ -356,7 +360,7 @@ describe('Contact', () => {
       render(<Contact profile={profileWithoutSocial} />);
 
       expect(
-        screen.getByRole('heading', { name: /connect on social media/i })
+        screen.getByRole('heading', { name: /get in touch/i })
       ).toBeInTheDocument();
       expect(
         screen.queryByRole('link', { name: /visit .* profile/i })
@@ -389,7 +393,7 @@ describe('Contact', () => {
       render(<Contact profile={minimalProfile} />);
 
       expect(
-        screen.getByRole('heading', { name: /get in touch/i })
+        screen.getByRole('heading', { name: /let's connect/i })
       ).toBeInTheDocument();
       expect(
         screen.getByRole('link', { name: /send email to jane@example\.com/i })
