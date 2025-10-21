@@ -22,7 +22,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   return (
-    <Card variant="default" hoverable className="flex flex-col h-full">
+    <Card variant="default" className="flex flex-col h-full">
       {/* Project Image */}
       {project.images && project.images.length > 0 && (
         <div className="relative w-full aspect-video mb-4 overflow-hidden rounded-lg bg-gray-100">
