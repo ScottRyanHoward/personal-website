@@ -63,7 +63,7 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({
               src={project.images[0]}
               alt={`${project.title} screenshot`}
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           )}

@@ -1,5 +1,27 @@
 [
   {
+    "id": "monopoly-go-sticker-tracker",
+    "title": "Monopoly GO! Sticker Tracker",
+    "description": "Web-based tool for tracking Monopoly GO! sticker collections with real-time synchronization and multi-player support.",
+    "longDescription": "Comprehensive sticker collection management tool built with vanilla JavaScript and Firebase. Features include real-time synchronization across devices, multi-player support, advanced search functionality, secure passcode protection, and mobile-optimized touch interface. Supports unlimited sticker sets with customizable names, color-coded status tracking (need/have/extra), and data export/import capabilities.",
+    "motivation": "Created to solve the challenge of coordinating sticker trades among Monopoly GO! players. The tool addresses the need for real-time collaboration, mobile accessibility, and secure data management while maintaining optimal performance through vanilla JavaScript implementation.",
+    "technologies": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Firebase",
+      "Responsive Design",
+      "Mobile Optimization",
+      "Real-time Database"
+    ],
+    "images": [
+      "/images/monopoly_go.jpg"
+    ],
+    "featured": true,
+    "startDate": "2025-02-01",
+    "status": "completed"
+  },
+  {
     "id": "personal-proj-1",
     "title": "Personal Portfolio Website",
     "description": "Modern, performant personal website built with Next.js, TypeScript, and Tailwind CSS showcasing professional experience and projects.",
