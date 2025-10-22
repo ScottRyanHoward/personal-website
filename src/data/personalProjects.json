@@ -19,6 +19,7 @@
     "images": [
       "/images/riveter.jpg"
     ],
+    "repoUrl": "https://github.com/ScottRyanHoward/riveter",
     "featured": true,
     "startDate": "2025-05-01",
     "status": "in-progress"
@@ -41,6 +42,7 @@
     "images": [
       "/images/monopoly_go.jpg"
     ],
+    "repoUrl": "https://github.com/ScottRyanHoward/monopoly-go-sticker-tracker",
     "featured": true,
     "startDate": "2025-02-01",
     "status": "completed"
@@ -64,6 +66,7 @@
     "images": [
       "/images/kiro.svg"
     ],
+    "repoUrl": "https://github.com/ScottRyanHoward/personal-website",
     "featured": true,
     "startDate": "2025-10-01",
     "status": "completed"
