@@ -1,0 +1,34 @@
+[
+  {
+    "id": "vol-1",
+    "organization": "Rowan University",
+    "organizationLogo": "/images/rowan.jpeg",
+    "role": "Computer Science Industry Advisory Board Member",
+    "location": "Glassboro, NJ",
+    "startDate": "2023-11",
+    "endDate": "Present",
+    "description": "Serve as an industry advisor to the Computer Science department, providing guidance on curriculum development, industry trends, and student career preparation.",
+    "achievements": [
+      "Advise on curriculum alignment with industry needs",
+      "Mentor students and provide career guidance",
+      "Support department initiatives and strategic planning"
+    ],
+    "url": "https://csm.rowan.edu/departments/cs/"
+  },
+  {
+    "id": "vol-2",
+    "organization": "BSides South Jersey",
+    "organizationLogo": "/images/bsides-logo.jpg",
+    "role": "Founder",
+    "location": "South Jersey",
+    "startDate": "2025-09",
+    "endDate": "Present",
+    "description": "Founded and organize BSides South Jersey, a community-driven information security conference that brings together security professionals, researchers, and enthusiasts.",
+    "achievements": [
+      "Established the first BSides conference in South Jersey",
+      "Build and foster a local cybersecurity community",
+      "Organize annual security conferences and events"
+    ],
+    "url": "https://bsidessouthjersey.org"
+  }
+]

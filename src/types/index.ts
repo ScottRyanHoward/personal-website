@@ -103,3 +103,17 @@ export interface Certification {
   credentialId?: string;
   credentialUrl?: string;
 }
+
+// Volunteering
+export interface Volunteering {
+  id: string;
+  organization: string;
+  organizationLogo?: string;
+  role: string;
+  location?: string;
+  startDate: string;
+  endDate?: string | 'Present';
+  description: string;
+  achievements?: string[];
+  url?: string;
+}

@@ -5,4 +5,5 @@ export { Skills } from './Skills';
 export { WorkProjects } from './WorkProjects';
 export { PersonalProjects } from './PersonalProjects';
 export { Education } from './Education';
+export { Volunteering } from './Volunteering';
 export { Contact } from './Contact';

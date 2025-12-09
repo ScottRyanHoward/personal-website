@@ -9,6 +9,7 @@ import type {
   SkillCategory,
   Education as EducationType,
   Certification,
+  Volunteering as VolunteeringType,
 } from '@/types';
 
 // Import data
@@ -16,6 +17,7 @@ import profileData from '@/data/profile.json';
 import experienceData from '@/data/experience.json';
 import skillsData from '@/data/skills.json';
 import educationData from '@/data/education.json';
+import volunteeringData from '@/data/volunteering.json';
 
 // Lazy load below-the-fold sections for better initial page load performance
 // ssr: false ensures components load on client side only, reducing initial bundle
@@ -40,6 +42,11 @@ const PersonalProjects = dynamic(() => import('@/components/sections/PersonalPro
 });
 
 const Education = dynamic(() => import('@/components/sections/Education').then(mod => mod.Education), {
+  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
+  ssr: true,
+});
+
+const Volunteering = dynamic(() => import('@/components/sections/Volunteering').then(mod => mod.Volunteering), {
   loading: () => <div className="min-h-[400px] animate-pulse bg-gray-100 dark:bg-gray-800" />,
   ssr: true,
 });
@@ -70,6 +77,7 @@ export default function Home() {
           degrees={educationData.degrees as EducationType[]} 
           certifications={educationData.certifications as Certification[]} 
         />
+        <Volunteering volunteering={volunteeringData as VolunteeringType[]} />
         <Contact profile={profileData as Profile} />
       </main>
       <Footer socialLinks={profileData.socialLinks} />
