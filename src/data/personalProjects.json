@@ -1,10 +1,10 @@
 [
   {
     "id": "riveter-infrastructure-drift-detection",
-    "title": "Riveter - Infrastructure Drift Detection",
-    "description": "Python CLI tool for defining and detecting custom infrastructure drift in Terraform configurations beyond standard cloud provider capabilities.",
+    "title": "Riveter - Custom Terraform Policy Enforcement",
+    "description": "Python CLI tool for defining custom infrastructure policies for Terraform configurations.",
     "longDescription": "Comprehensive infrastructure drift detection tool built with Python that enables organizations to define custom drift detection rules using YAML. Features direct scanning of Terraform configurations, support for complex rule definitions covering security groups, instance types, storage encryption, and resource tags. Built with a modular architecture including separate modules for Terraform parsing (python-hcl2), rule validation (PyYAML), resource scanning, and rich terminal reporting. Supports filtering by tags and nested attribute checking with detailed violation reporting.",
-    "motivation": "Created to address the limitations of standard cloud provider drift detection by enabling custom rule definitions that enforce organization-specific infrastructure standards. The tool fills the gap between basic Terraform state management and comprehensive compliance checking, allowing teams to codify their infrastructure policies and automatically detect violations during CI/CD processes.",
+    "motivation": "Stop infrastructure security issues before they reach production. Riveter validates Terraform configurations against security and compliance standards in seconds, catching misconfigurations during development and identifying issues at the earliest point in the development process - saving you from costly production incidents and compliance failures.",
     "technologies": [
       "Python",
       "Click",
