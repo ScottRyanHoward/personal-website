@@ -1,5 +1,17 @@
 [
   {
+    "id": "work-proj-0",
+    "title": "Value Stream Map & CI/CD Workflow Migration for Major Car Manufacturer",
+    "description": "Delivery Lead for Value Stream Mapping assessment followed by workflow migration from Jenkins to GitHub Actions and foundational OTEL implementation for a Lighthouse team.",
+    "longDescription": "Served as Delivery Lead for a comprehensive Value Stream Mapping assessment and subsequent CI/CD workflow migration for a major car manufacturer. Led the transition from Jenkins to GitHub Actions while implementing foundational OpenTelemetry (OTEL) observability for a Lighthouse team. The project involved analyzing existing workflows, identifying bottlenecks, and designing modern CI/CD pipelines that improved deployment efficiency and system observability.",
+    "technologies": ["GitHub", "GitHub Actions", "OpenTelemetry", "Jenkins", "AWS"],
+    "companyId": "liatrio",
+    "experienceId": "exp-1",
+    "images": ["/images/car.jpg"],
+    "featured": true,
+    "startDate": "2024-02"
+  },
+  {
     "id": "work-proj-1",
     "title": "DevEx Platform for Major Retail Company",
     "description": "Enterprise developer experience platform automating infrastructure and application configurations using Terraform, Backstage, and AI tooling.",

@@ -25,7 +25,7 @@
       "Spearheaded initiative for tooling to help delivery leaders track employee sentiment"
     ],
     "technologies": ["Terraform", "Terragrunt", "Azure", "GitHub", "GitLab", "Docker", "Python", "Backstage", "SAML", "OAuth", "OpenID"],
-    "relatedProjects": ["work-proj-1", "work-proj-2", "work-proj-3"]
+    "relatedProjects": ["work-proj-0", "work-proj-1", "work-proj-2", "work-proj-3"]
   },
   {
     "id": "exp-2",
