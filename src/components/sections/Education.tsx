@@ -34,7 +34,7 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
   return (
     <section
       id="education"
-      className="bg-gradient-to-br from-blue-50 to-slate-50 px-4 py-20"
+      className="bg-gradient-to-br from-primary-50 to-slate-50 px-4 py-20"
       aria-label="Education and certifications section"
     >
       <div className="container mx-auto max-w-5xl">
@@ -68,7 +68,7 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
 
                     <div className="flex-1">
                       {/* Date range */}
-                      <time className="mb-2 block text-sm font-semibold text-blue-600 md:text-base">
+                      <time className="mb-2 block text-sm font-semibold text-primary-600 md:text-base">
                         {formatDateRange(degree.startDate, degree.endDate)}
                       </time>
 
@@ -174,7 +174,7 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
                       href={cert.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                       aria-label={`View ${cert.name} credential`}
                     >
                       <span>View Credential</span>

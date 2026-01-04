@@ -79,6 +79,6 @@ describe('Header', () => {
     render(<Header name="Scott Ryan Howard" />);
     
     const nameButton = screen.getByRole('button', { name: /Scott Ryan Howard/i });
-    expect(nameButton).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
+    expect(nameButton).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-primary-500');
   });
 });

@@ -24,7 +24,7 @@ export const Contact: React.FC<ContactProps> = ({
   return (
     <section
       id="contact"
-      className="bg-gradient-to-br from-blue-900 to-blue-800 px-4 py-20"
+      className="bg-gradient-to-br from-primary-900 to-primary-800 px-4 py-20"
       aria-label="Contact section"
     >
       <div className="container mx-auto max-w-4xl">
@@ -34,7 +34,7 @@ export const Contact: React.FC<ContactProps> = ({
         </h2>
 
         {/* Connect Section */}
-        <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-lg border border-blue-100">
+        <div className="mb-12 rounded-lg bg-white p-6 sm:p-8 shadow-lg border border-primary-100">
           <h3 className="mb-6 text-center text-lg sm:text-xl font-semibold text-slate-900">
             Get In Touch
           </h3>
@@ -42,9 +42,9 @@ export const Contact: React.FC<ContactProps> = ({
           {/* Email Contact */}
           <div className="mb-6 text-center">
             <div className="mb-3 flex items-center justify-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-50">
                 <svg
-                  className="h-6 w-6 text-blue-700"
+                  className="h-6 w-6 text-primary-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -61,7 +61,7 @@ export const Contact: React.FC<ContactProps> = ({
             </div>
             <a
               href={`mailto:${profile.email}`}
-              className="inline-block text-base sm:text-lg text-blue-700 hover:text-blue-800 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded break-all font-medium"
+              className="inline-block text-base sm:text-lg text-primary-700 hover:text-primary-800 hover:underline focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded break-all font-medium"
               aria-label={`Send email to ${profile.email}`}
             >
               {profile.email}
@@ -83,7 +83,7 @@ export const Contact: React.FC<ContactProps> = ({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 sm:px-6 sm:py-3 transition-all hover:border-blue-600 hover:bg-blue-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 sm:px-6 sm:py-3 transition-all hover:border-primary-600 hover:bg-primary-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                 aria-label={`Visit ${link.platform} profile (opens in new tab)`}
               >
                 {getSocialIcon(link.icon)}

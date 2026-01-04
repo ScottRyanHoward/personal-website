@@ -35,16 +35,16 @@ describe('SkillBadge Component', () => {
   });
 
   describe('Category-Based Color Coding', () => {
-    it('applies blue color for programming languages', () => {
+    it('applies olive green color for programming languages', () => {
       render(<SkillBadge name="JavaScript" category="Programming Languages" />);
       const badge = screen.getByRole('listitem');
-      expect(badge).toHaveClass('bg-blue-100', 'text-blue-800');
+      expect(badge).toHaveClass('bg-primary-100', 'text-primary-800');
     });
 
-    it('applies blue color for languages category', () => {
+    it('applies olive green color for languages category', () => {
       render(<SkillBadge name="Python" category="Languages" />);
       const badge = screen.getByRole('listitem');
-      expect(badge).toHaveClass('bg-blue-100', 'text-blue-800');
+      expect(badge).toHaveClass('bg-primary-100', 'text-primary-800');
     });
 
     it('applies green color for frameworks', () => {
@@ -104,7 +104,7 @@ describe('SkillBadge Component', () => {
     it('handles category names with spaces', () => {
       render(<SkillBadge name="Java" category="Programming Languages" />);
       const badge = screen.getByRole('listitem');
-      expect(badge).toHaveClass('bg-blue-100', 'text-blue-800');
+      expect(badge).toHaveClass('bg-primary-100', 'text-primary-800');
     });
   });
 
@@ -150,7 +150,7 @@ describe('SkillBadge Component', () => {
     it('has hover color classes for programming languages', () => {
       render(<SkillBadge name="TypeScript" category="Languages" />);
       const badge = screen.getByRole('listitem');
-      expect(badge).toHaveClass('hover:bg-blue-200');
+      expect(badge).toHaveClass('hover:bg-primary-200');
     });
 
     it('has hover color classes for frameworks', () => {

@@ -28,7 +28,7 @@ export const WorkProjects: React.FC<WorkProjectsProps> = ({ onViewExperience }) 
   return (
     <section
       id="work-projects"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-slate-50"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-slate-50"
       aria-labelledby="work-projects-heading"
     >
       <div className="max-w-7xl mx-auto">

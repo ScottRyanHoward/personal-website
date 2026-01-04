@@ -62,7 +62,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {project.technologies.map((tech, index) => (
               <span
                 key={index}
-                className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full"
+                className="inline-block px-3 py-1 text-xs font-medium bg-primary-100 text-primary-800 rounded-full"
               >
                 {tech}
               </span>
@@ -77,7 +77,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
               aria-label={`View live demo of ${project.title}`}
             >
               <svg
@@ -123,7 +123,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {onViewExperience && project.experienceId && (
             <button
               onClick={handleViewExperience}
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
               aria-label={`View experience at ${experienceCompany}`}
             >
               <svg

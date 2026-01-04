@@ -82,10 +82,10 @@ const Navigation: React.FC = () => {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 onKeyDown={(e) => handleKeyDown(e, link.href)}
-                className={`text-sm lg:text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1 ${
+                className={`text-sm lg:text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded px-2 py-1 ${
                   isActive
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
+                    ? 'text-primary-600 border-b-2 border-primary-600'
+                    : 'text-gray-700 hover:text-primary-600'
                 }`}
                 aria-current={isActive ? 'page' : undefined}
               >
@@ -99,7 +99,7 @@ const Navigation: React.FC = () => {
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMenu}
-        className="md:hidden p-2 text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+        className="md:hidden p-2 text-gray-700 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
@@ -137,10 +137,10 @@ const Navigation: React.FC = () => {
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     onKeyDown={(e) => handleKeyDown(e, link.href)}
-                    className={`block px-6 py-3 text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset ${
+                    className={`block px-6 py-3 text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset ${
                       isActive
-                        ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600'
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                        ? 'text-primary-600 bg-primary-50 border-l-4 border-primary-600'
+                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >

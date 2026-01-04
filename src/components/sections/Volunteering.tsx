@@ -60,7 +60,7 @@ export const Volunteering: React.FC<VolunteeringProps> = ({ volunteering }) => {
 
                 <div className="flex-1">
                   {/* Date range */}
-                  <time className="mb-2 block text-sm font-semibold text-blue-600 md:text-base">
+                  <time className="mb-2 block text-sm font-semibold text-primary-600 md:text-base">
                     {formatDateRange(item.startDate, item.endDate)}
                   </time>
 
@@ -76,7 +76,7 @@ export const Volunteering: React.FC<VolunteeringProps> = ({ volunteering }) => {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-blue-600 transition-colors hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        className="font-medium text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                       >
                         {item.organization}
                       </a>

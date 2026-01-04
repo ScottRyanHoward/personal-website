@@ -50,7 +50,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
               {/* Timeline marker and line */}
               <div className="flex flex-col items-center">
                 {/* Marker circle */}
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 shadow-lg md:h-14 md:w-14">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-600 shadow-lg md:h-14 md:w-14">
                   <div className="h-4 w-4 rounded-full bg-white md:h-5 md:w-5" />
                 </div>
                 {/* Connecting line */}
@@ -62,7 +62,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
               {/* Content */}
               <div className="flex-1 pb-4">
                 {/* Date range */}
-                <time className="mb-2 block text-sm font-semibold text-blue-600 md:text-base">
+                <time className="mb-2 block text-sm font-semibold text-primary-600 md:text-base">
                   {formatDateRange(exp.startDate, exp.endDate)}
                 </time>
 
@@ -112,7 +112,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
                           key={idx}
                           className="flex gap-2 text-sm text-gray-700 md:text-base"
                         >
-                          <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
+                          <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary-600" />
                           <span>{responsibility}</span>
                         </li>
                       ))}
@@ -150,7 +150,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
                       {exp.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700"
+                          className="rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700"
                         >
                           {tech}
                         </span>

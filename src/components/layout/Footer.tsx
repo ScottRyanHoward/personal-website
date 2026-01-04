@@ -75,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-1"
+                    className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-1"
                   >
                     {link.label}
                   </a>
@@ -94,7 +94,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded p-1"
+                  className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded p-1"
                   aria-label={`Visit ${link.platform} profile`}
                 >
                   {getSocialIcon(link.platform)}
@@ -107,7 +107,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
           <div className="flex flex-col items-start sm:col-span-2 md:col-span-1 md:items-end">
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 bg-blue-600 text-white text-sm sm:text-base rounded hover:bg-blue-700 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+              className="inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 bg-primary-600 text-white text-sm sm:text-base rounded hover:bg-primary-700 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               aria-label="Back to top"
             >
               <svg

@@ -52,6 +52,12 @@ vi.mock('@/components/sections/Education', () => ({
   ),
 }));
 
+vi.mock('@/components/sections/Volunteering', () => ({
+  Volunteering: ({ volunteering }: any) => (
+    <section id="volunteering" data-testid="volunteering">{volunteering.length} volunteering</section>
+  ),
+}));
+
 vi.mock('@/components/sections/Contact', () => ({
   Contact: ({ profile }: any) => <section id="contact" data-testid="contact">Contact {profile.name}</section>,
 }));
@@ -90,6 +96,7 @@ describe('Home Page Integration', () => {
       'work-projects',
       'personal-projects',
       'education',
+      'volunteering',
       'contact',
     ];
 
@@ -115,6 +122,7 @@ describe('Home Page Integration', () => {
       'work-projects',
       'personal-projects',
       'education',
+      'volunteering',
       'contact',
     ];
 
@@ -200,7 +208,7 @@ describe('Home Page Integration', () => {
 
     // All sections should be within main
     const sectionsInMain = main?.querySelectorAll('section');
-    expect(sectionsInMain?.length).toBe(8); // 8 sections total
+    expect(sectionsInMain?.length).toBe(9); // 9 sections total
   });
 
   it('includes structured data for SEO', () => {

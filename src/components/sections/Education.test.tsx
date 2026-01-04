@@ -331,7 +331,7 @@ describe('Education', () => {
       );
 
       const section = container.querySelector('section');
-      expect(section).toHaveClass('bg-gradient-to-br', 'from-blue-50', 'to-slate-50', 'px-4', 'py-20');
+      expect(section).toHaveClass('bg-gradient-to-br', 'from-primary-50', 'to-slate-50', 'px-4', 'py-20');
     });
 
     it('renders certifications in grid layout', () => {

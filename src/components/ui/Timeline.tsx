@@ -27,7 +27,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
       {/* Date marker and connecting line */}
       <div className="flex flex-col items-center">
         {/* Date marker circle */}
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white shadow-md md:h-12 md:w-12">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-md md:h-12 md:w-12">
           <div className="h-3 w-3 rounded-full bg-white md:h-4 md:w-4" />
         </div>
         {/* Connecting line */}

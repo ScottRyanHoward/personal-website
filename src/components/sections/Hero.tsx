@@ -51,13 +51,13 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 px-4 py-20 pt-24 md:pt-28"
+      className="relative flex min-h-screen items-center justify-center bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 px-4 py-20 pt-24 md:pt-28"
       aria-label="Hero section"
     >
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center text-center">
           {/* Profile Image */}
-          <div className="relative mb-6 sm:mb-8 h-40 w-40 sm:h-48 sm:w-48 overflow-hidden rounded-full border-4 border-blue-300 shadow-2xl md:h-64 md:w-64 transition-transform hover:scale-105">
+          <div className="relative mb-6 sm:mb-8 h-40 w-40 sm:h-48 sm:w-48 overflow-hidden rounded-full border-4 border-primary-300 shadow-2xl md:h-64 md:w-64 transition-transform hover:scale-105">
             <OptimizedImage
               src={profile.profileImage}
               alt={`${profile.name} profile picture`}
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({
           <h1 className="mb-3 sm:mb-4 text-3xl sm:text-4xl font-bold text-white md:text-5xl lg:text-6xl px-4">
             {profile.name}
           </h1>
-          <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl font-medium text-blue-100 md:text-3xl px-4">
+          <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl font-medium text-primary-100 md:text-3xl px-4">
             {profile.title}
           </h2>
 
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({
               variant="primary"
               onClick={handleViewWork}
               aria-label="View my work and projects"
-              className="w-full sm:w-auto bg-blue-600 text-white hover:bg-blue-500 focus:ring-white"
+              className="w-full sm:w-auto bg-primary-600 text-white hover:bg-primary-500 focus:ring-white"
             >
               View Work
             </Button>
@@ -92,15 +92,15 @@ export const Hero: React.FC<HeroProps> = ({
               variant="outline"
               onClick={handleDownloadResume}
               aria-label="Download resume as PDF"
-              className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-blue-900 focus:ring-white"
+              className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary-900 focus:ring-white"
             >
               Download Resume
             </Button>
             <Button
-              variant="secondary"
+              variant="primary"
               onClick={handleContact}
               aria-label="Go to contact section"
-              className="w-full sm:w-auto bg-blue-700 text-white hover:bg-blue-600 focus:ring-white"
+              className="w-full sm:w-auto bg-primary-600 text-white hover:bg-primary-500 focus:ring-white"
             >
               Contact
             </Button>
@@ -111,11 +111,11 @@ export const Hero: React.FC<HeroProps> = ({
       {/* Scroll Indicator */}
       <button
         onClick={handleScrollDown}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         aria-label="Scroll down to next section"
       >
         <svg
-          className="h-8 w-8 text-blue-100"
+          className="h-8 w-8 text-primary-100"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

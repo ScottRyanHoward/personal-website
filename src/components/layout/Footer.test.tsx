@@ -124,21 +124,21 @@ describe('Footer', () => {
     render(<Footer socialLinks={mockSocialLinks} />);
     
     const aboutLink = screen.getByText('About');
-    expect(aboutLink).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
+    expect(aboutLink).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-primary-500');
   });
 
   it('has proper focus styles on social links', () => {
     render(<Footer socialLinks={mockSocialLinks} />);
     
     const linkedInLink = screen.getByLabelText('Visit LinkedIn profile');
-    expect(linkedInLink).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
+    expect(linkedInLink).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-primary-500');
   });
 
   it('has proper focus styles on back to top button', () => {
     render(<Footer socialLinks={mockSocialLinks} />);
     
     const backToTopButton = screen.getByRole('button', { name: 'Back to top' });
-    expect(backToTopButton).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
+    expect(backToTopButton).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-primary-500');
   });
 
   it('renders with empty social links array', () => {

@@ -9,7 +9,7 @@
   --card-background: #ffffff;
   --card-border: #e5e7eb;
   --muted: #6b7280;
-  --accent: #3b82f6;
+  --accent: #7a9d52;
   
   /* Spacing */
   --section-padding: 4rem;
@@ -54,7 +54,7 @@ body {
 
 /* Focus styles for accessibility - WCAG 2.1 compliant */
 *:focus-visible {
-  outline: 3px solid #2563eb; /* Blue-600 for high contrast */
+  outline: 3px solid #7a9d52; /* Primary-600 for high contrast */
   outline-offset: 2px;
   transition: outline-offset 0.1s ease;
 }
@@ -65,7 +65,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid #2563eb;
+  outline: 3px solid #7a9d52;
   outline-offset: 2px;
 }
 

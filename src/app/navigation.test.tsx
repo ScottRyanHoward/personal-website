@@ -34,6 +34,10 @@ vi.mock('@/components/sections/Education', () => ({
   Education: () => <section id="education">Education</section>,
 }));
 
+vi.mock('@/components/sections/Volunteering', () => ({
+  Volunteering: () => <section id="volunteering">Volunteering</section>,
+}));
+
 vi.mock('@/components/sections/Contact', () => ({
   Contact: () => <section id="contact">Contact</section>,
 }));
@@ -47,6 +51,11 @@ vi.mock('@/components/layout', () => ({
 // Mock StructuredData component
 vi.mock('@/components/StructuredData', () => ({
   default: () => <script type="application/ld+json">{JSON.stringify({name: "Test"})}</script>,
+}));
+
+// Mock SkipToContent component
+vi.mock('@/components/layout/SkipToContent', () => ({
+  default: () => <a href="#main-content">Skip to content</a>,
 }));
 
 // Mock SkipToContent component
@@ -114,6 +123,7 @@ describe('Page Navigation', () => {
       'work-projects',
       'personal-projects',
       'education',
+      'volunteering',
       'contact',
     ]);
   });
@@ -128,7 +138,7 @@ describe('Page Navigation', () => {
     const sectionsInMain = main?.querySelectorAll('section');
 
     expect(sectionsInMain?.length).toBe(allSections.length);
-    expect(sectionsInMain?.length).toBe(8);
+    expect(sectionsInMain?.length).toBe(9);
   });
 
   it('main element has proper spacing class', () => {

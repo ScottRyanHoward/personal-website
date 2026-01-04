@@ -7,8 +7,8 @@ export interface SkillBadgeProps {
 }
 
 const categoryColors: Record<string, string> = {
-  'programming-languages': 'bg-blue-100 text-blue-800 hover:bg-blue-200',
-  languages: 'bg-blue-100 text-blue-800 hover:bg-blue-200',
+  'programming-languages': 'bg-primary-100 text-primary-800 hover:bg-primary-200',
+  languages: 'bg-primary-100 text-primary-800 hover:bg-primary-200',
   frameworks: 'bg-green-100 text-green-800 hover:bg-green-200',
   tools: 'bg-purple-100 text-purple-800 hover:bg-purple-200',
   databases: 'bg-orange-100 text-orange-800 hover:bg-orange-200',

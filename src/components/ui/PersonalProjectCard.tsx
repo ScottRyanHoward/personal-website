@@ -116,7 +116,7 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({
         </p>
 
         {/* Motivation */}
-        <div className="mb-4 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+        <div className="mb-4 p-3 bg-primary-50 rounded-lg border-l-4 border-primary-400">
           <p className="text-sm text-gray-700 italic">
             <span className="font-semibold text-gray-900 not-italic">Why: </span>
             {project.motivation}

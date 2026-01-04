@@ -137,7 +137,7 @@ describe('Navigation', () => {
     render(<Navigation />);
     
     const aboutLink = screen.getAllByText('About')[0];
-    expect(aboutLink).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
+    expect(aboutLink).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-primary-500');
   });
 
   it('has proper ARIA attributes on menu button', () => {
@@ -194,7 +194,7 @@ describe('Navigation', () => {
     const activeLinks = links.filter(link => link.getAttribute('aria-current') === 'page');
     
     if (activeLinks.length > 0) {
-      expect(activeLinks[0]).toHaveClass('text-blue-600');
+      expect(activeLinks[0]).toHaveClass('text-primary-600');
     }
     
     document.body.removeChild(mockElement);

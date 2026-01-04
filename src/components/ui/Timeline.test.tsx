@@ -131,8 +131,8 @@ describe('Timeline Component', () => {
   describe('Visual Indicators', () => {
     it('renders date markers for each item', () => {
       const { container } = render(<Timeline items={mockItems} />);
-      // Check for marker circles (blue background)
-      const markers = container.querySelectorAll('.bg-blue-600');
+      // Check for marker circles (olive green background)
+      const markers = container.querySelectorAll('.bg-primary-600');
       expect(markers.length).toBeGreaterThan(0);
     });
 
@@ -226,7 +226,7 @@ describe('TimelineItem Component', () => {
         <TimelineItem date="Jan 2023" title="Test Title" />
       );
 
-      const marker = container.querySelector('.bg-blue-600');
+      const marker = container.querySelector('.bg-primary-600');
       expect(marker).toHaveClass('h-10', 'w-10', 'md:h-12', 'md:w-12');
     });
 

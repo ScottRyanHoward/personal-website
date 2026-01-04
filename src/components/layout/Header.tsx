@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
           {/* Logo/Name */}
           <button
             onClick={scrollToTop}
-            className="text-xl md:text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+            className="text-xl md:text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
             aria-label={`${name} - Go to top`}
           >
             {name}
