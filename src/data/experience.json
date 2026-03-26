@@ -1,12 +1,26 @@
 [
   {
+    "id": "exp-0",
+    "company": "Liatrio",
+    "companyLogo": "/images/liatrio.png",
+    "position": "Lead Delivery Consultant",
+    "location": "Chico, CA (Remote)",
+    "startDate": "2026-01",
+    "endDate": "Present",
+    "description": "",
+    "responsibilities": [],
+    "achievements": [],
+    "technologies": [],
+    "relatedProjects": []
+  },
+  {
     "id": "exp-1",
     "company": "Liatrio",
     "companyLogo": "/images/liatrio.png",
     "position": "Senior DevOps Engineer I & II",
     "location": "Chico, CA (Remote)",
     "startDate": "2023-02",
-    "endDate": "Present",
+    "endDate": "2026-01",
     "description": "Leading DevOps initiatives for major enterprise clients, building DevEx platforms, and mentoring engineers while driving cultural excellence.",
     "responsibilities": [
       "Co-lead for a team of six engineers building a DevEx platform for a major retail company using Terraform, Backstage, GitHub, and AI tooling",
