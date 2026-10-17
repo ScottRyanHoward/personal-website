@@ -1,0 +1,37 @@
+
+ RUN  v3.2.4 <repo>
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ src/lib/content.test.ts > content: profile.json > has all required fields 1ms
+ ✓ src/lib/content.test.ts > content: profile.json > references images that exist 0ms
+ ✓ src/lib/content.test.ts > content: experience.json > has all required fields 0ms
+ ✓ src/lib/content.test.ts > content: experience.json > has valid dates 0ms
+ ✓ src/lib/content.test.ts > content: experience.json > has unique ids 0ms
+ ✓ src/lib/content.test.ts > content: experience.json > links relatedProjects to existing work projects 0ms
+ ✓ src/lib/content.test.ts > content: experience.json > references images that exist 0ms
+ ✓ src/lib/content.test.ts > content: skills.json > has all required fields 0ms
+ ✓ src/lib/content.test.ts > content: skills.json > uses allowed proficiency values 0ms
+ ✓ src/lib/content.test.ts > content: education.json > has all required fields 0ms
+ ✓ src/lib/content.test.ts > content: education.json > has valid dates 0ms
+ ✓ src/lib/content.test.ts > content: education.json > has unique ids 0ms
+ ✓ src/lib/content.test.ts > content: education.json > references images that exist 0ms
+ ✓ src/lib/content.test.ts > content: workProjects.json > has all required fields 0ms
+ ✓ src/lib/content.test.ts > content: workProjects.json > has valid dates 0ms
+ ✓ src/lib/content.test.ts > content: workProjects.json > has unique ids 0ms
+ ✓ src/lib/content.test.ts > content: workProjects.json > links experienceId to an existing experience 0ms
+ ✓ src/lib/content.test.ts > content: workProjects.json > references images that exist 0ms
+ ✓ src/lib/content.test.ts > content: personalProjects.json > has all required fields 0ms
+ ✓ src/lib/content.test.ts > content: personalProjects.json > uses allowed status values 0ms
+ ✓ src/lib/content.test.ts > content: personalProjects.json > has valid dates 0ms
+ ✓ src/lib/content.test.ts > content: personalProjects.json > has unique ids 0ms
+ ✓ src/lib/content.test.ts > content: personalProjects.json > references images that exist 0ms
+ ✓ src/lib/content.test.ts > content: volunteering.json > has all required fields 0ms
+ ✓ src/lib/content.test.ts > content: volunteering.json > has valid dates 0ms
+ ✓ src/lib/content.test.ts > content: volunteering.json > has unique ids 0ms
+ ✓ src/lib/content.test.ts > content: volunteering.json > references images that exist 0ms
+
+ Test Files  1 passed (1)
+      Tests  27 passed (27)
+   Start at  12:25:50
+   Duration  995ms (transform 54ms, setup 64ms, collect 40ms, tests 4ms, environment 392ms, prepare 62ms)
+

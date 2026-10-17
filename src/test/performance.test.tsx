@@ -17,11 +17,14 @@ describe('Performance Optimizations', () => {
       expect(config).toContain('compress: true');
     });
 
-    it('should have SWC minification enabled', () => {
+    it('should not set deprecated or unused config options', () => {
       const configPath = join(process.cwd(), 'next.config.js');
       const config = readFileSync(configPath, 'utf-8');
-      
-      expect(config).toContain('swcMinify: true');
+
+      // SWC minification is the default; the swcMinify flag was removed in Next 15
+      expect(config).not.toContain('swcMinify');
+      // react-icons is not a dependency
+      expect(config).not.toContain('react-icons');
     });
 
     it('should have caching headers configured', () => {
@@ -95,8 +98,11 @@ describe('Performance Optimizations', () => {
       const pagePath = join(process.cwd(), 'src/app/page.tsx');
       const page = readFileSync(pagePath, 'utf-8');
       
-      expect(page).toContain('loading:');
-      expect(page).toContain('animate-pulse');
+      // Every dynamic() section uses the shared placeholder while its chunk loads
+      const dynamicCount = (page.match(/dynamic\(\(\) => import/g) || []).length;
+      const placeholderCount = (page.match(/loading: \(\) => <SectionPlaceholder \/>/g) || []).length;
+      expect(dynamicCount).toBeGreaterThan(0);
+      expect(placeholderCount).toBe(dynamicCount);
     });
 
     it('should lazy load Experience section', () => {
@@ -200,19 +206,6 @@ describe('Performance Optimizations', () => {
       const pkg = JSON.parse(readFileSync(packagePath, 'utf-8'));
       
       expect(pkg.devDependencies).toHaveProperty('@next/bundle-analyzer');
-    });
-  });
-
-  describe('Documentation', () => {
-    it('should have performance documentation', () => {
-      const perfDocPath = join(process.cwd(), 'PERFORMANCE.md');
-      const perfDoc = readFileSync(perfDocPath, 'utf-8');
-      
-      expect(perfDoc).toContain('Performance Optimization');
-      expect(perfDoc).toContain('Code Splitting');
-      expect(perfDoc).toContain('Font Optimization');
-      expect(perfDoc).toContain('Caching Headers');
-      expect(perfDoc).toContain('Web Vitals');
     });
   });
 });

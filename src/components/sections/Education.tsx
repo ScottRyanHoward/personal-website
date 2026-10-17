@@ -1,20 +1,12 @@
 import React from 'react';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { formatDateRange, formatMonthYear } from '@/lib/dates';
 import { Education as EducationType, Certification } from '@/types';
 
 export interface EducationProps {
   degrees: EducationType[];
   certifications: Certification[];
 }
-
-const formatDate = (dateString: string): string => {
-  const [year, month] = dateString.split('-');
-  const date = new Date(parseInt(year), parseInt(month) - 1);
-  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-};
-
-const formatDateRange = (startDate: string, endDate: string): string => {
-  return `${formatDate(startDate)} - ${formatDate(endDate)}`;
-};
 
 export const Education: React.FC<EducationProps> = ({ degrees, certifications }) => {
   // Sort degrees by end date (most recent first)
@@ -55,13 +47,17 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
                   aria-label={`${degree.degree} in ${degree.field} from ${degree.institution}`}
                 >
                   <div className="flex gap-6">
-                    {/* Institution Logo */}
+                    {/* Institution Logo (small, so served as-is without optimization or blur placeholder) */}
                     {degree.institutionLogo && (
-                      <div className="flex-shrink-0">
-                        <img
+                      <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg md:h-20 md:w-20">
+                        <OptimizedImage
                           src={degree.institutionLogo}
                           alt={`${degree.institution} logo`}
-                          className="h-16 w-16 rounded-lg object-contain md:h-20 md:w-20"
+                          fill
+                          className="object-contain"
+                          unoptimized
+                          placeholder="empty"
+                          sizes="80px"
                         />
                       </div>
                     )}
@@ -149,13 +145,13 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
                   {/* Issue date */}
                   <div className="mb-3 text-sm text-gray-600">
                     <time>
-                      Issued: {formatDate(cert.issueDate)}
+                      Issued: {formatMonthYear(cert.issueDate)}
                     </time>
                     {cert.expiryDate && (
                       <>
                         <br />
                         <time>
-                          Expires: {formatDate(cert.expiryDate)}
+                          Expires: {formatMonthYear(cert.expiryDate)}
                         </time>
                       </>
                     )}

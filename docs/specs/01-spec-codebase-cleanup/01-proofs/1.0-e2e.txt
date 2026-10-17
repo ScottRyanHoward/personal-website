@@ -1,0 +1,512 @@
+[WebServer] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+
+[WebServer] Browserslist: browsers data (caniuse-lite) is 12 months old. Please run:
+[WebServer]   npx update-browserslist-db@latest
+[WebServer]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+
+Running 90 tests using 5 workers
+
+[1/90] [chromium] › e2e/external-links.spec.ts:93:7 › External Links › should open email link with mailto
+[2/90] [chromium] › e2e/external-links.spec.ts:80:7 › External Links › should have accessible labels for external links
+[3/90] [chromium] › e2e/external-links.spec.ts:108:7 › External Links › should open phone link with tel protocol
+[4/90] [chromium] › e2e/external-links.spec.ts:65:7 › External Links › should have proper security attributes on external links
+[5/90] [chromium] › e2e/external-links.spec.ts:30:7 › External Links › should open social media links in new tab
+[6/90] [chromium] › e2e/external-links.spec.ts:127:7 › External Links › should handle external project links
+[7/90] [chromium] › e2e/external-links.spec.ts:148:7 › External Links › should handle external personal project links
+[8/90] [chromium] › e2e/external-links.spec.ts:169:7 › External Links › should not navigate away from site when clicking internal links
+[9/90] [chromium] › e2e/full-page-flow.spec.ts:4:7 › Full Page Navigation Flow › should complete full user journey through the website
+[10/90] [chromium] › e2e/full-page-flow.spec.ts:68:7 › Full Page Navigation Flow › should handle complete mobile user journey
+[11/90] [chromium] › e2e/full-page-flow.spec.ts:120:7 › Full Page Navigation Flow › should maintain state during complex navigation
+[12/90] [chromium] › e2e/full-page-flow.spec.ts:148:7 › Full Page Navigation Flow › should handle keyboard-only navigation flow
+[13/90] [chromium] › e2e/full-page-flow.spec.ts:173:7 › Full Page Navigation Flow › should display all critical content sections
+[14/90] [chromium] › e2e/full-page-flow.spec.ts:208:7 › Full Page Navigation Flow › should handle browser back/forward navigation
+[15/90] [chromium] › e2e/mobile-menu.spec.ts:11:7 › Mobile Menu › should display hamburger menu button on mobile
+[16/90] [chromium] › e2e/mobile-menu.spec.ts:16:7 › Mobile Menu › should hide desktop navigation on mobile
+[17/90] [chromium] › e2e/mobile-menu.spec.ts:22:7 › Mobile Menu › should open mobile menu when hamburger is clicked
+[18/90] [chromium] › e2e/mobile-menu.spec.ts:37:7 › Mobile Menu › should display all navigation links in mobile menu
+[19/90] [chromium] › e2e/mobile-menu.spec.ts:57:7 › Mobile Menu › should close mobile menu when a link is clicked
+[20/90] [chromium] › e2e/mobile-menu.spec.ts:73:7 › Mobile Menu › should close mobile menu when close button is clicked
+[21/90] [chromium] › e2e/mobile-menu.spec.ts:89:7 › Mobile Menu › should navigate to correct section from mobile menu
+[22/90] [chromium] › e2e/mobile-menu.spec.ts:103:7 › Mobile Menu › should highlight active section in mobile menu
+[23/90] [chromium] › e2e/mobile-menu.spec.ts:119:7 › Mobile Menu › should be keyboard accessible
+[24/90] [chromium] › e2e/mobile-menu.spec.ts:143:7 › Mobile Menu › should maintain menu state during scroll
+  1) [chromium] › e2e/full-page-flow.spec.ts:173:7 › Full Page Navigation Flow › should display all critical content sections 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: /Scott Ryan Howard/i })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: /Scott Ryan Howard/i })
+
+
+      176 |
+      177 |     // Verify Hero content
+    > 178 |     await expect(page.getByRole('heading', { name: /Scott Ryan Howard/i })).toBeVisible();
+          |                                                                             ^
+      179 |     
+      180 |     // Check for Software Engineer text (appears multiple times on page)
+      181 |     const softwareEngineerText = page.getByText(/Software Engineer/i).first();
+        at e2e/full-page-flow.spec.ts:178:77
+
+    Error Context: test-results/full-page-flow-Full-Page-N-c6d89-l-critical-content-sections-chromium/error-context.md
+
+
+[25/90] [chromium] › e2e/navigation.spec.ts:13:7 › Page Navigation › should display all main sections
+[26/90] [chromium] › e2e/navigation.spec.ts:8:7 › Page Navigation › should load the homepage successfully
+[27/90] [chromium] › e2e/navigation.spec.ts:30:7 › Page Navigation › should navigate to all sections via desktop navigation
+[28/90] [chromium] › e2e/navigation.spec.ts:62:7 › Page Navigation › should highlight active section in navigation
+[29/90] [chromium] › e2e/navigation.spec.ts:83:7 › Page Navigation › should scroll to top when clicking site name
+[30/90] [chromium] › e2e/navigation.spec.ts:120:7 › Page Navigation › should have keyboard accessible navigation
+[31/90] [chromium] › e2e/resume-download.spec.ts:11:7 › Resume Download › should display download resume button
+[32/90] [chromium] › e2e/resume-download.spec.ts:22:7 › Resume Download › should have accessible label for download button
+[33/90] [chromium] › e2e/resume-download.spec.ts:33:7 › Resume Download › should display download icon on button
+[34/90] [chromium] › e2e/resume-download.spec.ts:45:7 › Resume Download › should trigger download when button is clicked
+[35/90] [chromium] › e2e/resume-download.spec.ts:73:7 › Resume Download › should be keyboard accessible
+[36/90] [chromium] › e2e/resume-download.spec.ts:104:7 › Resume Download › should have visible focus indicator on download button
+[37/90] [chromium] › e2e/resume-download.spec.ts:119:7 › Resume Download › should display download section with proper heading
+[38/90] [chromium] › e2e/resume-download.spec.ts:130:7 › Resume Download › should display descriptive text about resume download
+[39/90] [chromium] › e2e/resume-download.spec.ts:141:7 › Resume Download › should work on mobile viewport
+[40/90] [chromium] › e2e/resume-download.spec.ts:174:7 › Resume Download › should be visible in Hero section CTA
+[41/90] [chromium] › e2e/smooth-scrolling.spec.ts:9:7 › Smooth Scrolling › should smoothly scroll between sections
+[42/90] [chromium] › e2e/smooth-scrolling.spec.ts:31:7 › Smooth Scrolling › should scroll smoothly when using skip to content link
+[43/90] [chromium] › e2e/smooth-scrolling.spec.ts:44:7 › Smooth Scrolling › should maintain smooth scroll behavior across multiple sections
+[44/90] [chromium] › e2e/smooth-scrolling.spec.ts:58:7 › Smooth Scrolling › should handle rapid navigation clicks gracefully
+[45/90] [chromium] › e2e/smooth-scrolling.spec.ts:75:7 › Smooth Scrolling › should scroll to section with proper offset for fixed header
+[46/90] [mobile-chromium] › e2e/external-links.spec.ts:30:7 › External Links › should open social media links in new tab
+  2) [chromium] › e2e/resume-download.spec.ts:33:7 › Resume Download › should display download icon on button 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('#contact').getByRole('button', { name: /Download resume/i }).locator('svg')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('#contact').getByRole('button', { name: /Download resume/i }).locator('svg')
+
+
+      40 |     const downloadButton = contactSection.getByRole('button', { name: /Download resume/i });
+      41 |     const icon = downloadButton.locator('svg');
+    > 42 |     await expect(icon).toBeVisible();
+         |                        ^
+      43 |   });
+      44 |
+      45 |   test('should trigger download when button is clicked', async ({ page, context }) => {
+        at e2e/resume-download.spec.ts:42:24
+
+    Error Context: test-results/resume-download-Resume-Dow-5276f-lay-download-icon-on-button-chromium/error-context.md
+
+
+[47/90] [mobile-chromium] › e2e/external-links.spec.ts:65:7 › External Links › should have proper security attributes on external links
+[48/90] [mobile-chromium] › e2e/external-links.spec.ts:80:7 › External Links › should have accessible labels for external links
+[49/90] [mobile-chromium] › e2e/external-links.spec.ts:93:7 › External Links › should open email link with mailto
+[50/90] [mobile-chromium] › e2e/external-links.spec.ts:108:7 › External Links › should open phone link with tel protocol
+[51/90] [mobile-chromium] › e2e/external-links.spec.ts:127:7 › External Links › should handle external project links
+[52/90] [mobile-chromium] › e2e/external-links.spec.ts:148:7 › External Links › should handle external personal project links
+[53/90] [mobile-chromium] › e2e/external-links.spec.ts:169:7 › External Links › should not navigate away from site when clicking internal links
+[54/90] [mobile-chromium] › e2e/full-page-flow.spec.ts:4:7 › Full Page Navigation Flow › should complete full user journey through the website
+[55/90] [mobile-chromium] › e2e/full-page-flow.spec.ts:68:7 › Full Page Navigation Flow › should handle complete mobile user journey
+[56/90] [mobile-chromium] › e2e/full-page-flow.spec.ts:120:7 › Full Page Navigation Flow › should maintain state during complex navigation
+[57/90] [mobile-chromium] › e2e/full-page-flow.spec.ts:148:7 › Full Page Navigation Flow › should handle keyboard-only navigation flow
+[58/90] [mobile-chromium] › e2e/full-page-flow.spec.ts:173:7 › Full Page Navigation Flow › should display all critical content sections
+[59/90] [mobile-chromium] › e2e/full-page-flow.spec.ts:208:7 › Full Page Navigation Flow › should handle browser back/forward navigation
+[60/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:11:7 › Mobile Menu › should display hamburger menu button on mobile
+[61/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:16:7 › Mobile Menu › should hide desktop navigation on mobile
+  3) [mobile-chromium] › e2e/full-page-flow.spec.ts:173:7 › Full Page Navigation Flow › should display all critical content sections 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: /Scott Ryan Howard/i })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: /Scott Ryan Howard/i })
+
+
+      176 |
+      177 |     // Verify Hero content
+    > 178 |     await expect(page.getByRole('heading', { name: /Scott Ryan Howard/i })).toBeVisible();
+          |                                                                             ^
+      179 |     
+      180 |     // Check for Software Engineer text (appears multiple times on page)
+      181 |     const softwareEngineerText = page.getByText(/Software Engineer/i).first();
+        at e2e/full-page-flow.spec.ts:178:77
+
+    Error Context: test-results/full-page-flow-Full-Page-N-c6d89-l-critical-content-sections-mobile-chromium/error-context.md
+
+
+[62/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:22:7 › Mobile Menu › should open mobile menu when hamburger is clicked
+[63/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:37:7 › Mobile Menu › should display all navigation links in mobile menu
+[64/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:57:7 › Mobile Menu › should close mobile menu when a link is clicked
+[65/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:73:7 › Mobile Menu › should close mobile menu when close button is clicked
+[66/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:89:7 › Mobile Menu › should navigate to correct section from mobile menu
+[67/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:103:7 › Mobile Menu › should highlight active section in mobile menu
+[68/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:119:7 › Mobile Menu › should be keyboard accessible
+[69/90] [mobile-chromium] › e2e/mobile-menu.spec.ts:143:7 › Mobile Menu › should maintain menu state during scroll
+[70/90] [mobile-chromium] › e2e/navigation.spec.ts:8:7 › Page Navigation › should load the homepage successfully
+[71/90] [mobile-chromium] › e2e/navigation.spec.ts:13:7 › Page Navigation › should display all main sections
+[72/90] [mobile-chromium] › e2e/navigation.spec.ts:30:7 › Page Navigation › should navigate to all sections via desktop navigation
+[73/90] [mobile-chromium] › e2e/navigation.spec.ts:62:7 › Page Navigation › should highlight active section in navigation
+[74/90] [mobile-chromium] › e2e/navigation.spec.ts:83:7 › Page Navigation › should scroll to top when clicking site name
+[75/90] [mobile-chromium] › e2e/navigation.spec.ts:120:7 › Page Navigation › should have keyboard accessible navigation
+[76/90] [mobile-chromium] › e2e/resume-download.spec.ts:11:7 › Resume Download › should display download resume button
+[77/90] [mobile-chromium] › e2e/resume-download.spec.ts:22:7 › Resume Download › should have accessible label for download button
+  4) [mobile-chromium] › e2e/full-page-flow.spec.ts:4:7 › Full Page Navigation Flow › should complete full user journey through the website 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'About', exact: true })
+
+
+      24 |     for (const section of sections) {
+      25 |       // Click navigation link (use first visible one)
+    > 26 |       await page.locator('nav').getByRole('link', { name: section.name, exact: true }).click();
+         |                                                                                        ^
+      27 |       await page.waitForTimeout(600);
+      28 |
+      29 |       // Verify section is in viewport
+        at e2e/full-page-flow.spec.ts:26:88
+
+    Error Context: test-results/full-page-flow-Full-Page-N-f950d-journey-through-the-website-mobile-chromium/error-context.md
+
+
+[78/90] [mobile-chromium] › e2e/resume-download.spec.ts:33:7 › Resume Download › should display download icon on button
+  5) [mobile-chromium] › e2e/full-page-flow.spec.ts:148:7 › Full Page Navigation Flow › should handle keyboard-only navigation flow 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.focus: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'About', exact: true })
+
+
+      152 |     // Focus on first navigation link directly
+      153 |     const aboutLink = page.locator('nav').getByRole('link', { name: 'About', exact: true });
+    > 154 |     await aboutLink.focus();
+          |                     ^
+      155 |
+      156 |     // Navigate to About
+      157 |     await page.keyboard.press('Enter');
+        at e2e/full-page-flow.spec.ts:154:21
+
+    Error Context: test-results/full-page-flow-Full-Page-N-114af-yboard-only-navigation-flow-mobile-chromium/error-context.md
+
+
+[79/90] [mobile-chromium] › e2e/resume-download.spec.ts:45:7 › Resume Download › should trigger download when button is clicked
+  6) [mobile-chromium] › e2e/full-page-flow.spec.ts:208:7 › Full Page Navigation Flow › should handle browser back/forward navigation 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'About', exact: true })
+
+
+      211 |
+      212 |     // Navigate to About
+    > 213 |     await page.locator('nav').getByRole('link', { name: 'About', exact: true }).click();
+          |                                                                                 ^
+      214 |     await page.waitForTimeout(600);
+      215 |     
+      216 |     // Verify About section is in view (hash navigation may not update URL)
+        at e2e/full-page-flow.spec.ts:213:81
+
+    Error Context: test-results/full-page-flow-Full-Page-N-05733-ser-back-forward-navigation-mobile-chromium/error-context.md
+
+
+[80/90] [mobile-chromium] › e2e/resume-download.spec.ts:73:7 › Resume Download › should be keyboard accessible
+  7) [mobile-chromium] › e2e/resume-download.spec.ts:11:7 › Resume Download › should display download resume button 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      11 |   test('should display download resume button', async ({ page }) => {
+      12 |     // Scroll to Contact section
+    > 13 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+         |                                                                                   ^
+      14 |     await page.waitForTimeout(500);
+      15 |
+      16 |     // Find download button in Contact section
+        at e2e/resume-download.spec.ts:13:83
+
+    Error Context: test-results/resume-download-Resume-Dow-d0872-play-download-resume-button-mobile-chromium/error-context.md
+
+
+[81/90] [mobile-chromium] › e2e/resume-download.spec.ts:104:7 › Resume Download › should have visible focus indicator on download button
+  8) [mobile-chromium] › e2e/resume-download.spec.ts:22:7 › Resume Download › should have accessible label for download button 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      22 |   test('should have accessible label for download button', async ({ page }) => {
+      23 |     // Scroll to Contact section
+    > 24 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+         |                                                                                   ^
+      25 |     await page.waitForTimeout(500);
+      26 |
+      27 |     // Verify button has proper aria-label in Contact section
+        at e2e/resume-download.spec.ts:24:83
+
+    Error Context: test-results/resume-download-Resume-Dow-0dcde-e-label-for-download-button-mobile-chromium/error-context.md
+
+
+[82/90] [mobile-chromium] › e2e/resume-download.spec.ts:119:7 › Resume Download › should display download section with proper heading
+  9) [mobile-chromium] › e2e/resume-download.spec.ts:33:7 › Resume Download › should display download icon on button 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      33 |   test('should display download icon on button', async ({ page }) => {
+      34 |     // Scroll to Contact section
+    > 35 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+         |                                                                                   ^
+      36 |     await page.waitForTimeout(500);
+      37 |
+      38 |     // Find download button and check for icon in Contact section
+        at e2e/resume-download.spec.ts:35:83
+
+    Error Context: test-results/resume-download-Resume-Dow-5276f-lay-download-icon-on-button-mobile-chromium/error-context.md
+
+
+[83/90] [mobile-chromium] › e2e/resume-download.spec.ts:130:7 › Resume Download › should display descriptive text about resume download
+  10) [mobile-chromium] › e2e/resume-download.spec.ts:45:7 › Resume Download › should trigger download when button is clicked 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      45 |   test('should trigger download when button is clicked', async ({ page, context }) => {
+      46 |     // Scroll to Contact section
+    > 47 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+         |                                                                                   ^
+      48 |     await page.waitForTimeout(500);
+      49 |
+      50 |     // Monitor window.open calls
+        at e2e/resume-download.spec.ts:47:83
+
+    Error Context: test-results/resume-download-Resume-Dow-afcec-load-when-button-is-clicked-mobile-chromium/error-context.md
+
+
+[84/90] [mobile-chromium] › e2e/resume-download.spec.ts:141:7 › Resume Download › should work on mobile viewport
+  11) [mobile-chromium] › e2e/resume-download.spec.ts:73:7 › Resume Download › should be keyboard accessible 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      73 |   test('should be keyboard accessible', async ({ page, context }) => {
+      74 |     // Scroll to Contact section
+    > 75 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+         |                                                                                   ^
+      76 |     await page.waitForTimeout(500);
+      77 |
+      78 |     // Monitor window.open calls
+        at e2e/resume-download.spec.ts:75:83
+
+    Error Context: test-results/resume-download-Resume-Dow-73505-ould-be-keyboard-accessible-mobile-chromium/error-context.md
+
+
+[85/90] [mobile-chromium] › e2e/resume-download.spec.ts:174:7 › Resume Download › should be visible in Hero section CTA
+[86/90] [mobile-chromium] › e2e/smooth-scrolling.spec.ts:9:7 › Smooth Scrolling › should smoothly scroll between sections
+[87/90] [mobile-chromium] › e2e/smooth-scrolling.spec.ts:31:7 › Smooth Scrolling › should scroll smoothly when using skip to content link
+[88/90] [mobile-chromium] › e2e/smooth-scrolling.spec.ts:44:7 › Smooth Scrolling › should maintain smooth scroll behavior across multiple sections
+  12) [mobile-chromium] › e2e/resume-download.spec.ts:104:7 › Resume Download › should have visible focus indicator on download button 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      104 |   test('should have visible focus indicator on download button', async ({ page }) => {
+      105 |     // Scroll to Contact section
+    > 106 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+          |                                                                                   ^
+      107 |     await page.waitForTimeout(500);
+      108 |
+      109 |     // Focus the download button in Contact section
+        at e2e/resume-download.spec.ts:106:83
+
+    Error Context: test-results/resume-download-Resume-Dow-b50b4-ndicator-on-download-button-mobile-chromium/error-context.md
+
+
+[89/90] [mobile-chromium] › e2e/smooth-scrolling.spec.ts:58:7 › Smooth Scrolling › should handle rapid navigation clicks gracefully
+  13) [mobile-chromium] › e2e/resume-download.spec.ts:119:7 › Resume Download › should display download section with proper heading 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      119 |   test('should display download section with proper heading', async ({ page }) => {
+      120 |     // Scroll to Contact section
+    > 121 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+          |                                                                                   ^
+      122 |     await page.waitForTimeout(500);
+      123 |
+      124 |     // Check for download section heading in Contact section
+        at e2e/resume-download.spec.ts:121:83
+
+    Error Context: test-results/resume-download-Resume-Dow-1df2d-section-with-proper-heading-mobile-chromium/error-context.md
+
+
+[90/90] [mobile-chromium] › e2e/smooth-scrolling.spec.ts:75:7 › Smooth Scrolling › should scroll to section with proper offset for fixed header
+  14) [mobile-chromium] › e2e/resume-download.spec.ts:130:7 › Resume Download › should display descriptive text about resume download 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      130 |   test('should display descriptive text about resume download', async ({ page }) => {
+      131 |     // Scroll to Contact section
+    > 132 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+          |                                                                                   ^
+      133 |     await page.waitForTimeout(500);
+      134 |
+      135 |     // Check for descriptive text in Contact section
+        at e2e/resume-download.spec.ts:132:83
+
+    Error Context: test-results/resume-download-Resume-Dow-6b292--text-about-resume-download-mobile-chromium/error-context.md
+
+
+  15) [mobile-chromium] › e2e/smooth-scrolling.spec.ts:9:7 › Smooth Scrolling › should smoothly scroll between sections 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Contact', exact: true })
+
+
+      12 |
+      13 |     // Click on Contact section in navigation
+    > 14 |     await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+         |                                                                                   ^
+      15 |
+      16 |     // Wait a bit for scroll to start
+      17 |     await page.waitForTimeout(100);
+        at e2e/smooth-scrolling.spec.ts:14:83
+
+    Error Context: test-results/smooth-scrolling-Smooth-Sc-e2d27-hly-scroll-between-sections-mobile-chromium/error-context.md
+
+
+  16) [mobile-chromium] › e2e/smooth-scrolling.spec.ts:44:7 › Smooth Scrolling › should maintain smooth scroll behavior across multiple sections 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'About', exact: true })
+
+
+      46 |
+      47 |     for (const section of sections) {
+    > 48 |       await page.locator('nav').getByRole('link', { name: section, exact: true }).click();
+         |                                                                                   ^
+      49 |       await page.waitForTimeout(600);
+      50 |
+      51 |       // Verify section is in viewport
+        at e2e/smooth-scrolling.spec.ts:48:83
+
+    Error Context: test-results/smooth-scrolling-Smooth-Sc-0352c-or-across-multiple-sections-mobile-chromium/error-context.md
+
+
+  17) [mobile-chromium] › e2e/smooth-scrolling.spec.ts:58:7 › Smooth Scrolling › should handle rapid navigation clicks gracefully 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'Experience', exact: true })
+
+
+      59 |     // Rapidly click multiple navigation links
+      60 |     const nav = page.locator('nav');
+    > 61 |     await nav.getByRole('link', { name: 'Experience', exact: true }).click();
+         |                                                                      ^
+      62 |     await page.waitForTimeout(100);
+      63 |     await nav.getByRole('link', { name: 'Skills', exact: true }).click();
+      64 |     await page.waitForTimeout(100);
+        at e2e/smooth-scrolling.spec.ts:61:70
+
+    Error Context: test-results/smooth-scrolling-Smooth-Sc-7c38c-avigation-clicks-gracefully-mobile-chromium/error-context.md
+
+
+  18) [mobile-chromium] › e2e/smooth-scrolling.spec.ts:75:7 › Smooth Scrolling › should scroll to section with proper offset for fixed header 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('nav').getByRole('link', { name: 'About', exact: true })
+
+
+      75 |   test('should scroll to section with proper offset for fixed header', async ({ page }) => {
+      76 |     // Click on About section in navigation
+    > 77 |     await page.locator('nav').getByRole('link', { name: 'About', exact: true }).click();
+         |                                                                                 ^
+      78 |     await page.waitForTimeout(500);
+      79 |
+      80 |     // Get the About section position
+        at e2e/smooth-scrolling.spec.ts:77:81
+
+    Error Context: test-results/smooth-scrolling-Smooth-Sc-8eb44-per-offset-for-fixed-header-mobile-chromium/error-context.md
+
+
+  18 failed
+    [chromium] › e2e/full-page-flow.spec.ts:173:7 › Full Page Navigation Flow › should display all critical content sections 
+    [chromium] › e2e/resume-download.spec.ts:33:7 › Resume Download › should display download icon on button 
+    [mobile-chromium] › e2e/full-page-flow.spec.ts:4:7 › Full Page Navigation Flow › should complete full user journey through the website 
+    [mobile-chromium] › e2e/full-page-flow.spec.ts:148:7 › Full Page Navigation Flow › should handle keyboard-only navigation flow 
+    [mobile-chromium] › e2e/full-page-flow.spec.ts:173:7 › Full Page Navigation Flow › should display all critical content sections 
+    [mobile-chromium] › e2e/full-page-flow.spec.ts:208:7 › Full Page Navigation Flow › should handle browser back/forward navigation 
+    [mobile-chromium] › e2e/resume-download.spec.ts:11:7 › Resume Download › should display download resume button 
+    [mobile-chromium] › e2e/resume-download.spec.ts:22:7 › Resume Download › should have accessible label for download button 
+    [mobile-chromium] › e2e/resume-download.spec.ts:33:7 › Resume Download › should display download icon on button 
+    [mobile-chromium] › e2e/resume-download.spec.ts:45:7 › Resume Download › should trigger download when button is clicked 
+    [mobile-chromium] › e2e/resume-download.spec.ts:73:7 › Resume Download › should be keyboard accessible 
+    [mobile-chromium] › e2e/resume-download.spec.ts:104:7 › Resume Download › should have visible focus indicator on download button 
+    [mobile-chromium] › e2e/resume-download.spec.ts:119:7 › Resume Download › should display download section with proper heading 
+    [mobile-chromium] › e2e/resume-download.spec.ts:130:7 › Resume Download › should display descriptive text about resume download 
+    [mobile-chromium] › e2e/smooth-scrolling.spec.ts:9:7 › Smooth Scrolling › should smoothly scroll between sections 
+    [mobile-chromium] › e2e/smooth-scrolling.spec.ts:44:7 › Smooth Scrolling › should maintain smooth scroll behavior across multiple sections 
+    [mobile-chromium] › e2e/smooth-scrolling.spec.ts:58:7 › Smooth Scrolling › should handle rapid navigation clicks gracefully 
+    [mobile-chromium] › e2e/smooth-scrolling.spec.ts:75:7 › Smooth Scrolling › should scroll to section with proper offset for fixed header 
+  72 passed (2.5m)

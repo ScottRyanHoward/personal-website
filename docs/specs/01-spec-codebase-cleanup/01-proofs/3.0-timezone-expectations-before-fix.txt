@@ -1,0 +1,6 @@
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/components/sections/PersonalProjects.test.tsx > PersonalProjects > renders date ranges for projects
+ FAIL  src/components/ui/PersonalProjectCard.test.tsx > PersonalProjectCard > renders date range when both start and end dates are provided
+ FAIL  src/components/ui/PersonalProjectCard.test.tsx > PersonalProjectCard > renders only start date when end date is not provided
+ Test Files  2 failed (2)
+      Tests  3 failed | 40 passed (43)

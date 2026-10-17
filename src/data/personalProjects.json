@@ -21,7 +21,7 @@
     ],
     "repoUrl": "https://github.com/ScottRyanHoward/riveter",
     "featured": true,
-    "startDate": "2025-05-01",
+    "startDate": "2025-05",
     "status": "in-progress"
   },
   {
@@ -44,7 +44,7 @@
     ],
     "repoUrl": "https://github.com/ScottRyanHoward/monopoly-go-sticker-tracker",
     "featured": true,
-    "startDate": "2025-02-01",
+    "startDate": "2025-02",
     "status": "completed"
   },
   {
@@ -68,7 +68,7 @@
     ],
     "repoUrl": "https://github.com/ScottRyanHoward/personal-website",
     "featured": true,
-    "startDate": "2025-10-01",
+    "startDate": "2025-10",
     "status": "completed"
   }
 ]

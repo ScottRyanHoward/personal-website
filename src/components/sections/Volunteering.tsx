@@ -1,22 +1,11 @@
 import React from 'react';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { formatDateRange } from '@/lib/dates';
 import { Volunteering as VolunteeringType } from '@/types';
 
 export interface VolunteeringProps {
   volunteering: VolunteeringType[];
 }
-
-const formatDate = (dateString: string): string => {
-  if (dateString === 'Present') return 'Present';
-  const [year, month] = dateString.split('-');
-  const date = new Date(parseInt(year), parseInt(month) - 1);
-  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-};
-
-const formatDateRange = (startDate: string, endDate?: string | 'Present'): string => {
-  const start = formatDate(startDate);
-  const end = endDate ? formatDate(endDate) : 'Present';
-  return `${start} - ${end}`;
-};
 
 export const Volunteering: React.FC<VolunteeringProps> = ({ volunteering }) => {
   // Sort by start date (most recent first)
@@ -47,13 +36,17 @@ export const Volunteering: React.FC<VolunteeringProps> = ({ volunteering }) => {
               aria-label={`${item.role} at ${item.organization}`}
             >
               <div className="flex gap-6">
-                {/* Organization Logo */}
+                {/* Organization Logo (small, so served as-is without optimization or blur placeholder) */}
                 {item.organizationLogo && (
-                  <div className="flex-shrink-0">
-                    <img
+                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg md:h-20 md:w-20">
+                    <OptimizedImage
                       src={item.organizationLogo}
                       alt={`${item.organization} logo`}
-                      className="h-16 w-16 rounded-lg object-contain md:h-20 md:w-20"
+                      fill
+                      className="object-contain"
+                      unoptimized
+                      placeholder="empty"
+                      sizes="80px"
                     />
                   </div>
                 )}

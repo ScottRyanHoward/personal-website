@@ -10,7 +10,6 @@ src/test/
 # Documentation
 *.md
 !README.md
-DEPLOYMENT.md
 
 # Development files
 .vscode/

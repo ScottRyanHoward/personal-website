@@ -5,12 +5,9 @@
 
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { axe, toHaveNoViolations } from 'jest-axe';
+import { axe } from 'jest-axe';
 import { PersonalProjectCard } from '@/components/ui/PersonalProjectCard';
 import { PersonalProject } from '@/types';
-
-// Extend expect with jest-axe matchers
-expect.extend(toHaveNoViolations);
 
 // Mock project data for testing different status types
 const baseProject: PersonalProject = {

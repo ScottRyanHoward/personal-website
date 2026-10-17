@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
-import profileData from '@/data/profile.json';
+import { profile } from '@/lib/content';
 import WebVitals from '@/components/WebVitals';
 
 // Optimize font loading with font-display: swap
@@ -18,8 +18,8 @@ const siteUrl = "https://scottryanhoward.info";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${profileData.name} - ${profileData.title}`,
-    template: `%s | ${profileData.name}`,
+    default: `${profile.name} - ${profile.title}`,
+    template: `%s | ${profile.name}`,
   },
   icons: {
     icon: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico?v=2',
     apple: '/apple-touch-icon.png?v=2',
   },
-  description: profileData.summary,
+  description: profile.summary,
   keywords: [
     "Software Engineer",
     "Full Stack Developer",
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
     "JavaScript",
     "Portfolio",
     "Resume",
-    profileData.name,
+    profile.name,
   ],
-  authors: [{ name: profileData.name }],
-  creator: profileData.name,
-  publisher: profileData.name,
+  authors: [{ name: profile.name }],
+  creator: profile.name,
+  publisher: profile.name,
   formatDetection: {
     email: false,
     address: false,
@@ -55,24 +55,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: profileData.name,
-    title: `${profileData.name} - ${profileData.title}`,
-    description: profileData.summary,
+    siteName: profile.name,
+    title: `${profile.name} - ${profile.title}`,
+    description: profile.summary,
     images: [
       {
-        url: `${siteUrl}${profileData.profileImage}`,
+        url: `${siteUrl}${profile.profileImage}`,
         width: 1200,
         height: 630,
-        alt: `${profileData.name} - Profile Picture`,
+        alt: `${profile.name} - Profile Picture`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profileData.name} - ${profileData.title}`,
-    description: profileData.summary,
+    title: `${profile.name} - ${profile.title}`,
+    description: profile.summary,
     creator: "@scottryanhoward",
-    images: [`${siteUrl}${profileData.profileImage}`],
+    images: [`${siteUrl}${profile.profileImage}`],
   },
   robots: {
     index: true,
@@ -84,9 +84,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "google-site-verification-code", // Replace with actual verification code
   },
 };
 

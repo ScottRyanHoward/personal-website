@@ -1,0 +1,207 @@
+
+ RUN  v3.2.4 <repo>
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/Experience.test.tsx (20 tests) 717ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/Hero.test.tsx (14 tests) 858ms
+ ✓ src/components/sections/Hero.test.tsx (14 tests) 895ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/test/keyboard-navigation.test.tsx (19 tests) 1184ms
+ ✓ src/test/keyboard-navigation.test.tsx (19 tests) 1193ms
+ ✓ src/components/sections/Contact.test.tsx (29 tests) 1368ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/Contact.test.tsx (29 tests) 1370ms
+stderr | src/test/accessibility.test.tsx > Accessibility Tests > Color Contrast > Primary button should have sufficient color contrast
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+stderr | .claude/worktrees/interesting-aryabhata/src/test/accessibility.test.tsx > Accessibility Tests > Color Contrast > Primary button should have sufficient color contrast
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+stderr | src/test/accessibility.test.tsx > Accessibility Tests > Color Contrast > Text content should have sufficient color contrast
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+stderr | .claude/worktrees/interesting-aryabhata/src/test/accessibility.test.tsx > Accessibility Tests > Color Contrast > Text content should have sufficient color contrast
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ ✓ src/test/accessibility.test.tsx (32 tests) 1683ms
+   ✓ Accessibility Tests > Layout Components > Header should have no accessibility violations  414ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/test/accessibility.test.tsx (32 tests) 1700ms
+   ✓ Accessibility Tests > Layout Components > Header should have no accessibility violations  373ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/Education.test.tsx (30 tests) 700ms
+ ✓ src/components/sections/Education.test.tsx (30 tests) 767ms
+stderr | .claude/worktrees/interesting-aryabhata/src/test/status-badge-visual-regression.test.tsx > Status Badge Visual Regression Tests > Accessibility Contrast Ratio Validation > should pass accessibility checks for ideation status badge
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ ✓ src/components/sections/About.test.tsx (18 tests) 822ms
+stderr | .claude/worktrees/interesting-aryabhata/src/test/status-badge-visual-regression.test.tsx > Status Badge Visual Regression Tests > Accessibility Contrast Ratio Validation > should pass accessibility checks for in-progress status badge
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+stderr | .claude/worktrees/interesting-aryabhata/src/test/status-badge-visual-regression.test.tsx > Status Badge Visual Regression Tests > Accessibility Contrast Ratio Validation > should pass accessibility checks for completed status badge
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ ✓ src/components/ui/SkillBadge.test.tsx (30 tests) 565ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/WorkProjects.test.tsx (14 tests) 760ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/PersonalProjects.test.tsx (16 tests) 669ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/test/status-badge-visual-regression.test.tsx (19 tests) 751ms
+ ✓ src/components/sections/Experience.test.tsx (20 tests) 778ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/About.test.tsx (18 tests) 842ms
+ ✓ src/components/sections/WorkProjects.test.tsx (14 tests) 742ms
+stderr | src/test/status-badge-visual-regression.test.tsx > Status Badge Visual Regression Tests > Accessibility Contrast Ratio Validation > should pass accessibility checks for ideation status badge
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ ✓ src/components/ui/PersonalProjectCard.test.tsx (27 tests) 565ms
+stderr | src/test/status-badge-visual-regression.test.tsx > Status Badge Visual Regression Tests > Accessibility Contrast Ratio Validation > should pass accessibility checks for in-progress status badge
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+stderr | src/test/status-badge-visual-regression.test.tsx > Status Badge Visual Regression Tests > Accessibility Contrast Ratio Validation > should pass accessibility checks for completed status badge
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ ✓ src/test/status-badge-visual-regression.test.tsx (19 tests) 763ms
+ ✓ src/components/layout/Navigation.test.tsx (13 tests) 630ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/ui/PersonalProjectCard.test.tsx (27 tests) 629ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/ui/SkillBadge.test.tsx (30 tests) 686ms
+ ✓ src/components/sections/PersonalProjects.test.tsx (16 tests) 750ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/ui/Button.test.tsx (22 tests) 523ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/ui/ProjectCard.test.tsx (17 tests) 560ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/layout/Navigation.test.tsx (13 tests) 481ms
+ ✓ src/components/ui/Button.test.tsx (22 tests) 441ms
+ ✓ src/components/sections/Skills.test.tsx (13 tests) 511ms
+ ✓ src/test/responsive-design.test.tsx (25 tests) 417ms
+ ✓ src/components/layout/Footer.test.tsx (17 tests) 455ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/sections/Skills.test.tsx (13 tests) 533ms
+ ✓ src/components/layout/Header.test.tsx (8 tests) 314ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/test/responsive-design.test.tsx (25 tests) 365ms
+ ✓ src/components/ui/ProjectCard.test.tsx (17 tests) 837ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/layout/Footer.test.tsx (17 tests) 355ms
+ ✓ src/components/ui/Timeline.test.tsx (22 tests) 271ms
+ ✓ src/components/ui/Card.test.tsx (16 tests) 237ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/ui/Timeline.test.tsx (22 tests) 255ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/ui/Card.test.tsx (16 tests) 219ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/layout/Header.test.tsx (8 tests) 301ms
+ ✓ src/app/page.test.tsx (16 tests) 93ms
+ ✓ src/app/navigation.test.tsx (5 tests) 88ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/app/page.test.tsx (16 tests) 158ms
+stderr | src/components/ui/OptimizedImage.test.tsx > OptimizedImage > renders with provided src and alt text
+Warning: React does not recognize the `blurDataURL` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `blurdataurl` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at default (src/components/ui/OptimizedImage.test.tsx:3:15)
+    at OptimizedImage (src/components/ui/OptimizedImage.tsx:10:3)
+
+stderr | src/components/ui/OptimizedImage.test.tsx > OptimizedImage > uses fallback image on error when showFallbackOnError is true
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (src/components/ui/OptimizedImage.tsx:10:3)
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (src/components/ui/OptimizedImage.tsx:10:3)
+
+stderr | src/components/ui/OptimizedImage.test.tsx > OptimizedImage > uses custom fallback src when provided
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (src/components/ui/OptimizedImage.tsx:10:3)
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (src/components/ui/OptimizedImage.tsx:10:3)
+
+ ✓ src/components/ui/OptimizedImage.test.tsx (8 tests) 68ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/app/navigation.test.tsx (5 tests) 61ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/test/performance.test.tsx (25 tests) 8ms
+stderr | .claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.test.tsx > OptimizedImage > renders with provided src and alt text
+Warning: React does not recognize the `blurDataURL` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `blurdataurl` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at default (.claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.test.tsx:3:15)
+    at OptimizedImage (.claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.tsx:10:3)
+
+ ✓ src/components/StructuredData.test.tsx (12 tests) 73ms
+stderr | .claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.test.tsx > OptimizedImage > uses fallback image on error when showFallbackOnError is true
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (.claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.tsx:10:3)
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (.claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.tsx:10:3)
+
+stderr | .claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.test.tsx > OptimizedImage > uses custom fallback src when provided
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (.claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.tsx:10:3)
+Warning: An update to OptimizedImage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at OptimizedImage (.claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.tsx:10:3)
+
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/ui/OptimizedImage.test.tsx (8 tests) 80ms
+ ✓ src/test/performance.test.tsx (25 tests) 7ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/components/StructuredData.test.tsx (12 tests) 74ms
+Browserslist: browsers data (caniuse-lite) is 12 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ ✓ src/app/seo.test.tsx (11 tests) 5ms
+ ✓ .claude/worktrees/interesting-aryabhata/src/app/seo.test.tsx (11 tests) 4ms
+
+ Test Files  54 passed (54)
+      Tests  996 passed (996)
+   Start at  12:08:59
+   Duration  10.68s (transform 1.44s, setup 4.73s, collect 7.57s, tests 30.18s, environment 29.24s, prepare 4.04s)
+

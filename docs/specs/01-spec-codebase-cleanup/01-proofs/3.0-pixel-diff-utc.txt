@@ -1,0 +1,3 @@
+<scratchpad>/utc/before-utc-375.png vs docs/specs/01-spec-codebase-cleanup/01-proofs/after-3.0-375.png: 0 differing pixels (identical)
+<scratchpad>/utc/before-utc-768.png vs docs/specs/01-spec-codebase-cleanup/01-proofs/after-3.0-768.png: 0 differing pixels (identical)
+<scratchpad>/utc/before-utc-1280.png vs docs/specs/01-spec-codebase-cleanup/01-proofs/after-3.0-1280.png: 0 differing pixels (identical)

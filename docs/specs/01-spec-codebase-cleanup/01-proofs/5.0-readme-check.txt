@@ -1,0 +1,51 @@
+== README.md
+  script analyze              OK
+  script build                OK
+  script dev                  OK
+  script lighthouse           OK
+  script lint                 OK
+  script start                OK
+  script test                 OK
+  script test:e2e             OK
+  script test:e2e:debug       OK
+  script test:e2e:headed      OK
+  script test:e2e:report      OK
+  script test:e2e:ui          OK
+  script test:run             OK
+  script test:ui              OK
+  path   LICENSE                                                 OK
+  path   e2e/README.md                                           OK
+  path   education.json  (src/data)                              OK
+  path   experience.json  (src/data)                             OK
+  path   next.config.js                                          OK
+  path   personalProjects.json  (src/data)                       OK
+  path   profile.json  (src/data)                                OK
+  path   public/Scott_Howard_Resume.pdf                          OK
+  path   public/images/                                          OK
+  path   public/robots.txt                                       OK
+  path   public/sitemap.xml                                      OK
+  path   skills.json  (src/data)                                 OK
+  path   src/data/                                               OK
+  path   src/lib/content.test.ts                                 OK
+  path   src/lib/content.ts                                      OK
+  path   src/test/                                               OK
+  path   src/test/setup.ts                                       OK
+  path   src/types/index.ts                                      OK
+  path   vercel.json                                             OK
+  path   volunteering.json  (src/data)                           OK
+  path   workProjects.json  (src/data)                           OK
+== e2e/README.md
+  script test:e2e             OK
+  script test:e2e:debug       OK
+  script test:e2e:headed      OK
+  script test:e2e:report      OK
+  script test:e2e:ui          OK
+  path   docs/specs/01-spec-codebase-cleanup/01-proofs/1.0-e2e-baseline.txt OK
+  path   external-links.spec.ts  (e2e)                           OK
+  path   full-page-flow.spec.ts  (e2e)                           OK
+  path   mobile-menu.spec.ts  (e2e)                              OK
+  path   navigation.spec.ts  (e2e)                               OK
+  path   playwright.config.ts                                    OK
+  path   resume-download.spec.ts  (e2e)                          OK
+  path   smooth-scrolling.spec.ts  (e2e)                         OK
+ALL OK

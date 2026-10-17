@@ -1,5 +1,9 @@
 import '@testing-library/jest-dom';
-import { vi } from 'vitest';
+import { expect, vi } from 'vitest';
+import { toHaveNoViolations } from 'jest-axe';
+
+// Accessibility matcher used by the axe tests (types in src/test/vitest-axe.d.ts)
+expect.extend(toHaveNoViolations);
 
 // Mock Next.js font optimization
 vi.mock('next/font/google', () => ({

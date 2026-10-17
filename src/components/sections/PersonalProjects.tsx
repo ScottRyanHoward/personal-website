@@ -1,11 +1,12 @@
 import React from 'react';
 import { PersonalProject } from '@/types';
 import { PersonalProjectCard } from '@/components/ui/PersonalProjectCard';
-import personalProjectsData from '@/data/personalProjects.json';
 
-export const PersonalProjects: React.FC = () => {
-  const personalProjects = personalProjectsData as PersonalProject[];
+export interface PersonalProjectsProps {
+  personalProjects: PersonalProject[];
+}
 
+export const PersonalProjects: React.FC<PersonalProjectsProps> = ({ personalProjects }) => {
   return (
     <section
       id="personal-projects"

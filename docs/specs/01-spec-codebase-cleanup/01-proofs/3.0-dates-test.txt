@@ -1,0 +1,21 @@
+
+ RUN  v3.2.4 <repo>
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ src/lib/dates.test.ts > formatMonthYear > formats YYYY-MM as short month and year 18ms
+ ✓ src/lib/dates.test.ts > formatMonthYear > returns Present unchanged 0ms
+ ✓ src/lib/dates.test.ts > formatDateRange > formats a closed range 0ms
+ ✓ src/lib/dates.test.ts > formatDateRange > formats an explicit Present end date 0ms
+ ✓ src/lib/dates.test.ts > formatDateRange > shows Present for a missing end date by default 0ms
+ ✓ src/lib/dates.test.ts > formatDateRange > shows only the start date for a missing end date when openEnded is omit 0ms
+ ✓ src/lib/dates.test.ts > formatDateRange > ignores openEnded when an end date is given 0ms
+ ✓ src/lib/dates.test.ts > timezone independence > formats the same month in UTC 1ms
+ ✓ src/lib/dates.test.ts > timezone independence > formats the same month in America/New_York 1ms
+ ✓ src/lib/dates.test.ts > timezone independence > formats the same month in America/Los_Angeles 1ms
+ ✓ src/lib/dates.test.ts > timezone independence > formats the same month in Asia/Tokyo 1ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  12:29:09
+   Duration  795ms (transform 36ms, setup 52ms, collect 12ms, tests 23ms, environment 275ms, prepare 52ms)
+

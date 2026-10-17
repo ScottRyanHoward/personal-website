@@ -1,0 +1,3 @@
+docs/specs/01-spec-codebase-cleanup/01-proofs/before-375.png vs <scratchpad>/run2/before-375.png: 0 differing pixels (identical)
+docs/specs/01-spec-codebase-cleanup/01-proofs/before-768.png vs <scratchpad>/run2/before-768.png: 0 differing pixels (identical)
+docs/specs/01-spec-codebase-cleanup/01-proofs/before-1280.png vs <scratchpad>/run2/before-1280.png: 0 differing pixels (identical)

@@ -6,6 +6,7 @@ import { OptimizedImage } from './OptimizedImage';
 vi.mock('next/image', () => ({
   default: ({ src, alt, onError, ...props }: any) => {
     return (
+      // eslint-disable-next-line @next/next/no-img-element
       <img
         src={typeof src === 'string' ? src : src.src}
         alt={alt}

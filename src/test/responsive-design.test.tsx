@@ -13,6 +13,7 @@ import { PersonalProjects } from '@/components/sections/PersonalProjects';
 import Header from '@/components/layout/Header';
 import Navigation from '@/components/layout/Navigation';
 import type { Profile, Experience as ExperienceType, SkillCategory } from '@/types';
+import { workProjects, experiences } from '@/lib/content';
 
 // Mock data
 const mockProfile: Profile = {
@@ -121,7 +122,7 @@ describe('Responsive Design - Mobile Layout (< 640px)', () => {
   });
 
   it('should render WorkProjects with single column grid on mobile', () => {
-    const { container } = render(<WorkProjects />);
+    const { container } = render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     // Grid should be single column on mobile
     const grid = container.querySelector('.grid-cols-1');
@@ -170,7 +171,7 @@ describe('Responsive Design - Tablet Layout (640px - 1024px)', () => {
   });
 
   it('should render WorkProjects with 2-column grid on tablet', () => {
-    const { container } = render(<WorkProjects />);
+    const { container } = render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     // Grid should be 2 columns on tablet
     const grid = container.querySelector('.md\\:grid-cols-2');
@@ -200,7 +201,7 @@ describe('Responsive Design - Desktop Layout (> 1024px)', () => {
   });
 
   it('should render WorkProjects with 3-column grid on desktop', () => {
-    const { container } = render(<WorkProjects />);
+    const { container } = render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     // Grid should be 3 columns on desktop
     const grid = container.querySelector('.lg\\:grid-cols-3');
@@ -245,15 +246,15 @@ describe('Responsive Design - Breakpoint Transitions', () => {
   });
 
   it('should smoothly transition from tablet to desktop', () => {
-    const { container, rerender } = render(<WorkProjects />);
+    const { container, rerender } = render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     // Start at tablet
     setViewportSize(768);
-    rerender(<WorkProjects />);
+    rerender(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     // Transition to desktop
     setViewportSize(1440);
-    rerender(<WorkProjects />);
+    rerender(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     // Component should still render correctly
     expect(container.querySelector('section')).toBeInTheDocument();
@@ -332,7 +333,7 @@ describe('Responsive Design - Content Reflow', () => {
   });
 
   it('should adjust grid layouts across breakpoints', () => {
-    const { container } = render(<WorkProjects />);
+    const { container } = render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     // Grid should have responsive column classes
     const grid = container.querySelector('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3');
