@@ -1,17 +1,18 @@
 import React, { useMemo } from 'react';
 import { WorkProject, Experience } from '@/types';
 import { ProjectCard } from '@/components/ui/ProjectCard';
-import workProjectsData from '@/data/workProjects.json';
-import experienceData from '@/data/experience.json';
 
 export interface WorkProjectsProps {
+  workProjects: WorkProject[];
+  experiences: Experience[];
   onViewExperience?: (experienceId: string) => void;
 }
 
-export const WorkProjects: React.FC<WorkProjectsProps> = ({ onViewExperience }) => {
-  const workProjects = workProjectsData as WorkProject[];
-  const experiences = experienceData as Experience[];
-
+export const WorkProjects: React.FC<WorkProjectsProps> = ({
+  workProjects,
+  experiences,
+  onViewExperience,
+}) => {
   // Create a map of experience IDs to company names for quick lookup
   const experienceMap = useMemo(() => {
     return experiences.reduce((acc, exp) => {

@@ -1,0 +1,63 @@
+
+ RUN  v3.2.4 <repo>
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ❯ src/lib/content.test.ts (27 tests | 1 failed) 10ms
+   ✓ content: profile.json > has all required fields 1ms
+   ✓ content: profile.json > references images that exist 0ms
+   ✓ content: experience.json > has all required fields 0ms
+   ✓ content: experience.json > has valid dates 0ms
+   ✓ content: experience.json > has unique ids 0ms
+   ✓ content: experience.json > links relatedProjects to existing work projects 0ms
+   ✓ content: experience.json > references images that exist 0ms
+   ✓ content: skills.json > has all required fields 0ms
+   ✓ content: skills.json > uses allowed proficiency values 0ms
+   ✓ content: education.json > has all required fields 0ms
+   ✓ content: education.json > has valid dates 0ms
+   ✓ content: education.json > has unique ids 0ms
+   ✓ content: education.json > references images that exist 0ms
+   ✓ content: workProjects.json > has all required fields 0ms
+   ✓ content: workProjects.json > has valid dates 0ms
+   ✓ content: workProjects.json > has unique ids 0ms
+   ✓ content: workProjects.json > links experienceId to an existing experience 0ms
+   ✓ content: workProjects.json > references images that exist 0ms
+   ✓ content: personalProjects.json > has all required fields 0ms
+   × content: personalProjects.json > uses allowed status values 6ms
+     → expected [ Array(1) ] to deeply equal []
+   ✓ content: personalProjects.json > has valid dates 0ms
+   ✓ content: personalProjects.json > has unique ids 0ms
+   ✓ content: personalProjects.json > references images that exist 0ms
+   ✓ content: volunteering.json > has all required fields 0ms
+   ✓ content: volunteering.json > has valid dates 0ms
+   ✓ content: volunteering.json > has unique ids 0ms
+   ✓ content: volunteering.json > references images that exist 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/content.test.ts > content: personalProjects.json > uses allowed status values
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "personalProjects.json [riveter-infrastructure-drift-detection] status: \"done\" is not one of ideation, in-progress, completed",
++ ]
+
+ ❯ src/lib/content.test.ts:261:69
+    259| 
+    260|   it('uses allowed status values', () => {
+    261|     expect(checkAllowed(file, entries, 'status', PROJECT_STATUSES)).to…
+       |                                                                     ^
+    262|   });
+    263| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 26 passed (27)
+   Start at  12:21:18
+   Duration  832ms (transform 52ms, setup 51ms, collect 39ms, tests 10ms, environment 281ms, prepare 68ms)
+

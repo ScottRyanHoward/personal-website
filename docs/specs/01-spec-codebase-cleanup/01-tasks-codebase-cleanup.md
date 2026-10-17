@@ -25,6 +25,8 @@ These came up while reading the code and clarify how the spec applies. They do n
 - **A1 — Date format in `personalProjects.json`:** this file uses `YYYY-MM-DD` (for example `"2025-05-01"`), while every other file uses `YYYY-MM`. The spec's validation rule is `YYYY-MM`, so 2.0 changes these values to `YYYY-MM`. The displayed month does not change.
 - **A2 — Timezone bug in `PersonalProjectCard`:** it parses dates with `new Date("2023-01")`, which JavaScript reads as UTC midnight. The live site renders on Vercel's servers in UTC, so it shows the correct month (`Jan 2023`). In tests run in a US timezone it shows the previous month (`Dec 2022`), and the current test expects that wrong value (`PersonalProjectCard.test.tsx:64,70`). The shared helper parses year and month directly, without timezones. **Production output is unchanged.** Only those two test expectations change, to the correct `Jan 2023 - Jun 2023`. This is the one allowed exception to "expected date strings are unchanged".
 - **A3 — Open-ended ranges differ by section, and stay that way:** when there's no end date, `Volunteering` shows `"Start - Present"` and `PersonalProjectCard` shows only `"Start"`. The helper supports both behaviors through an option.
+- **A5 — Empty experience description (found in 2.7):** `experience.json` `exp-0` (Lead Delivery Consultant, from `cec60ce`) has `description: ""` and empty lists. The content test still fails when `description` is *missing*, but allows it to be *empty* for experience entries, so a role can be listed before its summary is written. Writing the description is content work for the site owner (non-goal 4).
+- **A6 — A2 also applies to `PersonalProjects.test.tsx`:** its `renders date ranges for projects` test expects the same timezone-shifted months (`May 2022 - Dec 2022` for `2022-06`..`2023-01`). Task 3.4 corrects this expectation as well.
 - **A4 — SVG images:** `PersonalProjectCard` uses a raw `<img>` only for `.svg` files. The replacement is `OptimizedImage` with `unoptimized` (SVGs aren't resized by Next), keeping the current `object-contain p-4` styling.
 
 ## Relevant Files
@@ -45,6 +47,7 @@ These came up while reading the code and clarify how the spec applies. They do n
 | `src/lib/dates.test.ts` | **New.** Unit tests for the date helpers. |
 | `src/app/page.tsx` | Read from `content.ts`, pass props to every section, use the shared placeholder. |
 | `src/app/layout.tsx` | Read from `content.ts`, remove the placeholder Google verification code. |
+| `src/test/responsive-design.test.tsx` | Renders `WorkProjects` with real content, so it now passes `workProjects` and `experiences` from `@/lib/content`. |
 | `src/app/page.test.tsx`, `src/app/seo.test.tsx` | Update mocks and imports for the new data path and props. |
 | `src/components/ui/SectionPlaceholder.tsx` | **New.** Shared lazy-load placeholder (light-only). |
 | `src/components/ui/SectionPlaceholder.test.tsx` | **New.** Renders with the expected classes and `aria-hidden`. |
@@ -99,7 +102,7 @@ These came up while reading the code and clarify how the spec applies. They do n
 - [x] 1.8 Check `.agents/`, `.claude/skills/`, `.kiro/skills/` and `skills-lock.json` for secrets (`grep -rniE "token|secret|api[_-]?key|password"`), then `git add` them.
 - [x] 1.9 Run `npx vitest run` → `01-proofs/1.0-vitest.txt`, then the e2e suite, then `git status --porcelain`, and capture the 1.0 proofs. Commit: "Clean up repository: merge pending content, ignore generated output, remove dead files".
 
-### [ ] 2.0 Consistent data loading through one content module, plus a content validation test
+### [x] 2.0 Consistent data loading through one content module, plus a content validation test
 
 #### 2.0 Proof Artifact(s)
 
@@ -111,13 +114,13 @@ These came up while reading the code and clarify how the spec applies. They do n
 
 #### 2.0 Tasks
 
-- [ ] 2.1 Change the three `startDate` values in `src/data/personalProjects.json` from `YYYY-MM-DD` to `YYYY-MM` (A1).
-- [ ] 2.2 Create `src/lib/content.ts`. Import every `src/data/*.json` file and export typed constants: `profile`, `experiences`, `skillCategories`, `degrees`, `certifications`, `workProjects`, `personalProjects`, `volunteering`. Cast only in this file.
-- [ ] 2.3 Change `WorkProjects` to accept `workProjects: WorkProject[]` and `experiences: Experience[]` props (keeping `onViewExperience`), and remove its JSON imports. Update `WorkProjects.test.tsx` to pass fixture arrays as props and drop the `vi.mock('@/data/...')` calls.
-- [ ] 2.4 Change `PersonalProjects` to accept a `personalProjects: PersonalProject[]` prop and remove its JSON import. Update `PersonalProjects.test.tsx` to pass fixtures as props. Replace the `vi.doMock` empty-data test with `render(<PersonalProjects personalProjects={[]} />)`.
-- [ ] 2.5 Update `src/app/page.tsx` to import from `@/lib/content` and pass props to every section, including `WorkProjects` and `PersonalProjects`. Remove the per-call `as Type` casts. Update `src/app/page.test.tsx` mocks to match.
-- [ ] 2.6 Update `src/app/layout.tsx` to read `profile` from `@/lib/content`. Leave `seo.test.tsx` importing the JSON directly, since tests may still read raw data.
-- [ ] 2.7 Write `src/lib/content.test.ts`, with one `describe` per content file, covering:
+- [x] 2.1 Change the three `startDate` values in `src/data/personalProjects.json` from `YYYY-MM-DD` to `YYYY-MM` (A1).
+- [x] 2.2 Create `src/lib/content.ts`. Import every `src/data/*.json` file and export typed constants: `profile`, `experiences`, `skillCategories`, `degrees`, `certifications`, `workProjects`, `personalProjects`, `volunteering`. Cast only in this file.
+- [x] 2.3 Change `WorkProjects` to accept `workProjects: WorkProject[]` and `experiences: Experience[]` props (keeping `onViewExperience`), and remove its JSON imports. Update `WorkProjects.test.tsx` to pass fixture arrays as props and drop the `vi.mock('@/data/...')` calls.
+- [x] 2.4 Change `PersonalProjects` to accept a `personalProjects: PersonalProject[]` prop and remove its JSON import. Update `PersonalProjects.test.tsx` to pass fixtures as props. Replace the `vi.doMock` empty-data test with `render(<PersonalProjects personalProjects={[]} />)`.
+- [x] 2.5 Update `src/app/page.tsx` to import from `@/lib/content` and pass props to every section, including `WorkProjects` and `PersonalProjects`. Remove the per-call `as Type` casts. Update `src/app/page.test.tsx` mocks to match.
+- [x] 2.6 Update `src/app/layout.tsx` to read `profile` from `@/lib/content`. Leave `seo.test.tsx` importing the JSON directly, since tests may still read raw data.
+- [x] 2.7 Write `src/lib/content.test.ts`, with one `describe` per content file, covering:
   - required fields from `src/types/index.ts` are present and non-empty
   - `PersonalProject.status` ∈ {`ideation`, `in-progress`, `completed`} and `Skill.proficiency` (when set) ∈ {`beginner`, `intermediate`, `advanced`, `expert`}
   - every date matches `^\d{4}-(0[1-9]|1[0-2])$`, or is `Present` where the type allows it
@@ -127,8 +130,8 @@ These came up while reading the code and clarify how the spec applies. They do n
   - every image path (`profileImage`, `companyLogo`, `institutionLogo`, `organizationLogo`, `images[]`) exists under `public/` (checked with `fs.existsSync`)
 
   Failure messages must name the file, entry `id` and field.
-- [ ] 2.8 Run the negative check (invalid `status`), save the failing output, and revert. Run the full `npx vitest run`.
-- [ ] 2.9 Take after screenshots at the three widths and pixel-diff them against `before-*` (expect 0; investigate and document any non-zero result). Capture the 2.0 proofs and commit: "Load all content through one module and validate content data".
+- [x] 2.8 Run the negative check (invalid `status`), save the failing output, and revert. Run the full `npx vitest run`.
+- [x] 2.9 Take after screenshots at the three widths and pixel-diff them against `before-*` (expect 0; investigate and document any non-zero result). Capture the 2.0 proofs and commit: "Load all content through one module and validate content data".
 
 ### [ ] 3.0 Shared date helper and loading placeholder, light-only styling, image and theme cleanup
 
@@ -148,7 +151,7 @@ These came up while reading the code and clarify how the spec applies. They do n
   - `formatDateRange(start: string, end?: string, options?: { openEnded?: 'present' | 'omit' }): string`, which returns `"Start - End"`, `"Start - Present"` (`present`, the default) or `"Start"` (`omit`)
 - [ ] 3.2 Write `src/lib/dates.test.ts` covering: `2023-01` → `Jan 2023`, `Present` → `Present`, closed range, open range for both options, and the same output under `process.env.TZ` set to `America/New_York` and to `UTC`.
 - [ ] 3.3 Replace the local formatters in `Experience.tsx`, `Education.tsx` (including cert `Issued:` and `Expires:`) and `Volunteering.tsx` with the shared helpers. Run their tests and confirm the expected strings are unchanged.
-- [ ] 3.4 Replace `formatDateRange` in `PersonalProjectCard.tsx` with the shared helper using `{ openEnded: 'omit' }`. Update only `PersonalProjectCard.test.tsx` lines 64 and 70 to `Jan 2023 - Jun 2023` / `Jan 2023` (A2), with a one-line comment explaining the timezone fix.
+- [ ] 3.4 Replace `formatDateRange` in `PersonalProjectCard.tsx` with the shared helper using `{ openEnded: 'omit' }`. Update only `PersonalProjectCard.test.tsx` lines 64 and 70 to `Jan 2023 - Jun 2023` / `Jan 2023` (A2), and the `PersonalProjects.test.tsx` date-range test to `Jun 2022 - Jan 2023` / `Mar 2023` (A6), each with a one-line comment explaining the timezone fix.
 - [ ] 3.5 In `PersonalProjectCard.tsx`, replace the raw `<img>` SVG branch with `<OptimizedImage src=… alt=… fill unoptimized className="object-contain p-4" />` (A4). Confirm `PersonalProjectCard.test.tsx` and the `kiro.svg` card still render.
 - [ ] 3.6 Create `src/components/ui/SectionPlaceholder.tsx`, which renders `<div aria-hidden="true" className="min-h-[400px] animate-pulse bg-gray-100" />`. Export it from `src/components/ui/index.ts`, add `SectionPlaceholder.test.tsx`, and use it for all 7 `loading:` options in `page.tsx`. This removes every `dark:` class.
 - [ ] 3.7 Remove the `accent` color block from `tailwind.config.ts`. Confirm `grep -rn "accent-" src` is empty.

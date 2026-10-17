@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Home from './page';
+import { workProjects, personalProjects, experiences } from '@/lib/content';
 
 // Mock Next.js Image component
 vi.mock('next/image', () => ({
@@ -35,12 +36,18 @@ vi.mock('@/components/sections/Skills', () => ({
 }));
 
 vi.mock('@/components/sections/WorkProjects', () => ({
-  WorkProjects: () => <section id="work-projects" data-testid="work-projects">Work Projects</section>,
+  WorkProjects: ({ workProjects, experiences }: any) => (
+    <section id="work-projects" data-testid="work-projects">
+      {workProjects.length} work projects, {experiences.length} experiences
+    </section>
+  ),
 }));
 
 vi.mock('@/components/sections/PersonalProjects', () => ({
-  PersonalProjects: () => (
-    <section id="personal-projects" data-testid="personal-projects">Personal Projects</section>
+  PersonalProjects: ({ personalProjects }: any) => (
+    <section id="personal-projects" data-testid="personal-projects">
+      {personalProjects.length} personal projects
+    </section>
   ),
 }));
 
@@ -154,14 +161,18 @@ describe('Home Page Integration', () => {
     expect(screen.getByTestId('skills')).toBeInTheDocument();
   });
 
-  it('renders WorkProjects section', () => {
+  it('passes content data to WorkProjects section', () => {
     render(<Home />);
-    expect(screen.getByTestId('work-projects')).toHaveTextContent('Work Projects');
+    expect(screen.getByTestId('work-projects')).toHaveTextContent(
+      `${workProjects.length} work projects, ${experiences.length} experiences`
+    );
   });
 
-  it('renders PersonalProjects section', () => {
+  it('passes content data to PersonalProjects section', () => {
     render(<Home />);
-    expect(screen.getByTestId('personal-projects')).toHaveTextContent('Personal Projects');
+    expect(screen.getByTestId('personal-projects')).toHaveTextContent(
+      `${personalProjects.length} personal projects`
+    );
   });
 
   it('passes correct data to Education section', () => {

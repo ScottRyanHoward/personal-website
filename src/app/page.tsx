@@ -3,21 +3,16 @@ import { Header, Footer } from '@/components/layout';
 import SkipToContent from '@/components/layout/SkipToContent';
 import { Hero, About } from '@/components/sections';
 import StructuredData from '@/components/StructuredData';
-import type {
-  Profile,
-  Experience as ExperienceType,
-  SkillCategory,
-  Education as EducationType,
-  Certification,
-  Volunteering as VolunteeringType,
-} from '@/types';
-
-// Import data
-import profileData from '@/data/profile.json';
-import experienceData from '@/data/experience.json';
-import skillsData from '@/data/skills.json';
-import educationData from '@/data/education.json';
-import volunteeringData from '@/data/volunteering.json';
+import {
+  profile,
+  experiences,
+  skillCategories,
+  degrees,
+  certifications,
+  workProjects,
+  personalProjects,
+  volunteering,
+} from '@/lib/content';
 
 // Lazy load below-the-fold sections for better initial page load performance
 // ssr: false ensures components load on client side only, reducing initial bundle
@@ -59,28 +54,21 @@ const Contact = dynamic(() => import('@/components/sections/Contact').then(mod =
 export default function Home() {
   return (
     <>
-      <StructuredData 
-        profile={profileData as Profile}
-        experiences={experienceData as ExperienceType[]}
-        education={educationData.degrees as EducationType[]}
-      />
+      <StructuredData profile={profile} experiences={experiences} education={degrees} />
       <SkipToContent />
-      <Header name={profileData.name} />
+      <Header name={profile.name} />
       <main id="main-content" className="min-h-screen" tabIndex={-1}>
-        <Hero profile={profileData as Profile} />
-        <About profile={profileData as Profile} />
-        <Experience experiences={experienceData as ExperienceType[]} />
-        <Skills skillCategories={skillsData as SkillCategory[]} />
-        <WorkProjects />
-        <PersonalProjects />
-        <Education 
-          degrees={educationData.degrees as EducationType[]} 
-          certifications={educationData.certifications as Certification[]} 
-        />
-        <Volunteering volunteering={volunteeringData as VolunteeringType[]} />
-        <Contact profile={profileData as Profile} />
+        <Hero profile={profile} />
+        <About profile={profile} />
+        <Experience experiences={experiences} />
+        <Skills skillCategories={skillCategories} />
+        <WorkProjects workProjects={workProjects} experiences={experiences} />
+        <PersonalProjects personalProjects={personalProjects} />
+        <Education degrees={degrees} certifications={certifications} />
+        <Volunteering volunteering={volunteering} />
+        <Contact profile={profile} />
       </main>
-      <Footer socialLinks={profileData.socialLinks} />
+      <Footer socialLinks={profile.socialLinks} />
     </>
   );
 }

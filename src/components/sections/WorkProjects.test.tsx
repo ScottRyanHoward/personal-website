@@ -1,104 +1,100 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { WorkProjects } from './WorkProjects';
+import type { WorkProject, Experience } from '@/types';
 
-// Mock the data imports
-vi.mock('@/data/workProjects.json', () => ({
-  default: [
-    {
-      id: 'work-proj-1',
-      title: 'Test Project 1',
-      description: 'This is a test project description',
-      longDescription: 'Longer description',
-      technologies: ['React', 'TypeScript', 'AWS'],
-      companyId: 'company-1',
-      experienceId: 'exp-1',
-      images: ['/images/test-project-1.jpg'],
-      demoUrl: 'https://demo.example.com',
-      repoUrl: 'https://github.com/test/project',
-      featured: true,
-      startDate: '2022-01',
-      endDate: '2022-08',
-    },
-    {
-      id: 'work-proj-2',
-      title: 'Test Project 2',
-      description: 'Another test project',
-      longDescription: 'Longer description 2',
-      technologies: ['Node.js', 'PostgreSQL'],
-      companyId: 'company-2',
-      experienceId: 'exp-2',
-      images: ['/images/test-project-2.jpg'],
-      demoUrl: 'https://demo2.example.com',
-      featured: false,
-      startDate: '2021-06',
-      endDate: '2022-03',
-    },
-  ],
-}));
+const workProjects: WorkProject[] = [
+  {
+    id: 'work-proj-1',
+    title: 'Test Project 1',
+    description: 'This is a test project description',
+    longDescription: 'Longer description',
+    technologies: ['React', 'TypeScript', 'AWS'],
+    companyId: 'company-1',
+    experienceId: 'exp-1',
+    images: ['/images/test-project-1.jpg'],
+    demoUrl: 'https://demo.example.com',
+    repoUrl: 'https://github.com/test/project',
+    featured: true,
+    startDate: '2022-01',
+    endDate: '2022-08',
+  },
+  {
+    id: 'work-proj-2',
+    title: 'Test Project 2',
+    description: 'Another test project',
+    longDescription: 'Longer description 2',
+    technologies: ['Node.js', 'PostgreSQL'],
+    companyId: 'company-2',
+    experienceId: 'exp-2',
+    images: ['/images/test-project-2.jpg'],
+    demoUrl: 'https://demo2.example.com',
+    featured: false,
+    startDate: '2021-06',
+    endDate: '2022-03',
+  },
+];
 
-vi.mock('@/data/experience.json', () => ({
-  default: [
-    {
-      id: 'exp-1',
-      company: 'Test Company 1',
-      position: 'Senior Engineer',
-      location: 'San Francisco, CA',
-      startDate: '2021-03',
-      endDate: 'Present',
-      description: 'Test description',
-      responsibilities: [],
-      achievements: [],
-      technologies: [],
-      relatedProjects: ['work-proj-1'],
-    },
-    {
-      id: 'exp-2',
-      company: 'Test Company 2',
-      position: 'Developer',
-      location: 'Remote',
-      startDate: '2019-06',
-      endDate: '2021-02',
-      description: 'Test description 2',
-      responsibilities: [],
-      achievements: [],
-      technologies: [],
-      relatedProjects: ['work-proj-2'],
-    },
-  ],
-}));
+const experiences: Experience[] = [
+  {
+    id: 'exp-1',
+    company: 'Test Company 1',
+    position: 'Senior Engineer',
+    location: 'San Francisco, CA',
+    startDate: '2021-03',
+    endDate: 'Present',
+    description: 'Test description',
+    responsibilities: [],
+    achievements: [],
+    technologies: [],
+    relatedProjects: ['work-proj-1'],
+  },
+  {
+    id: 'exp-2',
+    company: 'Test Company 2',
+    position: 'Developer',
+    location: 'Remote',
+    startDate: '2019-06',
+    endDate: '2021-02',
+    description: 'Test description 2',
+    responsibilities: [],
+    achievements: [],
+    technologies: [],
+    relatedProjects: ['work-proj-2'],
+  },
+];
 
 describe('WorkProjects', () => {
   it('renders the section heading', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     const heading = screen.getByRole('heading', { name: /work projects/i });
     expect(heading).toBeInTheDocument();
   });
 
   it('renders the section description', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     const description = screen.getByText(/featured projects from my professional experience/i);
     expect(description).toBeInTheDocument();
   });
 
   it('renders all work projects', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     expect(screen.getByText('Test Project 1')).toBeInTheDocument();
     expect(screen.getByText('Test Project 2')).toBeInTheDocument();
   });
 
   it('displays project descriptions', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     expect(screen.getByText('This is a test project description')).toBeInTheDocument();
     expect(screen.getByText('Another test project')).toBeInTheDocument();
   });
 
   it('displays technology tags for each project', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     expect(screen.getByText('React')).toBeInTheDocument();
     expect(screen.getByText('TypeScript')).toBeInTheDocument();
@@ -108,14 +104,14 @@ describe('WorkProjects', () => {
   });
 
   it('displays company names for projects', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     expect(screen.getByText('Test Company 1')).toBeInTheDocument();
     expect(screen.getByText('Test Company 2')).toBeInTheDocument();
   });
 
   it('renders demo links with correct attributes', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     const demoLinks = screen.getAllByRole('link', { name: /live demo/i });
     expect(demoLinks).toHaveLength(2);
@@ -126,7 +122,7 @@ describe('WorkProjects', () => {
   });
 
   it('renders repository links when available', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     const codeLinks = screen.getAllByRole('link', { name: /code/i });
     expect(codeLinks).toHaveLength(1); // Only first project has repo
@@ -138,7 +134,7 @@ describe('WorkProjects', () => {
 
   it('renders view experience buttons when callback provided', () => {
     const mockCallback = vi.fn();
-    render(<WorkProjects onViewExperience={mockCallback} />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} onViewExperience={mockCallback} />);
     
     const experienceButtons = screen.getAllByRole('button', { name: /view experience/i });
     expect(experienceButtons.length).toBeGreaterThan(0);
@@ -146,7 +142,7 @@ describe('WorkProjects', () => {
 
   it('calls onViewExperience when experience button is clicked', () => {
     const mockOnViewExperience = vi.fn();
-    render(<WorkProjects onViewExperience={mockOnViewExperience} />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} onViewExperience={mockOnViewExperience} />);
     
     const experienceButtons = screen.getAllByRole('button', { name: /view experience/i });
     experienceButtons[0].click();
@@ -155,7 +151,7 @@ describe('WorkProjects', () => {
   });
 
   it('uses responsive grid layout classes', () => {
-    const { container } = render(<WorkProjects />);
+    const { container } = render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     const grid = container.querySelector('.grid');
     expect(grid).toHaveClass('grid-cols-1');
@@ -164,14 +160,14 @@ describe('WorkProjects', () => {
   });
 
   it('has proper ARIA attributes', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     const section = screen.getByRole('region', { name: /work projects/i });
     expect(section).toHaveAttribute('aria-labelledby', 'work-projects-heading');
   });
 
   it('renders project images with proper attributes', () => {
-    render(<WorkProjects />);
+    render(<WorkProjects workProjects={workProjects} experiences={experiences} />);
     
     const images = screen.getAllByRole('img');
     expect(images.length).toBeGreaterThan(0);
@@ -182,12 +178,10 @@ describe('WorkProjects', () => {
     });
   });
 
-  it('renders section even when no projects exist', () => {
-    // This test verifies the component structure is present
-    // The actual empty state would require dynamic mocking which is complex in this setup
-    render(<WorkProjects />);
-    
-    const heading = screen.getByRole('heading', { name: /work projects/i });
-    expect(heading).toBeInTheDocument();
+  it('renders empty state message when no projects exist', () => {
+    render(<WorkProjects workProjects={[]} experiences={experiences} />);
+
+    expect(screen.getByRole('heading', { name: /work projects/i })).toBeInTheDocument();
+    expect(screen.getByText(/no work projects to display/i)).toBeInTheDocument();
   });
 });
