@@ -4,7 +4,9 @@ import Home from './page';
 import { workProjects, personalProjects, experiences } from '@/lib/content';
 
 // Mock Next.js Image component
+// Test double for next/image renders a plain <img>
 vi.mock('next/image', () => ({
+  // eslint-disable-next-line @next/next/no-img-element
   default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
 }));
 

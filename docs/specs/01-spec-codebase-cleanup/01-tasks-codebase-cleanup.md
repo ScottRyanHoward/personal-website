@@ -29,6 +29,9 @@ These came up while reading the code and clarify how the spec applies. They do n
 - **A6 — A2 also applies to `PersonalProjects.test.tsx`:** its `renders date ranges for projects` test expects the same timezone-shifted months (`May 2022 - Dec 2022` for `2022-06`..`2023-01`). Task 3.4 corrects this expectation as well.
 - **A7 — Correction to A2, found in 3.8:** the page is prerendered at **build** time, so the shifted months appear wherever the build runs west of UTC. A local build in US Eastern time showed `Apr/Jan/Sep 2025` for `2025-05/02/10`. The live site (built on Vercel in UTC) shows `May/Feb/Oct 2025` (checked with `curl`). The 3.0 output matches the live site exactly: 0 differing pixels against the 2.0 code built with `TZ=UTC`. Against the local Eastern-time baseline, only those three month labels differ (643 px).
 - **A8 — Clean builds for visual proofs:** an incremental `next build` that reused a stale `.next/cache` produced HTML and CSS with different `next/font` hashes (`__className_f367f3` vs `__className_d8ebd1`), so the page fell back to system fonts. Clean rebuilds don't reproduce this with either import style. Proof builds now always start with `rm -rf .next`. `page.tsx` imports `SectionPlaceholder` from its own file, so the page doesn't pull in the client-component barrel.
+- **A9 — Two more raw `<img>` tags (found in 4.8):** `Education.tsx` (institution logos) and `Volunteering.tsx` (organization logos) also used raw `<img>`, which the review missed. The spec's zero-lint-warnings goal requires fixing them. They now use `OptimizedImage` with `unoptimized` and `placeholder="empty"`, so the browser gets the same file as before. Running them through the local optimizer (no `sharp`) changed logo pixels, including a green corner on the BSides logo. The three `<img>` tags inside `next/image` test mocks keep a scoped `eslint-disable-next-line`.
+- **A10 — Axe matcher types:** `@types/jest-axe` was not installed, because it depends on `@types/jest` (globals clash with Vitest) and `axe-core@^3`. Two local declarations replace it: `src/test/jest-axe.d.ts` describes the module and `src/test/vitest-axe.d.ts` adds the Vitest matcher. `seo.test.tsx` now uses `toEqual`/`toMatchObject` instead of `if`-guarded property access. That fixes its 7 type errors and stops it passing silently when the metadata changes shape. `performance.test.tsx`'s `swcMinify: true` check is now a check that deprecated keys are absent.
+- **4.3 note:** `npm run analyze` wasn't run, because the analyzer opens browser tabs. Running `ANALYZE=true` against the config showed the v14 plugin loads and wraps the webpack config. The regular build exercises the same plugin.
 - **Follow-up (out of scope):** `globals.css` still has a `prefers-color-scheme: dark` block for the CSS variables. In a dark OS scheme the page is pixel-identical (every section paints its own background), so the only effect is the custom scrollbar colors. It's left as is.
 - **A4 — SVG images:** `PersonalProjectCard` uses a raw `<img>` only for `.svg` files. The replacement is `OptimizedImage` with `unoptimized` (SVGs aren't resized by Next), keeping the current `object-contain p-4` styling.
 
@@ -64,6 +67,9 @@ These came up while reading the code and clarify how the spec applies. They do n
 | `package.json`, `package-lock.json` | Pin `@next/bundle-analyzer` to `^14.2.0`. |
 | `src/test/setup.ts` | Register the axe matcher once, globally. |
 | `src/test/vitest-axe.d.ts` | **New.** Extend Vitest's `Assertion` type with `toHaveNoViolations`. |
+| `src/test/jest-axe.d.ts` | **New.** Minimal module types for `jest-axe` (A10). |
+| `src/components/sections/Education.tsx`, `Volunteering.tsx` | Logos moved from raw `<img>` to `OptimizedImage` (A9). |
+| `src/test/performance.test.tsx` | Config and placeholder assertions updated to the new expectations. |
 | `src/test/accessibility.test.tsx`, `src/test/status-badge-visual-regression.test.tsx` | Remove per-file `expect.extend`. |
 | `README.md` | Rewritten as the single consolidated doc. |
 | `CONTRIBUTING.md`, `CONTENT_GUIDE.md`, `DEPLOYMENT.md`, `PERFORMANCE.md` | Deleted after their useful content moves into `README.md`. |
@@ -160,7 +166,7 @@ These came up while reading the code and clarify how the spec applies. They do n
 - [x] 3.7 Remove the `accent` color block from `tailwind.config.ts`. Confirm `grep -rn "accent-" src` is empty.
 - [x] 3.8 Run `npx vitest run`, take the after screenshots, pixel-diff them against `before-*` (expect 0), capture the 3.0 proofs and commit: "Share date formatting and loading placeholder, remove unused styles".
 
-### [ ] 4.0 Config leftovers and type safety: `tsc`, lint and build all clean
+### [x] 4.0 Config leftovers and type safety: `tsc`, lint and build all clean
 
 #### 4.0 Proof Artifact(s)
 
@@ -172,14 +178,14 @@ These came up while reading the code and clarify how the spec applies. They do n
 
 #### 4.0 Tasks
 
-- [ ] 4.1 Remove `swcMinify: true` and the `experimental.optimizePackageImports` block from `next.config.js`.
-- [ ] 4.2 Remove the `verification` block (placeholder `google-site-verification-code`) from `src/app/layout.tsx`. Update `seo.test.tsx` if it asserts on it.
-- [ ] 4.3 Run `npm install -D @next/bundle-analyzer@^14.2.0` and confirm `npm run analyze` still starts a build.
-- [ ] 4.4 Move axe matcher registration into `src/test/setup.ts` (`import { toHaveNoViolations } from 'jest-axe'; expect.extend(toHaveNoViolations);`) and delete the per-file `expect.extend` lines in the two axe test files.
-- [ ] 4.5 Add `src/test/vitest-axe.d.ts`, which extends Vitest's `Assertion<T>` and `AsymmetricMatchersContaining` with `toHaveNoViolations(): void`. If the `jest-axe` module itself has no types, also install `@types/jest-axe`. Make sure `tsconfig.json` `include` covers the file.
-- [ ] 4.6 Run `npx tsc --noEmit` and fix any remaining errors at their source (no `@ts-ignore`).
-- [ ] 4.7 Do the axe negative check (temporarily add a missing-`alt` image, confirm the test fails, then revert).
-- [ ] 4.8 Run `npm run lint` and `npm run build`. Capture the 4.0 proofs and commit: "Remove config leftovers and fix test type errors".
+- [x] 4.1 Remove `swcMinify: true` and the `experimental.optimizePackageImports` block from `next.config.js`.
+- [x] 4.2 Remove the `verification` block (placeholder `google-site-verification-code`) from `src/app/layout.tsx`. Update `seo.test.tsx` if it asserts on it.
+- [x] 4.3 Run `npm install -D @next/bundle-analyzer@^14.2.0` and confirm `npm run analyze` still starts a build.
+- [x] 4.4 Move axe matcher registration into `src/test/setup.ts` (`import { toHaveNoViolations } from 'jest-axe'; expect.extend(toHaveNoViolations);`) and delete the per-file `expect.extend` lines in the two axe test files.
+- [x] 4.5 Add `src/test/vitest-axe.d.ts`, which extends Vitest's `Assertion<T>` and `AsymmetricMatchersContaining` with `toHaveNoViolations(): void`. If the `jest-axe` module itself has no types, also install `@types/jest-axe`. Make sure `tsconfig.json` `include` covers the file.
+- [x] 4.6 Run `npx tsc --noEmit` and fix any remaining errors at their source (no `@ts-ignore`).
+- [x] 4.7 Do the axe negative check (temporarily add a missing-`alt` image, confirm the test fails, then revert).
+- [x] 4.8 Run `npm run lint` and `npm run build`. Capture the 4.0 proofs and commit: "Remove config leftovers and fix test type errors".
 
 ### [ ] 5.0 Consolidated README replaces the root docs
 

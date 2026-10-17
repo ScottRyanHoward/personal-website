@@ -26,14 +26,6 @@ const nextConfig = {
   // Compression
   compress: true,
 
-  // Performance optimizations
-  swcMinify: true,
-
-  // Experimental features for better performance
-  experimental: {
-    optimizePackageImports: ['react-icons'],
-  },
-
   // Headers for caching and security
   async headers() {
     return [

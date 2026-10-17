@@ -4,11 +4,10 @@ import profileData from '@/data/profile.json';
 
 describe('SEO Metadata', () => {
   it('has proper title configuration', () => {
-    expect(metadata.title).toBeDefined();
-    if (typeof metadata.title === 'object' && metadata.title !== null) {
-      expect(metadata.title.default).toBe(`${profileData.name} - ${profileData.title}`);
-      expect(metadata.title.template).toBe(`%s | ${profileData.name}`);
-    }
+    expect(metadata.title).toEqual({
+      default: `${profileData.name} - ${profileData.title}`,
+      template: `%s | ${profileData.name}`,
+    });
   });
 
   it('has proper description', () => {
@@ -39,32 +38,34 @@ describe('SEO Metadata', () => {
   });
 
   it('has proper Open Graph configuration', () => {
-    expect(metadata.openGraph).toBeDefined();
-    expect(metadata.openGraph?.type).toBe('website');
-    expect(metadata.openGraph?.locale).toBe('en_US');
-    expect(metadata.openGraph?.siteName).toBe(profileData.name);
-    expect(metadata.openGraph?.title).toBe(`${profileData.name} - ${profileData.title}`);
-    expect(metadata.openGraph?.description).toBe(profileData.summary);
+    expect(metadata.openGraph).toMatchObject({
+      type: 'website',
+      locale: 'en_US',
+      siteName: profileData.name,
+      title: `${profileData.name} - ${profileData.title}`,
+      description: profileData.summary,
+    });
   });
 
   it('has Open Graph images configured', () => {
-    expect(metadata.openGraph?.images).toBeDefined();
-    if (Array.isArray(metadata.openGraph?.images)) {
-      const image = metadata.openGraph.images[0];
-      if (typeof image === 'object' && image !== null) {
-        expect(image.width).toBe(1200);
-        expect(image.height).toBe(630);
-        expect(image.alt).toContain(profileData.name);
-      }
-    }
+    expect(metadata.openGraph).toMatchObject({
+      images: [
+        {
+          width: 1200,
+          height: 630,
+          alt: expect.stringContaining(profileData.name),
+        },
+      ],
+    });
   });
 
   it('has proper Twitter card configuration', () => {
-    expect(metadata.twitter).toBeDefined();
-    expect(metadata.twitter?.card).toBe('summary_large_image');
-    expect(metadata.twitter?.title).toBe(`${profileData.name} - ${profileData.title}`);
-    expect(metadata.twitter?.description).toBe(profileData.summary);
-    expect(metadata.twitter?.creator).toBeDefined();
+    expect(metadata.twitter).toMatchObject({
+      card: 'summary_large_image',
+      title: `${profileData.name} - ${profileData.title}`,
+      description: profileData.summary,
+      creator: expect.any(String),
+    });
   });
 
   it('has proper robots configuration', () => {

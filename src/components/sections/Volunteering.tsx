@@ -1,4 +1,5 @@
 import React from 'react';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { formatDateRange } from '@/lib/dates';
 import { Volunteering as VolunteeringType } from '@/types';
 
@@ -35,13 +36,17 @@ export const Volunteering: React.FC<VolunteeringProps> = ({ volunteering }) => {
               aria-label={`${item.role} at ${item.organization}`}
             >
               <div className="flex gap-6">
-                {/* Organization Logo */}
+                {/* Organization Logo (small, so served as-is without optimization or blur placeholder) */}
                 {item.organizationLogo && (
-                  <div className="flex-shrink-0">
-                    <img
+                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg md:h-20 md:w-20">
+                    <OptimizedImage
                       src={item.organizationLogo}
                       alt={`${item.organization} logo`}
-                      className="h-16 w-16 rounded-lg object-contain md:h-20 md:w-20"
+                      fill
+                      className="object-contain"
+                      unoptimized
+                      placeholder="empty"
+                      sizes="80px"
                     />
                   </div>
                 )}

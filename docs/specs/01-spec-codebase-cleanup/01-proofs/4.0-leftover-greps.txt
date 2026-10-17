@@ -1,0 +1,11 @@
+$ grep -n "swcMinify\|react-icons" next.config.js
+(no matches)
+$ grep -n "google-site-verification-code" src/app/layout.tsx
+(no matches)
+$ npm ls @next/bundle-analyzer next
+personal-website@0.1.0 <repo>
+├── @next/bundle-analyzer@14.2.35
+└── next@14.2.33
+
+$ grep -rn "<img" src --include="*.tsx" | grep -v "\.test\."
+src/components/ui/PersonalProjectCard.tsx:55:          {/* SVG logos skip Next's raster optimization and get padding like the old <img> */}

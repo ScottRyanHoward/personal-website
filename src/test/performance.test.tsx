@@ -17,11 +17,14 @@ describe('Performance Optimizations', () => {
       expect(config).toContain('compress: true');
     });
 
-    it('should have SWC minification enabled', () => {
+    it('should not set deprecated or unused config options', () => {
       const configPath = join(process.cwd(), 'next.config.js');
       const config = readFileSync(configPath, 'utf-8');
-      
-      expect(config).toContain('swcMinify: true');
+
+      // SWC minification is the default; the swcMinify flag was removed in Next 15
+      expect(config).not.toContain('swcMinify');
+      // react-icons is not a dependency
+      expect(config).not.toContain('react-icons');
     });
 
     it('should have caching headers configured', () => {
