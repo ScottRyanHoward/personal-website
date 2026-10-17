@@ -1,0 +1,29 @@
+$ ls *.md
+README.md
+$ ls e2e/*.md
+e2e/README.md
+$ grep -n "^## " README.md
+3:## Overview
+13:## Setup
+39:## Editing Content
+72:## Testing
+84:## Deployment
+98:## Project Structure
+119:## License
+$ grep -n "e2e/README.md" README.md
+82:- End-to-end specs live in `e2e/`. See [`e2e/README.md`](./e2e/README.md) for
+
+$ npx vitest run
+ Test Files  30 passed (30)
+      Tests  538 passed (538)
+$ npx tsc --noEmit
+exit=0
+$ npm run lint
+✔ No ESLint warnings or errors
+$ rm -rf .next && npm run build
+exit=0 warnings=0
+┌ ○ /                                    11.2 kB        98.4 kB
+$ npm run test:e2e
+  18 failed
+  72 passed (2.5m)
+  e2e failure set vs 1.0 baseline: SAME (no new failures)

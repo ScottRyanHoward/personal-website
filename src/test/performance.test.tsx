@@ -208,17 +208,4 @@ describe('Performance Optimizations', () => {
       expect(pkg.devDependencies).toHaveProperty('@next/bundle-analyzer');
     });
   });
-
-  describe('Documentation', () => {
-    it('should have performance documentation', () => {
-      const perfDocPath = join(process.cwd(), 'PERFORMANCE.md');
-      const perfDoc = readFileSync(perfDocPath, 'utf-8');
-      
-      expect(perfDoc).toContain('Performance Optimization');
-      expect(perfDoc).toContain('Code Splitting');
-      expect(perfDoc).toContain('Font Optimization');
-      expect(perfDoc).toContain('Caching Headers');
-      expect(perfDoc).toContain('Web Vitals');
-    });
-  });
 });

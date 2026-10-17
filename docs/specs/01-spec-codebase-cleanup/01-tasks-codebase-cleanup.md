@@ -32,6 +32,7 @@ These came up while reading the code and clarify how the spec applies. They do n
 - **A9 — Two more raw `<img>` tags (found in 4.8):** `Education.tsx` (institution logos) and `Volunteering.tsx` (organization logos) also used raw `<img>`, which the review missed. The spec's zero-lint-warnings goal requires fixing them. They now use `OptimizedImage` with `unoptimized` and `placeholder="empty"`, so the browser gets the same file as before. Running them through the local optimizer (no `sharp`) changed logo pixels, including a green corner on the BSides logo. The three `<img>` tags inside `next/image` test mocks keep a scoped `eslint-disable-next-line`.
 - **A10 — Axe matcher types:** `@types/jest-axe` was not installed, because it depends on `@types/jest` (globals clash with Vitest) and `axe-core@^3`. Two local declarations replace it: `src/test/jest-axe.d.ts` describes the module and `src/test/vitest-axe.d.ts` adds the Vitest matcher. `seo.test.tsx` now uses `toEqual`/`toMatchObject` instead of `if`-guarded property access. That fixes its 7 type errors and stops it passing silently when the metadata changes shape. `performance.test.tsx`'s `swcMinify: true` check is now a check that deprecated keys are absent.
 - **4.3 note:** `npm run analyze` wasn't run, because the analyzer opens browser tabs. Running `ANALYZE=true` against the config showed the v14 plugin loads and wraps the webpack config. The regular build exercises the same plugin.
+- **A11 — Found in 5.0:** `vercel.json` redirects `/resume` to a `/resume.pdf` that doesn't exist, so the live `/resume` URL returns 404 (checked with `curl`). This is out of scope (it would change production behavior) and is documented as a known issue in `README.md`. `performance.test.tsx` had a test requiring `PERFORMANCE.md`, which was removed along with the approved doc deletion. The redundant `DEPLOYMENT.md` line in `.vercelignore` is removed.
 - **Follow-up (out of scope):** `globals.css` still has a `prefers-color-scheme: dark` block for the CSS variables. In a dark OS scheme the page is pixel-identical (every section paints its own background), so the only effect is the custom scrollbar colors. It's left as is.
 - **A4 — SVG images:** `PersonalProjectCard` uses a raw `<img>` only for `.svg` files. The replacement is `OptimizedImage` with `unoptimized` (SVGs aren't resized by Next), keeping the current `object-contain p-4` styling.
 
@@ -187,7 +188,7 @@ These came up while reading the code and clarify how the spec applies. They do n
 - [x] 4.7 Do the axe negative check (temporarily add a missing-`alt` image, confirm the test fails, then revert).
 - [x] 4.8 Run `npm run lint` and `npm run build`. Capture the 4.0 proofs and commit: "Remove config leftovers and fix test type errors".
 
-### [ ] 5.0 Consolidated README replaces the root docs
+### [x] 5.0 Consolidated README replaces the root docs
 
 #### 5.0 Proof Artifact(s)
 
@@ -198,8 +199,8 @@ These came up while reading the code and clarify how the spec applies. They do n
 
 #### 5.0 Tasks
 
-- [ ] 5.1 Read `README.md`, `CONTENT_GUIDE.md`, `DEPLOYMENT.md`, `PERFORMANCE.md`, `CONTRIBUTING.md` and `e2e/README.md`. List which facts are still accurate after 1.0–4.0.
-- [ ] 5.2 Rewrite `README.md` with these sections:
+- [x] 5.1 Read `README.md`, `CONTENT_GUIDE.md`, `DEPLOYMENT.md`, `PERFORMANCE.md`, `CONTRIBUTING.md` and `e2e/README.md`. List which facts are still accurate after 1.0–4.0.
+- [x] 5.2 Rewrite `README.md` with these sections:
   - **Overview:** stack and live URL
   - **Setup:** prerequisites, install, `dev`
   - **Editing Content:** one row per `src/data/*.json` file and the section it drives, date format `YYYY-MM`, adding images under `public/images/`, and how `content.test.ts` catches mistakes
@@ -208,6 +209,6 @@ These came up while reading the code and clarify how the spec applies. They do n
   - **Project Structure:** short tree including `src/lib/`
 
   Keep it concise and drop anything that's no longer true.
-- [ ] 5.3 Delete `CONTRIBUTING.md`, `CONTENT_GUIDE.md`, `DEPLOYMENT.md` and `PERFORMANCE.md`. Update `e2e/README.md` in place: remove stale content (for example references to the deleted `TEST_RESULTS.md`) and make sure its commands match `package.json`.
-- [ ] 5.4 Run the README accuracy check script on both `README.md` and `e2e/README.md` and fix any missing script or path. Capture the 5.0 proofs.
-- [ ] 5.5 Run the final full check (`npx vitest run`, `npm run test:e2e`, `npx tsc --noEmit`, `npm run lint`, `npm run build`) and compare e2e results with the 1.1 baseline. Commit: "Consolidate documentation into README".
+- [x] 5.3 Delete `CONTRIBUTING.md`, `CONTENT_GUIDE.md`, `DEPLOYMENT.md` and `PERFORMANCE.md`. Update `e2e/README.md` in place: remove stale content (for example references to the deleted `TEST_RESULTS.md`) and make sure its commands match `package.json`.
+- [x] 5.4 Run the README accuracy check script on both `README.md` and `e2e/README.md` and fix any missing script or path. Capture the 5.0 proofs.
+- [x] 5.5 Run the final full check (`npx vitest run`, `npm run test:e2e`, `npx tsc --noEmit`, `npm run lint`, `npm run build`) and compare e2e results with the 1.1 baseline. Commit: "Consolidate documentation into README".

@@ -101,7 +101,7 @@ npx playwright test e2e/navigation.spec.ts
 ### Run tests on specific browser
 ```bash
 npx playwright test --project=chromium
-npx playwright test --project=mobile
+npx playwright test --project=mobile-chromium
 ```
 
 ## Test Configuration
@@ -111,8 +111,8 @@ The tests are configured in `playwright.config.ts` with the following settings:
 - **Test Directory**: `./e2e`
 - **Base URL**: `http://localhost:3000`
 - **Projects**: 
-  - Desktop Chrome
-  - Mobile (iPhone 12)
+  - `chromium` (Desktop Chrome)
+  - `mobile-chromium` (Pixel 5)
 - **Web Server**: Automatically starts dev server before tests
 - **Retries**: 2 retries in CI, 0 locally
 - **Reporter**: HTML report
@@ -155,6 +155,10 @@ When adding new E2E tests:
 - Verify element exists in current viewport
 - Check if element is dynamically loaded
 - Use more specific selectors
+
+## Known Failures
+
+As of October 2026, 18 tests fail on `main` (72 pass). They failed before the Spec 01 cleanup and still fail after it, unchanged. They are mostly `mobile-chromium` runs of `resume-download.spec.ts` and `smooth-scrolling.spec.ts`, plus some `full-page-flow.spec.ts` checks. The full list is in `docs/specs/01-spec-codebase-cleanup/01-proofs/1.0-e2e-baseline.txt`. Compare against that list before treating a failure as a regression.
 
 ## CI/CD Integration
 
