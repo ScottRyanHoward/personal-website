@@ -1,0 +1,12 @@
+$ grep -rn "dark:" src --include="*.tsx" | grep -v "\.test\."
+(exit 1 - no matches)
+$ grep -rn "accent-" src
+(no matches)
+$ grep -c "min-h-\[400px\] animate-pulse" src/app/page.tsx
+0
+$ grep -rn "toLocaleDateString" src --include="*.tsx" | grep -v "\.test\."
+(no matches)
+$ grep -rn "const formatDate\|function formatDate" src --include="*.tsx"
+(no matches)
+$ npx next lint --file src/components/ui/PersonalProjectCard.tsx
+✔ No ESLint warnings or errors

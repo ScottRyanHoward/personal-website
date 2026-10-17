@@ -139,8 +139,9 @@ describe('PersonalProjects', () => {
 
   it('renders date ranges for projects', () => {
     render(<PersonalProjects personalProjects={personalProjects} />);
-    expect(screen.getByText(/May 2022 - Dec 2022/)).toBeInTheDocument();
-    expect(screen.getByText(/Feb 2023/)).toBeInTheDocument();
+    // Months match the data (2022-06..2023-01, 2023-03); the old parser shifted them a month back west of UTC
+    expect(screen.getByText(/Jun 2022 - Jan 2023/)).toBeInTheDocument();
+    expect(screen.getByText(/Mar 2023/)).toBeInTheDocument();
   });
 });
 

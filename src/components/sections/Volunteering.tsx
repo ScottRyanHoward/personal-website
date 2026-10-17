@@ -1,22 +1,10 @@
 import React from 'react';
+import { formatDateRange } from '@/lib/dates';
 import { Volunteering as VolunteeringType } from '@/types';
 
 export interface VolunteeringProps {
   volunteering: VolunteeringType[];
 }
-
-const formatDate = (dateString: string): string => {
-  if (dateString === 'Present') return 'Present';
-  const [year, month] = dateString.split('-');
-  const date = new Date(parseInt(year), parseInt(month) - 1);
-  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-};
-
-const formatDateRange = (startDate: string, endDate?: string | 'Present'): string => {
-  const start = formatDate(startDate);
-  const end = endDate ? formatDate(endDate) : 'Present';
-  return `${start} - ${end}`;
-};
 
 export const Volunteering: React.FC<VolunteeringProps> = ({ volunteering }) => {
   // Sort by start date (most recent first)

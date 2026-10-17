@@ -18,3 +18,5 @@ export type { PersonalProjectCardProps } from './PersonalProjectCard';
 
 export { OptimizedImage } from './OptimizedImage';
 export type { OptimizedImageProps } from './OptimizedImage';
+
+export { SectionPlaceholder } from './SectionPlaceholder';

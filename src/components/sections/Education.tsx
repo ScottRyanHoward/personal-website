@@ -1,20 +1,11 @@
 import React from 'react';
+import { formatDateRange, formatMonthYear } from '@/lib/dates';
 import { Education as EducationType, Certification } from '@/types';
 
 export interface EducationProps {
   degrees: EducationType[];
   certifications: Certification[];
 }
-
-const formatDate = (dateString: string): string => {
-  const [year, month] = dateString.split('-');
-  const date = new Date(parseInt(year), parseInt(month) - 1);
-  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-};
-
-const formatDateRange = (startDate: string, endDate: string): string => {
-  return `${formatDate(startDate)} - ${formatDate(endDate)}`;
-};
 
 export const Education: React.FC<EducationProps> = ({ degrees, certifications }) => {
   // Sort degrees by end date (most recent first)
@@ -149,13 +140,13 @@ export const Education: React.FC<EducationProps> = ({ degrees, certifications })
                   {/* Issue date */}
                   <div className="mb-3 text-sm text-gray-600">
                     <time>
-                      Issued: {formatDate(cert.issueDate)}
+                      Issued: {formatMonthYear(cert.issueDate)}
                     </time>
                     {cert.expiryDate && (
                       <>
                         <br />
                         <time>
-                          Expires: {formatDate(cert.expiryDate)}
+                          Expires: {formatMonthYear(cert.expiryDate)}
                         </time>
                       </>
                     )}

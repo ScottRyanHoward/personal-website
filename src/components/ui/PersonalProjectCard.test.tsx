@@ -61,13 +61,15 @@ describe('PersonalProjectCard', () => {
 
   it('renders date range when both start and end dates are provided', () => {
     render(<PersonalProjectCard project={mockProject} />);
-    expect(screen.getByText(/Dec 2022 - May 2023/)).toBeInTheDocument();
+    // 2023-01..2023-06 is Jan-Jun; the old parser shifted it a month back west of UTC
+    expect(screen.getByText(/Jan 2023 - Jun 2023/)).toBeInTheDocument();
   });
 
   it('renders only start date when end date is not provided', () => {
     const projectWithoutEndDate = { ...mockProject, endDate: undefined };
     render(<PersonalProjectCard project={projectWithoutEndDate} />);
-    expect(screen.getByText(/Dec 2022/)).toBeInTheDocument();
+    // Timezone-independent: 2023-01 renders as Jan 2023 everywhere
+    expect(screen.getByText(/Jan 2023/)).toBeInTheDocument();
   });
 
   it('renders all technology tags', () => {

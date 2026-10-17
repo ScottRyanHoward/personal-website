@@ -95,8 +95,11 @@ describe('Performance Optimizations', () => {
       const pagePath = join(process.cwd(), 'src/app/page.tsx');
       const page = readFileSync(pagePath, 'utf-8');
       
-      expect(page).toContain('loading:');
-      expect(page).toContain('animate-pulse');
+      // Every dynamic() section uses the shared placeholder while its chunk loads
+      const dynamicCount = (page.match(/dynamic\(\(\) => import/g) || []).length;
+      const placeholderCount = (page.match(/loading: \(\) => <SectionPlaceholder \/>/g) || []).length;
+      expect(dynamicCount).toBeGreaterThan(0);
+      expect(placeholderCount).toBe(dynamicCount);
     });
 
     it('should lazy load Experience section', () => {

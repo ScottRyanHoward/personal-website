@@ -27,6 +27,9 @@ These came up while reading the code and clarify how the spec applies. They do n
 - **A3 — Open-ended ranges differ by section, and stay that way:** when there's no end date, `Volunteering` shows `"Start - Present"` and `PersonalProjectCard` shows only `"Start"`. The helper supports both behaviors through an option.
 - **A5 — Empty experience description (found in 2.7):** `experience.json` `exp-0` (Lead Delivery Consultant, from `cec60ce`) has `description: ""` and empty lists. The content test still fails when `description` is *missing*, but allows it to be *empty* for experience entries, so a role can be listed before its summary is written. Writing the description is content work for the site owner (non-goal 4).
 - **A6 — A2 also applies to `PersonalProjects.test.tsx`:** its `renders date ranges for projects` test expects the same timezone-shifted months (`May 2022 - Dec 2022` for `2022-06`..`2023-01`). Task 3.4 corrects this expectation as well.
+- **A7 — Correction to A2, found in 3.8:** the page is prerendered at **build** time, so the shifted months appear wherever the build runs west of UTC. A local build in US Eastern time showed `Apr/Jan/Sep 2025` for `2025-05/02/10`. The live site (built on Vercel in UTC) shows `May/Feb/Oct 2025` (checked with `curl`). The 3.0 output matches the live site exactly: 0 differing pixels against the 2.0 code built with `TZ=UTC`. Against the local Eastern-time baseline, only those three month labels differ (643 px).
+- **A8 — Clean builds for visual proofs:** an incremental `next build` that reused a stale `.next/cache` produced HTML and CSS with different `next/font` hashes (`__className_f367f3` vs `__className_d8ebd1`), so the page fell back to system fonts. Clean rebuilds don't reproduce this with either import style. Proof builds now always start with `rm -rf .next`. `page.tsx` imports `SectionPlaceholder` from its own file, so the page doesn't pull in the client-component barrel.
+- **Follow-up (out of scope):** `globals.css` still has a `prefers-color-scheme: dark` block for the CSS variables. In a dark OS scheme the page is pixel-identical (every section paints its own background), so the only effect is the custom scrollbar colors. It's left as is.
 - **A4 — SVG images:** `PersonalProjectCard` uses a raw `<img>` only for `.svg` files. The replacement is `OptimizedImage` with `unoptimized` (SVGs aren't resized by Next), keeping the current `object-contain p-4` styling.
 
 ## Relevant Files
@@ -133,7 +136,7 @@ These came up while reading the code and clarify how the spec applies. They do n
 - [x] 2.8 Run the negative check (invalid `status`), save the failing output, and revert. Run the full `npx vitest run`.
 - [x] 2.9 Take after screenshots at the three widths and pixel-diff them against `before-*` (expect 0; investigate and document any non-zero result). Capture the 2.0 proofs and commit: "Load all content through one module and validate content data".
 
-### [ ] 3.0 Shared date helper and loading placeholder, light-only styling, image and theme cleanup
+### [x] 3.0 Shared date helper and loading placeholder, light-only styling, image and theme cleanup
 
 #### 3.0 Proof Artifact(s)
 
@@ -146,16 +149,16 @@ These came up while reading the code and clarify how the spec applies. They do n
 
 #### 3.0 Tasks
 
-- [ ] 3.1 Create `src/lib/dates.ts` with:
+- [x] 3.1 Create `src/lib/dates.ts` with:
   - `formatMonthYear(value: string): string`, which returns `"Present"` unchanged and otherwise splits `YYYY-MM` into numbers and formats `new Date(year, month - 1)` with `{ month: 'short', year: 'numeric' }`, `en-US`
   - `formatDateRange(start: string, end?: string, options?: { openEnded?: 'present' | 'omit' }): string`, which returns `"Start - End"`, `"Start - Present"` (`present`, the default) or `"Start"` (`omit`)
-- [ ] 3.2 Write `src/lib/dates.test.ts` covering: `2023-01` → `Jan 2023`, `Present` → `Present`, closed range, open range for both options, and the same output under `process.env.TZ` set to `America/New_York` and to `UTC`.
-- [ ] 3.3 Replace the local formatters in `Experience.tsx`, `Education.tsx` (including cert `Issued:` and `Expires:`) and `Volunteering.tsx` with the shared helpers. Run their tests and confirm the expected strings are unchanged.
-- [ ] 3.4 Replace `formatDateRange` in `PersonalProjectCard.tsx` with the shared helper using `{ openEnded: 'omit' }`. Update only `PersonalProjectCard.test.tsx` lines 64 and 70 to `Jan 2023 - Jun 2023` / `Jan 2023` (A2), and the `PersonalProjects.test.tsx` date-range test to `Jun 2022 - Jan 2023` / `Mar 2023` (A6), each with a one-line comment explaining the timezone fix.
-- [ ] 3.5 In `PersonalProjectCard.tsx`, replace the raw `<img>` SVG branch with `<OptimizedImage src=… alt=… fill unoptimized className="object-contain p-4" />` (A4). Confirm `PersonalProjectCard.test.tsx` and the `kiro.svg` card still render.
-- [ ] 3.6 Create `src/components/ui/SectionPlaceholder.tsx`, which renders `<div aria-hidden="true" className="min-h-[400px] animate-pulse bg-gray-100" />`. Export it from `src/components/ui/index.ts`, add `SectionPlaceholder.test.tsx`, and use it for all 7 `loading:` options in `page.tsx`. This removes every `dark:` class.
-- [ ] 3.7 Remove the `accent` color block from `tailwind.config.ts`. Confirm `grep -rn "accent-" src` is empty.
-- [ ] 3.8 Run `npx vitest run`, take the after screenshots, pixel-diff them against `before-*` (expect 0), capture the 3.0 proofs and commit: "Share date formatting and loading placeholder, remove unused styles".
+- [x] 3.2 Write `src/lib/dates.test.ts` covering: `2023-01` → `Jan 2023`, `Present` → `Present`, closed range, open range for both options, and the same output under `process.env.TZ` set to `America/New_York` and to `UTC`.
+- [x] 3.3 Replace the local formatters in `Experience.tsx`, `Education.tsx` (including cert `Issued:` and `Expires:`) and `Volunteering.tsx` with the shared helpers. Run their tests and confirm the expected strings are unchanged.
+- [x] 3.4 Replace `formatDateRange` in `PersonalProjectCard.tsx` with the shared helper using `{ openEnded: 'omit' }`. Update only `PersonalProjectCard.test.tsx` lines 64 and 70 to `Jan 2023 - Jun 2023` / `Jan 2023` (A2), and the `PersonalProjects.test.tsx` date-range test to `Jun 2022 - Jan 2023` / `Mar 2023` (A6), each with a one-line comment explaining the timezone fix.
+- [x] 3.5 In `PersonalProjectCard.tsx`, replace the raw `<img>` SVG branch with `<OptimizedImage src=… alt=… fill unoptimized className="object-contain p-4" />` (A4). Confirm `PersonalProjectCard.test.tsx` and the `kiro.svg` card still render.
+- [x] 3.6 Create `src/components/ui/SectionPlaceholder.tsx`, which renders `<div aria-hidden="true" className="min-h-[400px] animate-pulse bg-gray-100" />`. Export it from `src/components/ui/index.ts`, add `SectionPlaceholder.test.tsx`, and use it for all 7 `loading:` options in `page.tsx`. This removes every `dark:` class.
+- [x] 3.7 Remove the `accent` color block from `tailwind.config.ts`. Confirm `grep -rn "accent-" src` is empty.
+- [x] 3.8 Run `npx vitest run`, take the after screenshots, pixel-diff them against `before-*` (expect 0), capture the 3.0 proofs and commit: "Share date formatting and loading placeholder, remove unused styles".
 
 ### [ ] 4.0 Config leftovers and type safety: `tsc`, lint and build all clean
 

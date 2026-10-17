@@ -1,22 +1,11 @@
 import React from 'react';
+import { formatDateRange } from '@/lib/dates';
 import { OptimizedImage } from '@/components/ui';
 import { Experience as ExperienceType } from '@/types';
 
 export interface ExperienceProps {
   experiences: ExperienceType[];
 }
-
-const formatDate = (dateString: string): string => {
-  if (dateString === 'Present') return 'Present';
-  
-  const [year, month] = dateString.split('-');
-  const date = new Date(parseInt(year), parseInt(month) - 1);
-  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-};
-
-const formatDateRange = (startDate: string, endDate: string | 'Present'): string => {
-  return `${formatDate(startDate)} - ${formatDate(endDate)}`;
-};
 
 export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
   // Sort experiences by start date (most recent first)
