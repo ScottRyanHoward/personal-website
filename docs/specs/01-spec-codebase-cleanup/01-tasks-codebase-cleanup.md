@@ -76,7 +76,7 @@ These came up while reading the code and clarify how the spec applies. They do n
 
 ## Tasks
 
-### [ ] 1.0 Repository hygiene: merge pending content, remove stale worktree, untrack generated output, delete dead files
+### [x] 1.0 Repository hygiene: merge pending content, remove stale worktree, untrack generated output, delete dead files
 
 #### 1.0 Proof Artifact(s)
 
@@ -89,15 +89,15 @@ These came up while reading the code and clarify how the spec applies. They do n
 
 #### 1.0 Tasks
 
-- [ ] 1.1 Run `npm run test:e2e` and `npx vitest run` on the untouched `main`. Save the output to `01-proofs/1.0-e2e-baseline.txt` and `01-proofs/1.0-vitest-baseline.txt`, noting every failing test by name.
-- [ ] 1.2 Take full-page screenshots of a production build (`npm run build && npm run start`) at 375px, 768px and 1280px widths. Save them as `01-proofs/before-375.png`, `before-768.png`, `before-1280.png` (the baseline for 2.0 and 3.0). Capture twice and pixel-diff the two runs to confirm the capture is deterministic (0 differing pixels).
-- [ ] 1.3 Cherry-pick `cec60ce` onto `main` (`git cherry-pick cec60ce`). If there are conflicts in `experience.json` or `profile.json`, keep the incoming content. Run `npx vitest run` and confirm everything passes.
-- [ ] 1.4 Remove the worktree (`git worktree remove .claude/worktrees/interesting-aryabhata`) and delete its branch (`git branch -D claude/interesting-aryabhata`) once 1.3 is confirmed on `main`.
-- [ ] 1.5 Add `'**/.claude/**'` to the `exclude` array in `vitest.config.ts`.
-- [ ] 1.6 Add `playwright-report/`, `test-results/`, `.claude/worktrees/` and `.claude/settings.local.json` to `.gitignore`. Run `git rm -r --cached playwright-report test-results`.
-- [ ] 1.7 Delete the 9 `src/components/sections/*.demo.tsx` files, the 7 `src/components/sections/*_IMPLEMENTATION.md` files, `src/app/PERFORMANCE_TESTING.md`, `src/app/SEO_IMPLEMENTATION.md` and `e2e/TEST_RESULTS.md`. Run `grep -rn "\.demo" src` and confirm there are no remaining references.
-- [ ] 1.8 Check `.agents/`, `.claude/skills/`, `.kiro/skills/` and `skills-lock.json` for secrets (`grep -rniE "token|secret|api[_-]?key|password"`), then `git add` them.
-- [ ] 1.9 Run `npx vitest run` → `01-proofs/1.0-vitest.txt`, then the e2e suite, then `git status --porcelain`, and capture the 1.0 proofs. Commit: "Clean up repository: merge pending content, ignore generated output, remove dead files".
+- [x] 1.1 Run `npm run test:e2e` and `npx vitest run` on the untouched `main`. Save the output to `01-proofs/1.0-e2e-baseline.txt` and `01-proofs/1.0-vitest-baseline.txt`, noting every failing test by name.
+- [x] 1.2 Take full-page screenshots of a production build (`npm run build && npm run start`) at 375px, 768px and 1280px widths. Save them as `01-proofs/before-375.png`, `before-768.png`, `before-1280.png` (the baseline for 2.0 and 3.0). Capture twice and pixel-diff the two runs to confirm the capture is deterministic (0 differing pixels). _Implementation note: the baseline was re-captured at the end of 1.0, after the 1.3 cherry-pick, because that commit changes visible content (new role). The 2.0 and 3.0 diffs therefore measure only code changes._
+- [x] 1.3 Cherry-pick `cec60ce` onto `main` (`git cherry-pick cec60ce`). If there are conflicts in `experience.json` or `profile.json`, keep the incoming content. Run `npx vitest run` and confirm everything passes.
+- [x] 1.4 Remove the worktree (`git worktree remove .claude/worktrees/interesting-aryabhata`) and delete its branch (`git branch -D claude/interesting-aryabhata`) once 1.3 is confirmed on `main`.
+- [x] 1.5 Add `'**/.claude/**'` to the `exclude` array in `vitest.config.ts`.
+- [x] 1.6 Add `playwright-report/`, `test-results/`, `.claude/worktrees/` and `.claude/settings.local.json` to `.gitignore`. Run `git rm -r --cached playwright-report test-results`.
+- [x] 1.7 Delete the 9 `src/components/sections/*.demo.tsx` files, the 7 `src/components/sections/*_IMPLEMENTATION.md` files, `src/app/PERFORMANCE_TESTING.md`, `src/app/SEO_IMPLEMENTATION.md` and `e2e/TEST_RESULTS.md`. Run `grep -rn "\.demo" src` and confirm there are no remaining references.
+- [x] 1.8 Check `.agents/`, `.claude/skills/`, `.kiro/skills/` and `skills-lock.json` for secrets (`grep -rniE "token|secret|api[_-]?key|password"`), then `git add` them.
+- [x] 1.9 Run `npx vitest run` → `01-proofs/1.0-vitest.txt`, then the e2e suite, then `git status --porcelain`, and capture the 1.0 proofs. Commit: "Clean up repository: merge pending content, ignore generated output, remove dead files".
 
 ### [ ] 2.0 Consistent data loading through one content module, plus a content validation test
 
